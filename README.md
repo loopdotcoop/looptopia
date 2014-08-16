@@ -21,4 +21,5 @@ Changelog
 +                   Initial commit
 + 0.0.1-1           create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; 
 + 0.0.1-2           improve ‘.gitignore’; 
++ 0.0.1-3           initialise Meteor: `$ mrt create tmp/looptopia` … `$ mv tmp/looptopia/.[!.]* tmp/looptopia/* ./` … `$ rm -rf tmp`; 
 
