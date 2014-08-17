@@ -19,15 +19,15 @@ is built on [git-flow](https://github.com/nvie/gitflow/wiki) and
 Meteor Packages
 ---------------
 
-1. Remove ‘insecure’ and ‘autopublish’, which should not be used in a production app:  
+1. Remove `insecure` and `autopublish`, which should not be used in a production app:  
 `$ mrt remove insecure autopublish`
 
-2. The accounts-password package contains a full system for password-based authentication. In 
+2. The `accounts-password` package contains a full system for password-based authentication. In 
 addition to the basic username and password-based sign-in process, it also supports email-based 
 sign-in including address verification and password recovery emails:  
 `$ mrt add accounts-password`
 
-3. ‘standard-app-packages’ should already be installed, and makes up the core Meteor stack:
+3. `standard-app-packages` should already be installed, and makes up the core Meteor stack:
   - __meteor__          Meteor.isServer! The CSS extension handler! And so much more!
   - __webapp__          A standard Meteor app is a web app (which defines the 'main' function).
   - __logging__         It's Log! It's better than bad, it's good!
@@ -46,6 +46,10 @@ sign-in including address verification and password recovery emails:
   - __reload__          We can reload the client without messing up methods in flight.
   - __autoupdate__      And update automatically when new client code is available!
 
+4. `less` is the dynamic stylesheet language. All files with the ‘.less’ extension are converted to 
+CSS, minified, bundled, and sent ot the client:  
+`$ mrt add less`
+
 
 
 
@@ -61,5 +65,6 @@ Changelog
 + 0.0.1-4           paste ‘Meteor Packages’ section into ‘README.md’ from ‘20140802-ldcore-…tryout/’; 
 + 0.0.1-5           `rm` the three default `looptopia.*` files;  add ‘client-config.js’, ‘home.html’; 
 + 0.0.1-6           replace ‘package.json’ with ‘both/config.js’; 
++ 0.0.1-7           `$ mrt add zurb-foundation; mrt add less`; follows loopdotcoop.github.io@0.1.0; 
 
 
