@@ -66,5 +66,5 @@ Changelog
 + 0.0.1-5           `rm` the three default `looptopia.*` files;  add ‘client-config.js’, ‘home.html’; 
 + 0.0.1-6           replace ‘package.json’ with ‘both/config.js’; 
 + 0.0.1-7           `$ mrt add zurb-foundation; mrt add less`; follows loopdotcoop.github.io@0.1.0; 
-
++ 0.1.0             looptopia holding page release; 
 
