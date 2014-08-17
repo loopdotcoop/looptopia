@@ -9,8 +9,9 @@ looptopia
 Workflow
 --------
 
-This project uses the [oe-flow](https://github.com/loopdotcoop/oe-flow) development workflow, which is compatible with 
-[git-flow](https://github.com/nvie/gitflow/wiki) and [Semantic Versioning 2.0.0](http://semver.org/).
+This project uses the [oe-flow](https://github.com/loopdotcoop/oe-flow) development workflow, which 
+is built on [git-flow](https://github.com/nvie/gitflow/wiki) and 
+[Semantic Versioning 2.0.0](http://semver.org/).
 
 
 
@@ -21,9 +22,9 @@ Meteor Packages
 1. Remove ‘insecure’ and ‘autopublish’, which should not be used in a production app:  
 `$ mrt remove insecure autopublish`
 
-2. The accounts-password package contains a full system for password-based authentication. In addition to the basic 
-username and password-based sign-in process, it also supports email-based sign-in including address verification and 
-password recovery emails:  
+2. The accounts-password package contains a full system for password-based authentication. In 
+addition to the basic username and password-based sign-in process, it also supports email-based 
+sign-in including address verification and password recovery emails:  
 `$ mrt add accounts-password`
 
 3. ‘standard-app-packages’ should already be installed, and makes up the core Meteor stack:
@@ -54,8 +55,11 @@ Changelog
 +                   Initial commit
 + 0.0.1-1           create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; 
 + 0.0.1-2           improve ‘.gitignore’; 
-+ 0.0.1-3           initialise Meteor: `$ mrt create tmp/looptopia` … `$ mv tmp/looptopia/.[!.]* tmp/looptopia/* ./` … `$ rm -rf tmp`; 
-+ 0.0.1-4           paste ‘Meteor Packages’ section into ‘README.md’ from ‘20140802-ldcore-model-initial-tryout/’; 
-+ 0.0.1-5           `rm` the three default `looptopia.*` files; add ‘client/client-config.js’ and ‘client/page/home.html’; 
++ 0.0.1-3           initialise Meteor:  
+                    `$ mrt create tmp/looptopia` … `$ mv tmp/looptopia/.[!.]* tmp/looptopia/* ./`  
+                    `$ rm -rf tmp`; 
++ 0.0.1-4           paste ‘Meteor Packages’ section into ‘README.md’ from ‘20140802-ldcore-…tryout/’; 
++ 0.0.1-5           `rm` the three default `looptopia.*` files;  add ‘client-config.js’, ‘home.html’; 
++ 0.0.1-6           replace ‘package.json’ with ‘both/config.js’; 
 
 
