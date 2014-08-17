@@ -43,13 +43,20 @@
 
 
 
+/* Color */
+html, body {
+  background-color: #000;
+  color: #ccc;
+}
+
+
+
 /* Typography */
 
 @import url(http://fonts.googleapis.com/css?family=Podkova:400,700);
 
 body {
   font-family: verdana, sans-serif;
-  background-color: #000;
 }
 
 h1, h2, h3, h4, h5, h6, button, .button {
@@ -62,7 +69,6 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 p {
-  color: #eee;
   font-size: 1.1rem;
   line-height: 1.4;
   text-align: center;
@@ -80,38 +86,43 @@ p {
 
 
 
-/* Navigation */
+/* Header and Footer */
 
-#ldc-nav-top {
-  padding-top: 10px;
-}
-#ldc-nav-top .ldc-social,
-#ldc-nav-top .ldc-menu {
-  text-align: center; /* responsive */
-}
-#ldc-nav-top .ldc-menu {
-  padding-bottom: 1rem; /* responsive */
-}
-#ldc-nav-top .ldc-social a {
-  padding-right: .5rem;
-}
-#ldc-nav-top .ldc-menu a {
-  padding-left: 1rem;
+#header,
+#footer {
+    padding-top: 10px;  
+    .ldc-social,
+    .ldc-menu,
+    .ldc-legal,
+    .ldc-copyright {
+        text-align: center; // responsive
+    }
+    .ldc-menu {
+        padding-bottom: 1rem; // responsive
+    }
+    .ldc-social a,
+    .ldc-legal a {
+        padding-right: .5rem;
+    }
+    .ldc-menu a {
+        padding-left: 1rem;
+    }
 }
 @media only screen and (min-width: 40.063em) {
-  #ldc-nav-top {
-    padding-bottom: 10px;
-  }
-  #ldc-nav-top .ldc-social {
-    text-align: left; /* responsive */
-  }
-  #ldc-nav-top .ldc-menu {
-    text-align: right; /* responsive */
-    padding-bottom: 0; /* responsive */
-  }
+    #header,
+    #footer {
+        padding-bottom: 10px;
+        .ldc-social,
+        .ldc-legal {
+            text-align: left; // responsive
+        }
+        .ldc-menu,
+        .ldc-copyright {
+            text-align: right; // responsive
+            padding-bottom: 0; // responsive
+        }
+    }
 }
-
-
 
 
 
@@ -121,7 +132,35 @@ p {
   height: auto;
 }
 
-.footer {
-  text-align: center;
-}
 
+
+
+/* Sticky Footer, based on http://jsbin.com/qucet/2 and http://www.cssstickyfooter.com/ */
+@footer-height: 2.5rem;
+@footer-height-mobile: 4rem;
+
+html, body {
+    height: 100%;
+}
+#wrap {
+    min-height: 100%;
+}
+#main {
+    overflow: auto;
+    padding-bottom: @footer-height-mobile; // responsive - must be same height as the footer
+}
+#footer {
+    position: relative;
+    margin-top: -@footer-height-mobile; // responsive - negative value of footer height
+    height: @footer-height-mobile; // responsive
+    clear: both;
+} 
+@media only screen and (min-width: 40.063em) {
+    #main {
+        padding-bottom: @footer-height; // responsive - must be same height as the footer
+    }
+    #footer {
+        margin-top: -@footer-height; // responsive - negative value of footer height
+        height: @footer-height; // responsive
+    } 
+}

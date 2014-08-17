@@ -1,0 +1,42 @@
+<template name="layout">
+  <!-- client/partial/layout.html -->
+
+  <!--[if lt IE 7 ]><div id="page-top" class="no-js ie ie6 lte7 lte8 lte9 index"><![endif]-->
+  <!--[if IE 7 ]><div id="page-top" class="no-js ie ie7 lte7 lte8 lte9 index"><![endif]-->
+  <!--[if IE 8 ]><div id="page-top" class="no-js ie ie8 lte8 lte9 index"><![endif]-->
+  <!--[if IE 9 ]><div id="page-top" class="no-js ie ie9 lte9 index"><![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <div id="wrap" class="no-js index"><!--<![endif]-->
+    <div id="main">
+
+      <div id="header">
+        <div class="medium-6 small-12 columns ldc-social">
+          <a target="_blank" href="https://github.com/loopdotcoop"      ><span class="foundicon-github"  ></span></a>
+          <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="foundicon-facebook"></span></a>
+          <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon">@loopdotcoop</span></span></a>
+        </div>
+        <div class="medium-6 small-12 columns ldc-menu">
+          <a href="http://loop.coop/">Loop.Coop</a>
+        </div>
+      </div><!--/#header -->
+
+      <article id="yeild">
+        {{> yield}}{{! `yield` is a special Iron Router template }}
+      </article><!--/#yeild -->
+
+    </div><!--/#main -->
+  </div><!--/#wrap -->
+
+  <!-- #footer -->
+  <div id="footer">
+    <div class="medium-6 small-12 columns ldc-legal">
+      <a href="{{ pathFor 'terms' }}">Terms</a>
+      <a href="{{ pathFor 'privacy' }}">Privacy</a>
+    </div>
+    <div class="medium-6 small-12 columns ldc-copyright">
+      <span>&copy;{{ config 'year' }} {{ config 'organization' }}</span>
+    </div>
+  </div><!--/#footer -->
+
+</template>
+
