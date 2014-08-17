@@ -1,0 +1,40 @@
+<body>
+
+    <div id="ldc-nav-top">
+      <div class="medium-6 small-12 columns ldc-social">
+        <a target="_blank" href="https://github.com/loopdotcoop"      ><span class="foundicon-github"  ></span></a>
+        <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="foundicon-facebook"></span></a>
+        <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon">@loopdotcoop</span></span></a>
+      </div>
+      <div class="medium-6 small-12 columns ldc-menu">
+        <a href="http://loop.coop/">Loop.Coop</a>
+      </div>
+    </div>
+
+{{> home}}
+</body>
+
+<template name="home">
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Welcome to {{ config 'name' }} v{{ config 'version' }}</h1>
+      <p>Are you here for a sneak peek? Please return on September 1st.</p>
+    </div>
+    <div class="large-12 columns">
+      <a target="_blank" href="http://www.brightondigitalfestival.co.uk/events/loop-coop-present-the-looptopian-launch/">
+        <img alt="A sneak peek at Looptopia" style="max-height:485px; margin:0 0 40px 0;" src="img/20140721-loopdotcoop-looptopia-v1-rgb-970x485.jpg">
+      </a>
+    </div>
+    <div class="large-12 columns">
+      <p>For The Looptopian Launch on September 27th:</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-4 medium-push-4 small-8 small-push-2 columns">
+      <a target="_blank" href="http://looptopian-launch.eventbrite.co.uk/" class="large radius button expand">Buy Tickets Here</a>
+    </div>
+  </div>
+
+</template>

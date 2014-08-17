@@ -1,0 +1,127 @@
+/* [Foundation icons](http://zurb.com/playground/foundation-icons) */
+
+@font-face {
+  font-family: 'SocialFoundicons';
+  src: url('../font/social_foundicons.eot');
+  src: url('../font/social_foundicons.eot?#iefix') format('embedded-opentype'),
+       url('../font/social_foundicons.woff') format('woff'),
+       url('../font/social_foundicons.ttf') format('truetype'),
+       url('../font/social_foundicons.svg#socialFoundicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[class*="foundicon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+ 
+[class*="foundicon-"]:before {
+  font-family: "SocialFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2rem;
+  text-decoration: inherit;
+}
+
+.foundicon-facebook:before {
+  content: "\f003";
+}
+.foundicon-twitter:before {
+  content: "\f004";
+}
+.foundicon-github:before {
+  content: "\f006";
+}
+
+
+
+
+/* Typography */
+
+@import url(http://fonts.googleapis.com/css?family=Podkova:400,700);
+
+body {
+  font-family: verdana, sans-serif;
+  background-color: #000;
+}
+
+h1, h2, h3, h4, h5, h6, button, .button {
+  font-family: 'Podkova', sans-serif;
+  font-weight: bold;
+  line-height: 1.1;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #2285a2;
+  text-align: center;
+}
+p {
+  color: #eee;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+
+
+
+/* Utility */
+
+.ldc-raise-icon {
+  vertical-align: top;
+}
+
+
+
+
+/* Navigation */
+
+#ldc-nav-top {
+  padding-top: 10px;
+}
+#ldc-nav-top .ldc-social,
+#ldc-nav-top .ldc-menu {
+  text-align: center; /* responsive */
+}
+#ldc-nav-top .ldc-menu {
+  padding-bottom: 1rem; /* responsive */
+}
+#ldc-nav-top .ldc-social a {
+  padding-right: .5rem;
+}
+#ldc-nav-top .ldc-menu a {
+  padding-left: 1rem;
+}
+@media only screen and (min-width: 40.063em) {
+  #ldc-nav-top {
+    padding-bottom: 10px;
+  }
+  #ldc-nav-top .ldc-social {
+    text-align: left; /* responsive */
+  }
+  #ldc-nav-top .ldc-menu {
+    text-align: right; /* responsive */
+    padding-bottom: 0; /* responsive */
+  }
+}
+
+
+
+
+
+
+.large-12.columns >img, .large-12.columns >a >img {
+  width: 1100px;
+  height: auto;
+}
+
+.footer {
+  text-align: center;
+}
+
