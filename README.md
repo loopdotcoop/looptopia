@@ -121,7 +121,8 @@ Changelog
 + 0.1.1-2           can log in and out;  
                     add `AccountsTemplates.` to ‘accounts-templates-core/…/lib/signinForm.js:301’;  
                     same fix for ‘…signinForm.js:272’; 
-+ 0.1.1-3           `$ mrt add handlebar-helpers`; show ‘Sign In’ if anon user; hide accounts forms;
++ 0.1.1-3           `$ mrt add handlebar-helpers`; show ‘Sign In’ if anon user; hide accounts forms; 
++ 0.1.1-4           `{{ $.Config.name }}` in templates; ‘looptopia.less’ like loopdotcoop.github.io; 
 
 
 

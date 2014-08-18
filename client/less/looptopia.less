@@ -45,8 +45,11 @@
 
 /* Color */
 html, body {
-  background-color: #000;
-  color: #ccc;
+    background-color: #000;
+    color: #ccc;
+    .ldc-copyright span {
+        color: #444;
+    }
 }
 
 
@@ -56,22 +59,22 @@ html, body {
 @import url(http://fonts.googleapis.com/css?family=Podkova:400,700);
 
 body {
-  font-family: verdana, sans-serif;
+    font-family: verdana, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, button, .button {
-  font-family: 'Podkova', sans-serif;
-  font-weight: bold;
-  line-height: 1.1;
+h1, h2, h3, h4, h5, h6, button, .button, #header, #footer {
+    font-family: 'Podkova', sans-serif;
+    font-weight: bold;
+    line-height: 1.1;
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #2285a2;
-  text-align: center;
+    color: #2285a2;
+    text-align: center;
 }
 p {
-  font-size: 1.1rem;
-  line-height: 1.4;
-  text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
 
@@ -80,7 +83,7 @@ p {
 /* Utility */
 
 .ldc-raise-icon {
-  vertical-align: top;
+    vertical-align: .7rem;
 }
 
 
@@ -90,7 +93,8 @@ p {
 
 #header,
 #footer {
-    padding-top: 10px;  
+    padding-top: 10px;
+    font-size: 1.2rem;
     .ldc-social,
     .ldc-menu,
     .ldc-legal,
@@ -100,12 +104,16 @@ p {
     .ldc-menu {
         padding-bottom: 1rem; // responsive
     }
-    .ldc-social a,
-    .ldc-legal a {
-        padding-right: .5rem;
+    .ldc-legal {
+        padding-bottom: .5rem; // responsive
     }
-    .ldc-menu a {
-        padding-left: 1rem;
+    .ldc-social a {
+        padding: 0 .25rem;
+    }
+    .ldc-menu a,
+    .ldc-legal a,
+    .ldc-copyright span {
+        padding: 0 .5rem;
     }
 }
 @media only screen and (min-width: 40.063em) {
@@ -115,6 +123,7 @@ p {
         .ldc-social,
         .ldc-legal {
             text-align: left; // responsive
+            padding-bottom: 0; // responsive
         }
         .ldc-menu,
         .ldc-copyright {
