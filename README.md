@@ -123,6 +123,7 @@ Changelog
                     same fix for ‘…signinForm.js:272’; 
 + 0.1.1-3           `$ mrt add handlebar-helpers`; show ‘Sign In’ if anon user; hide accounts forms; 
 + 0.1.1-4           `{{ $.Config.name }}` in templates; ‘looptopia.less’ like loopdotcoop.github.io; 
++ 0.1.2             tidy until we enable user-registration; 
 
 
 
