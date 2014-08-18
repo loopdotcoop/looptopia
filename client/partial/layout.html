@@ -16,7 +16,13 @@
           <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon">@loopdotcoop</span></span></a>
         </div>
         <div class="medium-6 small-12 columns ldc-menu">
-          <a href="http://loop.coop/">Loop.Coop</a>
+          <a href="/profile">User slug!{{! user 'slug' }}</a>
+          <a href="/" id="sign-out">Sign Out</a>
+{{#if signedIn }}
+{{else}}
+          <a href="/sign-in">Sign In</a>
+          <a href="/register">Register</a>
+{{/if}}
         </div>
       </div><!--/#header -->
 

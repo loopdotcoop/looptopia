@@ -110,6 +110,11 @@ Changelog
 + 0.0.1-7           `$ mrt add zurb-foundation; mrt add less`; follows loopdotcoop.github.io@0.1.0; 
 + 0.1.0             looptopia holding page release; 
 + 0.1.1-1           `$ mrt remove insecure autopublish`; `$ mrt add accounts-password`;  
-                    `$ mrt add accounts-templates-foundation`; add ‘Meteor Packages’ to ‘README.md’; 
+                    `$ mrt add accounts-templates-foundation`; add ‘Meteor Packages’ to ‘README.md’;  
                     basic routing works, based on ‘20140802-ldcore-model-initial-tryout/’; 
++ 0.1.1-2           can log in and out;  
+                    add `AccountsTemplates.` to ‘accounts-templates-core/…/lib/signinForm.js:301’;  
+                    same fix for ‘…signinForm.js:272’; 
+
+
 
