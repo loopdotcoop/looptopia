@@ -1,6 +1,7 @@
 {
   "packages": {
     "zurb-foundation": {},
-    "accounts-templates-foundation": {}
+    "accounts-templates-foundation": {},
+    "handlebar-helpers": {}
   }
 }

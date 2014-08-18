@@ -93,6 +93,12 @@ __iron-core:__ Iron namespace and utilities.
 _No dependencies._
 
 
+### `$ mrt add handlebar-helpers`  
+
+__handlebar-helpers:__ Handlebar helpers.  
+_No dependencies._
+
+
 
 
 Changelog
@@ -115,6 +121,7 @@ Changelog
 + 0.1.1-2           can log in and out;  
                     add `AccountsTemplates.` to ‘accounts-templates-core/…/lib/signinForm.js:301’;  
                     same fix for ‘…signinForm.js:272’; 
++ 0.1.1-3           `$ mrt add handlebar-helpers`; show ‘Sign In’ if anon user; hide accounts forms;
 
 
 
