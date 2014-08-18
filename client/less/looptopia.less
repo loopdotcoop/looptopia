@@ -1,0 +1,175 @@
+/* [Foundation icons](http://zurb.com/playground/foundation-icons) */
+
+@font-face {
+  font-family: 'SocialFoundicons';
+  src: url('../font/social_foundicons.eot');
+  src: url('../font/social_foundicons.eot?#iefix') format('embedded-opentype'),
+       url('../font/social_foundicons.woff') format('woff'),
+       url('../font/social_foundicons.ttf') format('truetype'),
+       url('../font/social_foundicons.svg#socialFoundicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[class*="foundicon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+ 
+[class*="foundicon-"]:before {
+  font-family: "SocialFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2rem;
+  text-decoration: inherit;
+}
+
+.foundicon-facebook:before {
+  content: "\f003";
+}
+.foundicon-twitter:before {
+  content: "\f004";
+}
+.foundicon-github:before {
+  content: "\f006";
+}
+
+
+
+
+/* Color */
+html, body {
+    background-color: #000;
+    color: #ccc;
+    .ldc-copyright span {
+        color: #444;
+    }
+}
+
+
+
+/* Typography */
+
+@import url(http://fonts.googleapis.com/css?family=Podkova:400,700);
+
+body {
+    font-family: verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, button, .button, #header, #footer {
+    font-family: 'Podkova', sans-serif;
+    font-weight: bold;
+    line-height: 1.1;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #2285a2;
+    text-align: center;
+}
+p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+
+
+
+/* Utility */
+
+.ldc-raise-icon {
+    vertical-align: .7rem;
+}
+
+
+
+
+/* Header and Footer */
+
+#header,
+#footer {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    .ldc-social,
+    .ldc-menu,
+    .ldc-legal,
+    .ldc-copyright {
+        text-align: center; // responsive
+    }
+    .ldc-menu {
+        padding-bottom: 1rem; // responsive
+    }
+    .ldc-legal {
+        padding-bottom: .5rem; // responsive
+    }
+    .ldc-social a {
+        padding: 0 .25rem;
+    }
+    .ldc-menu a,
+    .ldc-legal a,
+    .ldc-copyright span {
+        padding: 0 .5rem;
+    }
+}
+@media only screen and (min-width: 40.063em) {
+    #header,
+    #footer {
+        padding-bottom: 10px;
+        .ldc-social,
+        .ldc-legal {
+            text-align: left; // responsive
+            padding-bottom: 0; // responsive
+        }
+        .ldc-menu,
+        .ldc-copyright {
+            text-align: right; // responsive
+            padding-bottom: 0; // responsive
+        }
+    }
+}
+
+
+
+
+.large-12.columns >img, .large-12.columns >a >img {
+  width: 1100px;
+  height: auto;
+}
+
+
+
+
+/* Sticky Footer, based on http://jsbin.com/qucet/2 and http://www.cssstickyfooter.com/ */
+@footer-height: 2.5rem;
+@footer-height-mobile: 4rem;
+
+html, body {
+    height: 100%;
+}
+#wrap {
+    min-height: 100%;
+}
+#main {
+    overflow: auto;
+    padding-bottom: @footer-height-mobile; // responsive - must be same height as the footer
+}
+#footer {
+    position: relative;
+    margin-top: -@footer-height-mobile; // responsive - negative value of footer height
+    height: @footer-height-mobile; // responsive
+    clear: both;
+} 
+@media only screen and (min-width: 40.063em) {
+    #main {
+        padding-bottom: @footer-height; // responsive - must be same height as the footer
+    }
+    #footer {
+        margin-top: -@footer-height; // responsive - negative value of footer height
+        height: @footer-height; // responsive
+    } 
+}
