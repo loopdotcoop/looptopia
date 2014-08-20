@@ -2,7 +2,7 @@ Config = {
     name:         'Looptopia'
   , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
   , initials:     'lta'
-  , version:      '0.1.3-2'
+  , version:      '0.1.3-3'
   , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
   , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
   , scripts: {

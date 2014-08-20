@@ -34,12 +34,17 @@ Router.map(function() {
         }
     );
 
-    // this.route('listUsers', {
+    // this.route('list-users', {
     //         path: '/list-users'
-    //       , onBeforeAction: function () {
-    //             AccountsEntry.signInRequired(this);
-    //         }
+    //       // , onBeforeAction: function () {
+    //       //       AccountsEntry.signInRequired(this);
+    //       //   }
     //     }
     // );
+
+    this.route('list-topians', {
+            path: '/list-topians'
+        }
+    );
 
 });

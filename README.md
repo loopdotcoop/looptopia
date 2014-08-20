@@ -135,5 +135,5 @@ Changelog
 + 0.1.2             tidy until we enable user-registration; 
 + 0.1.3-1           fix iron-router http://stackoverflow.com/a/25409128; 
 + 0.1.3-2           `$ mrt add jquery-datatables`; 
-
++ 0.1.3-3           ‘Topians’ collection and very simple ‘/list-topians/’ route; 
 
