@@ -99,6 +99,15 @@ __handlebar-helpers:__ Handlebar helpers.
 _No dependencies._
 
 
+### `$ mrt add jquery-datatables`  
+
+__jquery-datatables:__ Sort, page, and filter millions of records. Reactively.  
+`luma-component`
+
+__luma-component:__ Blaze component mixins and base class.  
+_No dependencies._
+
+
 
 
 Changelog
@@ -124,6 +133,7 @@ Changelog
 + 0.1.1-3           `$ mrt add handlebar-helpers`; show ‘Sign In’ if anon user; hide accounts forms; 
 + 0.1.1-4           `{{ $.Config.name }}` in templates; ‘looptopia.less’ like loopdotcoop.github.io; 
 + 0.1.2             tidy until we enable user-registration; 
-
++ 0.1.3-1           fix iron-router http://stackoverflow.com/a/25409128; 
++ 0.1.3-2           `$ mrt add jquery-datatables`; 
 
 

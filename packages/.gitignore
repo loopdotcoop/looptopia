@@ -8,3 +8,5 @@ blaze-layout
 iron-core
 iron-dynamic-template
 handlebar-helpers
+jquery-datatables
+luma-component
