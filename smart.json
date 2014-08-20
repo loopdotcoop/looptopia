@@ -2,6 +2,7 @@
   "packages": {
     "zurb-foundation": {},
     "accounts-templates-foundation": {},
-    "handlebar-helpers": {}
+    "handlebar-helpers": {},
+    "iron-router": "0.8.2"
   }
 }
