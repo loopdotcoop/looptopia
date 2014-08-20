@@ -7,3 +7,10 @@ console.log( 'There are now ' + Topians.find({}).count() + ' Topians.' );
 Meteor.publish('topians', function () {
     return Topians.find({});
 });
+
+TopiansTable = new DataTableComponent({
+    subscription: 'topiansTable'
+  , collection: Topians
+});
+TopiansTable.publish();
+

@@ -136,4 +136,8 @@ Changelog
 + 0.1.3-1           fix iron-router http://stackoverflow.com/a/25409128; 
 + 0.1.3-2           `$ mrt add jquery-datatables`; 
 + 0.1.3-3           ‘Topians’ collection and very simple ‘/list-topians/’ route; 
++ 0.1.3-4           As a temporary measure, `$ mrt add coffeescript` (Meteor Packages), so that...;  
+                    ‘datatable-patch.coffee’ will work as a stopgap fix of `DataTableComponent`; 
+
+
 
