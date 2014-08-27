@@ -8,7 +8,7 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.3-7'
+      , version:      '0.1.3-8'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -52,7 +52,13 @@ Config = {
           , '+ 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; '
           , '+ 0.1.3-6           the project can run with only the ‘about’ feature present; '
           , '+ 0.1.3-7           all templates contain a `<tt class="x">` element; '
+          , '+ 0.1.3-8           ‘notfound’ functionality now in ‘about’; ‘utility’ feature removed; '
 
         ]
     }
 }
+
+Router.configure({
+    notFoundTemplate: 'about.not-found' // catchall 404 https://github.com/EventedMind/iron-router#route-options
+});
+

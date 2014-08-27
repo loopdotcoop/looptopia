@@ -1,15 +1,16 @@
 <head>
-<!-- about.html -->
+<!-- about.not-found.html -->
 </head>
 
-<template name="about">
-  <tt class="x">about.html
+<template name="about.not-found">
+  <tt class="x">about.not-found.html
      {{$.Config.about.version}}</tt>
 
   <div class="row">
     <div class="large-12 columns">
-      <h1>About This Project</h1>
-      <dl class="about">
+      <h1>404 Not Found</h1>
+      <h4>About This Project:</h4>
+      <dl>
         {{#each key_value $.Config.about}}
           <dt>{{key}}</dt><dd>{{value}}</dd>
         {{/each}}

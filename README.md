@@ -141,4 +141,5 @@ Changelog
 + 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; 
 + 0.1.3-6           The project can run with only the ‘about’ feature present; 
 + 0.1.3-7           all templates contain a `<tt class="x">` element; 
++ 0.1.3-8           ‘notfound’ functionality now in ‘about’; ‘utility’ feature removed; 
 
