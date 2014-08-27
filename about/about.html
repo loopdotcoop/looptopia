@@ -1,0 +1,20 @@
+<head>
+<!-- about.html -->
+</head>
+
+<template name="about">
+  <tt class="x">about.html
+     {{$.Config.about.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>About This Project</h1>
+      <dl class="about">
+        {{#each key_value $.Config.about}}
+          <dt>{{key}}</dt><dd>{{value}}</dd>
+        {{/each}}
+      </dl>
+    </div>
+  </div>
+
+</template>

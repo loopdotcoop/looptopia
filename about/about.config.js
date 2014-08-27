@@ -1,3 +1,8 @@
+//// Under oe-flow, ‘about/about.config.js’ describes the project as a whole, not the ‘about’ feature itself. 
+//// The project can run with only the ‘about’ feature present, but it will not run without it.
+//// The global `Config` object is defined here. Other features add to it, eg `Config.foobar = { ... }`. 
+//// It is important that data in `Config.about` is synchronized with the top-level ‘README.md’ in every commit. 
+
 Config = {
     about: {
         name:         'Looptopia'
@@ -19,8 +24,7 @@ Config = {
             'Beth Walker <info@loop.coop>'
         ]
       , changelog: [
-            '+ 0.0.1-1           create ‘layout’ as a feature of ‘looptopia@0.1.3-5’; '
-          , '+                   Initial commit'
+            '+                   Initial commit'
           , '+ 0.0.1-1           create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; '
           , '+ 0.0.1-2           improve ‘.gitignore’; '
           , '+ 0.0.1-3           initialise Meteor:  \n' +
@@ -46,6 +50,7 @@ Config = {
           , '+ 0.1.3-4           As a temporary measure, `$ mrt add coffeescript` (Meteor Packages), so that...;  \n' +
             '                    ‘datatable-patch.coffee’ will work as a stopgap fix of `DataTableComponent`; '
           , '+ 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; '
+          , '+ 0.1.3-6           The project can run with only the ‘about’ feature present; '
 
         ]
     }

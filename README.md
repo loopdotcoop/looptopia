@@ -95,7 +95,7 @@ _No dependencies._
 
 ### `$ mrt add handlebar-helpers`  
 
-__handlebar-helpers:__ Handlebar helpers.  
+__handlebar-helpers:__ [Handlebar helpers](https://github.com/raix/Meteor-handlebar-helpers).  
 _No dependencies._
 
 
@@ -139,6 +139,6 @@ Changelog
 + 0.1.3-4           As a temporary measure, `$ mrt add coffeescript` (Meteor Packages), so that...;  
                     ‘datatable-patch.coffee’ will work as a stopgap fix of `DataTableComponent`; 
 + 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; 
-
++ 0.1.3-6           The project can run with only the ‘about’ feature present; 
 
 

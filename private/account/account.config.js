@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.1-1'
+  , version:      '0.0.1-2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -31,6 +31,9 @@ AccountsTemplates.configure({
 });
 
 //// https://github.com/splendido/accounts-templates-core#routing
+//// More routes can be added elsewhere in the app, eg:
+////     postSignInRoutePath: '/dashboard'
+////     postSignUpRoutePath: '/profile'
 AccountsTemplates.configure({
     signInRoutePath:       '/account/sign-in'
   , signInRouteName:       'account.sign-in' // default is 'signIn'
@@ -49,6 +52,7 @@ AccountsTemplates.configure({
 // @todo language 
 
 //// https://github.com/splendido/accounts-templates-core#setup
+//// Must be run after all `AccountsTemplates.configure()` calls have been made.
 Meteor.startup(function () {
     AccountsTemplates.init();
 });
