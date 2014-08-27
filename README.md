@@ -1,4 +1,4 @@
-looptopia
+Looptopia
 =========
 
 ### A cube-shaped planet in the Loop.Coop system.
@@ -138,6 +138,7 @@ Changelog
 + 0.1.3-3           ‘Topians’ collection and very simple ‘/list-topians/’ route; 
 + 0.1.3-4           As a temporary measure, `$ mrt add coffeescript` (Meteor Packages), so that...;  
                     ‘datatable-patch.coffee’ will work as a stopgap fix of `DataTableComponent`; 
++ 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; 
 
 
 

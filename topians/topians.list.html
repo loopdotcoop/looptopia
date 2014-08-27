@@ -1,0 +1,14 @@
+<template name="topians.list">
+  <!-- topians.list.html -->
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>List Topians</h1>
+{{> DataTable topiansTable }}
+{{#each topians }}
+    {{ rand }}
+{{/each}}
+    </div>
+  </div>
+
+</template>
