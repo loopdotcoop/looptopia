@@ -1,6 +1,6 @@
-Config.home = {
-    name:         'Home'
-  , slug:         'home'
+Config.legal = {
+    name:         'Legal'
+  , slug:         'legal'
   , version:      '0.0.1-1'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
@@ -12,16 +12,17 @@ Config.home = {
   , year:         '2014'
   , license:      'GPL v2'
   , type:         'website' // http://ogp.me/#types
-  , url:          'http://looptopia.loop.coop/'
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
+  , widgets: { // add legal links to the 'footer-left' widget area
+        'footer-left': [
+            { path:'/legal/privacy', name:'Privacy' }
+          , { path:'/legal/terms'  , name:'Terms'   }
+        ]
+    }
   , changelog: [
-        '+ 0.0.1-1           create ‘home’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ 0.0.1-1           create ‘legal’ as a feature of ‘looptopia@0.1.3-5’; '
     ]
 };
 
-//// https://github.com/splendido/accounts-templates-core#routing
-AccountsTemplates.configure({
-    homeRoutePath: '/'
-});

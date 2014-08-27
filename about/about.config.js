@@ -8,7 +8,7 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.3-8'
+      , version:      '0.1.3-9'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -23,6 +23,7 @@ Config = {
       , contributors: [
             'Beth Walker <info@loop.coop>'
         ]
+      , widgets: {} // can be filled with widget areas, eg 'footer-left'
       , changelog: [
             '+                   Initial commit'
           , '+ 0.0.1-1           create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; '
@@ -53,6 +54,7 @@ Config = {
           , '+ 0.1.3-6           the project can run with only the ‘about’ feature present; '
           , '+ 0.1.3-7           all templates contain a `<tt class="x">` element; '
           , '+ 0.1.3-8           ‘notfound’ functionality now in ‘about’; ‘utility’ feature removed; '
+          , '+ 0.1.3-9           widget areas, eg `{ path:"/", name:"Sign Out", id:"sign-out", order:"high" }`; '
 
         ]
     }

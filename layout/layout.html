@@ -80,12 +80,13 @@
         </div>
         <div class="medium-6 small-12 columns ldc-menu">
 {{#if $.Meteor.userId }}
-          <a href="{{ pathFor 'profile' }}">{{ username }}</a>
-          <a href="{{ pathFor 'dashboard' }}">Dashboard</a>
-          <a href="{{ pathFor 'home' }}" id="sign-out">Sign Out</a>
+          {{#each widgets 'registered'}}
+          <a href="{{ path }}" id="{{ id }}">{{#if $eq name '_username_'}}{{ username }}{{else}}{{ name }}{{/if}}</a>
+          {{/each}}
 {{else}}
-          <a href="{{ pathFor 'account.sign-in' }}">Sign In</a>
-          <a href="{{ pathFor 'account.register' }}">Register</a>
+          {{#each widgets 'unregistered'}}
+          <a href="{{ path }}" id="{{ id }}">{{ name }}</a>
+          {{/each}}
 {{/if}}
         </div>
       </div><!--/#header -->
@@ -102,8 +103,9 @@
   <!-- #footer -->
   <div id="footer">
     <div class="medium-6 small-12 columns ldc-legal">
-      <a href="{{ pathFor 'legal.terms' }}">Terms</a>
-      <a href="{{ pathFor 'legal.privacy' }}">Privacy</a>
+      {{#each widgets 'footer-left'}}
+      <a href="{{ path }}" id="{{ id }}">{{ name }}</a>
+      {{/each}}
     </div>
     <div class="medium-6 small-12 columns ldc-copyright">
       <span>&copy;{{ $.Config.about.year }} {{ $.Config.about.organization }}</span>

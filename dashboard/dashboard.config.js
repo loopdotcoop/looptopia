@@ -1,6 +1,6 @@
-Config.profile = {
-    name:         'Profile'
-  , slug:         'profile'
+Config.dashboard = {
+    name:         'Dashboard'
+  , slug:         'dashboard'
   , version:      '0.0.1-1'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
@@ -12,16 +12,21 @@ Config.profile = {
   , year:         '2014'
   , license:      'GPL v2'
   , type:         'website' // http://ogp.me/#types
-  , url:          'http://looptopia.loop.coop/profile'
+  , url:          'http://looptopia.loop.coop/dashboard'
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
+  , widgets: { // add a link to the 'registered' widget area
+        'registered': [
+            { path:'/dashboard', name:'Dashboard', order:'high' }
+        ]
+    }
   , changelog: [
-        '+ 0.0.1-1           create ‘profile’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ 0.0.1-1           create ‘dashboard’ as a feature of ‘looptopia@0.1.3-5’; '
     ]
-};
+}
 
 //// https://github.com/splendido/accounts-templates-core#routing
 AccountsTemplates.configure({
-    postSignUpRoutePath: '/profile'
+    postSignInRoutePath: '/dashboard'
 });

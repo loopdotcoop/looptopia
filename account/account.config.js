@@ -15,6 +15,15 @@ Config.account = {
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
+  , widgets: { // add account links to the 'registered' and 'unregistered' widget areas
+        'registered': [
+            { path:'/', name:'Sign Out', id:'sign-out', order:'high' } // 'click #sign-out' will trigger `Meteor.logout();`
+        ]
+      , 'unregistered': [
+            { path:'/account/sign-in' , name:'Sign In'  }
+          , { path:'/account/register', name:'Register' }
+        ]
+    }
   , changelog: [
         '+ 0.0.1-1           create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
     ]

@@ -15,6 +15,7 @@ Config.topians = {
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
+  , widgets: {} // can be filled with widget areas, eg 'footer-left'
   , changelog: [
         '+ 0.0.1-1           create ‘topians’ as a feature of ‘looptopia@0.1.3-5’; '
     ]
