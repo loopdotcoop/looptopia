@@ -1,5 +1,68 @@
-<template name="layout">
+<head>
   <!-- layout.html -->
+
+  <!-- Compatibility -->
+  <meta charset="utf-8">
+  <meta name="resource-type"                   content="document">
+  <meta http-equiv="content-type"              content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible"           content="IE=EmulateIE10,chrome=1"><!-- Force IE10 rendering engine, or Chrome Frame if available -->
+  <meta name="viewport"                        content="width=device-width, user-scalable=yes, initial-scale=1.0">
+  <meta name="format-detection"                content="telephone=no">
+
+  <!-- Seo -->
+  <title>Looptopia by Loop.Coop</title>
+  <meta name="description"                     content="A cube-shaped planet in the Loop.Coop system.">
+  <meta name="keywords"                        content="Brighton, art, music, immersive, app, game, cooperative, party, festival">
+  <meta name="author"                          content="Rich Plastow <infoATloop.coop>">
+  <meta name="copyright"                       content="Copyright 2014 Loop.Coop">
+
+  <!-- Facebook -->
+  <meta property="og:title"                    content="Looptopia by Loop.Coop">
+  <meta property="og:type"                     content="website">
+  <meta property="og:url"                      content="http://looptopia.loop.coop/">
+  <meta property="og:site_name"                content="Looptopia">
+  <meta property="og:image"                    content="/layout/icon/lta-310x310.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon"                       href="/layout/icon/lta-16x16.ico">
+
+  <!-- iOS 1-6 -->
+  <link rel="apple-touch-icon"                    href="/layout/icon/lta-114x114.png"><!-- iPhone, 57x57 -->
+  <link rel="apple-touch-icon" sizes="114x114"    href="/layout/icon/lta-114x114.png"><!-- iPhone retina -->
+  <link rel="apple-touch-icon" sizes="72x72"      href="/layout/icon/lta-144x144.png"><!-- iPad -->
+  <link rel="apple-touch-icon" sizes="144x144"    href="/layout/icon/lta-144x144.png"><!-- iPad retina -->
+
+  <!-- iOS 7+ -->
+  <link rel="apple-touch-icon" sizes="60x60"      href="/layout/icon/lta-120x120.png"><!-- iPhone -->
+  <link rel="apple-touch-icon" sizes="120x120"    href="/layout/icon/lta-120x120.png"><!-- iPhone retina -->
+  <link rel="apple-touch-icon" sizes="76x76"      href="/layout/icon/lta-152x152.png"><!-- iPad -->
+  <link rel="apple-touch-icon" sizes="152x152"    href="/layout/icon/lta-152x152.png"><!-- iPad retina -->
+
+  <!-- Win8 -->
+  <meta name="application-name"                content="Looptopia">
+  <meta name="msapplication-TileColor"         content="#0b0d0c">
+  <meta name="msapplication-TileImage"         content="/layout/icon/lta-144x144.png">
+
+  <!-- IE11 -->
+  <meta name="msapplication-square70x70logo"   content="/layout/icon/lta-70x70.png">
+  <meta name="msapplication-square150x150logo" content="/layout/icon/lta-150x150.png">
+  <meta name="msapplication-wide310x150logo"   content="/layout/icon/lta-310x150.png">
+  <meta name="msapplication-square310x310logo" content="/layout/icon/lta-310x310.png">
+
+  <!-- Analytics -->
+  <script>/*
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-00000000-0']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();*/
+  </script>
+</head>
+
+<template name="layout">
 
   <!--[if lt IE 7 ]><div id="page-top" class="no-js ie ie6 lte7 lte8 lte9 index"><![endif]-->
   <!--[if IE 7 ]><div id="page-top" class="no-js ie ie7 lte7 lte8 lte9 index"><![endif]-->
@@ -28,6 +91,8 @@
       </div><!--/#header -->
 
       <article id="yeild">
+        <tt class="x">layout.html
+           {{$.Config.layout.version}}</tt>
         {{> yield}}{{! `yield` is a special Iron Router template }}
       </article><!--/#yeild -->
 

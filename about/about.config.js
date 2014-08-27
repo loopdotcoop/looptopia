@@ -8,7 +8,7 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.3-5'
+      , version:      '0.1.3-7'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -50,7 +50,8 @@ Config = {
           , '+ 0.1.3-4           As a temporary measure, `$ mrt add coffeescript` (Meteor Packages), so that...;  \n' +
             '                    ‘datatable-patch.coffee’ will work as a stopgap fix of `DataTableComponent`; '
           , '+ 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; '
-          , '+ 0.1.3-6           The project can run with only the ‘about’ feature present; '
+          , '+ 0.1.3-6           the project can run with only the ‘about’ feature present; '
+          , '+ 0.1.3-7           all templates contain a `<tt class="x">` element; '
 
         ]
     }
