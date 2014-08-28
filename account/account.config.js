@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.4'
+  , version:      '0.0.6'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -29,6 +29,7 @@ Config.account = {
       , '+ account@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
       , '+ account@0.0.3-1   Update ‘AccountsTemplates’ to v0.0.21; add ‘account.password-change’ etc; '
       , '+ account@0.0.4     Ready to test ‘account’ system on modulus; '
+      , '+ account@0.0.6     fix double-slash in password-reset link; fix “By clicking Register ...” links; '
     ]
 };
 
@@ -42,8 +43,8 @@ AccountsTemplates.configure({
   , enablePasswordChange: true
 
   , homeRoutePath: '/'
-  , privacyUrl: '/privacy'
-  , termsUrl: '/terms'
+  , privacyUrl: '/legal/privacy'
+  , termsUrl: '/legal/terms'
 });
 
 
