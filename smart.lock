@@ -5,9 +5,7 @@
       "zurb-foundation": {},
       "accounts-templates-foundation": {},
       "handlebar-helpers": {},
-      "iron-router": {
-        "version": "0.8.2"
-      },
+      "iron-router": {},
       "jquery-datatables": {},
       "autoform": {}
     },

@@ -28,8 +28,3 @@ Config.profile = {
     ]
 };
 
-//// https://github.com/splendido/accounts-templates-core#routing
-AccountsTemplates.configure({
-    postSignUpRoutePath: '/profile'
-});
-

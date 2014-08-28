@@ -29,5 +29,5 @@ Config.dashboard = {
 
 //// https://github.com/splendido/accounts-templates-core#routing
 AccountsTemplates.configure({
-    postSignInRoutePath: '/dashboard'
+    // postSignInRoutePath: '/dashboard'
 });
