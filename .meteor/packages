@@ -9,3 +9,5 @@ less
 accounts-password
 accounts-templates-foundation
 handlebar-helpers
+jquery-datatables
+coffeescript

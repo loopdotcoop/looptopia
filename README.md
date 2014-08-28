@@ -1,4 +1,4 @@
-looptopia
+Looptopia
 =========
 
 ### A cube-shaped planet in the Loop.Coop system.
@@ -95,7 +95,16 @@ _No dependencies._
 
 ### `$ mrt add handlebar-helpers`  
 
-__handlebar-helpers:__ Handlebar helpers.  
+__handlebar-helpers:__ [Handlebar helpers](https://github.com/raix/Meteor-handlebar-helpers).  
+_No dependencies._
+
+
+### `$ mrt add jquery-datatables`  
+
+__jquery-datatables:__ Sort, page, and filter millions of records. Reactively.  
+`luma-component`
+
+__luma-component:__ Blaze component mixins and base class.  
 _No dependencies._
 
 
@@ -124,6 +133,14 @@ Changelog
 + 0.1.1-3           `$ mrt add handlebar-helpers`; show ‘Sign In’ if anon user; hide accounts forms; 
 + 0.1.1-4           `{{ $.Config.name }}` in templates; ‘looptopia.less’ like loopdotcoop.github.io; 
 + 0.1.2             tidy until we enable user-registration; 
-
-
-
++ 0.1.3-1           fix iron-router http://stackoverflow.com/a/25409128; 
++ 0.1.3-2           `$ mrt add jquery-datatables`; 
++ 0.1.3-3           ‘Topians’ collection and very simple ‘/list-topians/’ route; 
++ 0.1.3-4           As a temporary measure, `$ mrt add coffeescript` (Meteor Packages), so that...;  
+                    ‘datatable-patch.coffee’ will work as a stopgap fix of `DataTableComponent`; 
++ 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; 
++ 0.1.3-6           The project can run with only the ‘about’ feature present; 
++ 0.1.3-7           all templates contain a `<tt class="x">` element; 
++ 0.1.3-8           ‘notfound’ functionality now in ‘about’; ‘utility’ feature removed; 
++ 0.1.3-9           widget areas, eg `{ path:"/", name:"Sign Out", id:"sign-out", order:"high" }`; 
++ looptopia@0.1.4   all features at version 0.0.2; 

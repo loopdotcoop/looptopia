@@ -1,0 +1,19 @@
+<head>
+<!-- topians.list.html -->
+</head>
+
+<template name="topians.list">
+  <tt class="x">topians.list.html
+     {{$.Config.topians.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>List Topians</h1>
+{{> DataTable topiansTable }}
+{{#each topians }}
+    {{ rand }}
+{{/each}}
+    </div>
+  </div>
+
+</template>
