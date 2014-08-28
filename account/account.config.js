@@ -25,7 +25,7 @@ Config.account = {
         ]
     }
   , changelog: [
-        '+ 0.0.1-1           create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ account@0.0.1-1   create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ account@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
       , '+ account@0.0.3-1   Update ‘AccountsTemplates’ to v0.0.21; add ‘account.password-change’ etc; '
       , '+ account@0.0.4     Ready to test ‘account’ system on modulus; '

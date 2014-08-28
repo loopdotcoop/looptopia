@@ -18,7 +18,7 @@ Config.home = {
     ]
   , widgets: {} // can be filled with widget areas, eg 'footer-left'
   , changelog: [
-        '+ 0.0.1-1           create ‘home’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ home@0.0.1-1      create ‘home’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ home@0.0.2        mock-merge into develop/looptopia@0.1.3-9; '
       , '+ home@0.0.4        move `AccountsTemplates` homeRoutePath config to ‘account’; '
     ]
