@@ -17,7 +17,7 @@ Config.topians = {
     ]
   , widgets: {} // can be filled with widget areas, eg 'footer-left'
   , changelog: [
-        '+ 0.0.1-1           create ‘topians’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ topians@0.0.1-1   create ‘topians’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ topians@0.0.2     merge into develop/looptopia@0.1.3-9; '
     ]
 };

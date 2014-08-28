@@ -22,7 +22,7 @@ Config.dashboard = {
         ]
     }
   , changelog: [
-        '+ 0.0.1-1             create ‘dashboard’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ dashboard@0.0.1-1   create ‘dashboard’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ dashboard@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
       , '+ dashboard@0.0.4     simpler `AccountsTemplates.ensureSignedIn`; '
     ]

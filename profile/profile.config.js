@@ -22,7 +22,7 @@ Config.profile = {
         ]
     }
   , changelog: [
-        '+ 0.0.1-1           create ‘profile’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ profile@0.0.1-1   create ‘profile’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ profile@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
       , '+ profile@0.0.3-1   `$ mrt add autoform` to build a profile form; '
       , '+ profile@0.0.4     simpler `AccountsTemplates.ensureSignedIn`; '
