@@ -4,6 +4,7 @@
     "accounts-templates-foundation": {},
     "handlebar-helpers": {},
     "iron-router": "0.8.2",
-    "jquery-datatables": {}
+    "jquery-datatables": {},
+    "autoform": {}
   }
 }

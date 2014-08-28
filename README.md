@@ -64,10 +64,10 @@ _No dependencies._
 
 ### `$ mrt add accounts-templates-foundation`  
 
-__accounts-templates-foundation:__ Accounts templates styled for Zurb Foundation.  
+__accounts-templates-foundation:__ [Accounts templates](https://github.com/splendido/accounts-templates-foundation/) styled for Zurb Foundation.  
 `accounts-templates-core`
 
-__accounts-templates-core:__ Meteor sign up and sign in templates core package.  
+[accounts-templates-core:](https://github.com/splendido/accounts-templates-core) Meteor sign up and sign in templates core package.  
 `iron-router`
 `accounts-t9n`  
 
@@ -75,7 +75,7 @@ __accounts-t9n:__ Translations for the meteor account's error messages.
 _No dependencies._
 
 __iron-router:__ Routing specifically designed for Meteor.  
-Note that we must run `$ mrt add iron-router` to use this directly, even though it’s been installed by `accounts-templates-core`.  
+Run `$ mrt add iron-router` to use this directly, even though it’s been installed by `accounts-templates-core`.  
 `iron-layout`
 
 __iron-layout:__ Dynamic layouts which enable rendering dynamic templates into regions on a page.  
@@ -105,6 +105,23 @@ __jquery-datatables:__ Sort, page, and filter millions of records. Reactively.
 `luma-component`
 
 __luma-component:__ Blaze component mixins and base class.  
+_No dependencies._
+
+
+### `$ mrt add autoform`  
+
+[autoform:](https://github.com/aldeed/meteor-autoform/) Forms with automatic insert, update, and validation.  
+`collection2`
+`simple-schema`
+`moment`
+ 
+[collection2:](https://github.com/aldeed/meteor-collection2) Attach SimpleSchema to a Meteor.Collection.  
+`simple-schema`
+
+[simple-schema:](https://github.com/aldeed/meteor-simple-schema) A simple schema validation object with reactivity.  
+_No dependencies._
+
+[moment:](https://github.com/acreeger/meteor-moment.git) For parsing, validating, manipulating, and formatting dates.
 _No dependencies._
 
 
@@ -145,3 +162,5 @@ Changelog
 + 0.1.3-9             widget areas, eg `{ path:"/", name:"Sign Out", id:"sign-out", order:"high" }`; 
 + looptopia@0.1.4     all features at version 0.0.2; 
 + looptopia@0.1.5-1   bump after release 0.1.4
+
+
