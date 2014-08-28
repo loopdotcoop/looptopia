@@ -1,0 +1,19 @@
+<head>
+<!-- users.list.html -->
+</head>
+
+<template name="users.list">
+  <tt class="x">users.list.html
+     {{$.Config.users.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>List Topians</h1>
+{{> DataTable usersTable }}
+{{#each users }}
+    {{ createdAt }}
+{{/each}}
+    </div>
+  </div>
+
+</template>
