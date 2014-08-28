@@ -1,7 +1,7 @@
 Config.topians = {
     name:         'Topians'
   , slug:         'topians'
-  , version:      '0.0.1-1'
+  , version:      '0.0.2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -18,6 +18,7 @@ Config.topians = {
   , widgets: {} // can be filled with widget areas, eg 'footer-left'
   , changelog: [
         '+ 0.0.1-1           create ‘topians’ as a feature of ‘looptopia@0.1.3-5’; '
+      , '+ topians@0.0.2     merge into develop/looptopia@0.1.3-9; '
     ]
 };
 
