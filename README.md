@@ -143,4 +143,4 @@ Changelog
 + 0.1.3-7           all templates contain a `<tt class="x">` element; 
 + 0.1.3-8           ‘notfound’ functionality now in ‘about’; ‘utility’ feature removed; 
 + 0.1.3-9           widget areas, eg `{ path:"/", name:"Sign Out", id:"sign-out", order:"high" }`; 
-
++ looptopia@0.1.4   all features at version 0.0.2; 
