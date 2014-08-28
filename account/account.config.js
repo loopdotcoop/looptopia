@@ -49,27 +49,27 @@ AccountsTemplates.configure({
 
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#routing
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
-    path: '/account/register',
+    path: 'account/register',
     template: 'account.register',
     redirect: '/profile'
 });
 AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
-    path: '/account/sign-in',
+    path: 'account/sign-in',
     template: 'account.sign-in',
     redirect: '/dashboard'
 });
 AccountsTemplates.configureRoute('forgotPwd', { // name: 'atForgotPwd'
-    path: '/account/password-forgot',
+    path: 'account/password-forgot',
     template: 'account.password-forgot',
     redirect: '/account/password-retrieve'
 });
 AccountsTemplates.configureRoute('resetPwd', { // name: 'atResetPwd' @todo test this
-    path: '/account/password-reset',
+    path: 'account/password-reset',
     template: 'account.password-reset',
     redirect: '/'
 });
 AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
-    path: '/account/password-change',
+    path: 'account/password-change',
     template: 'account.password-change',
     redirect: '/'
 });
