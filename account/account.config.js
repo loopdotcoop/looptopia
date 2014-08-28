@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.3-1'
+  , version:      '0.0.4'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -28,19 +28,24 @@ Config.account = {
         '+ 0.0.1-1           create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ account@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
       , '+ account@0.0.3-1   Update ‘AccountsTemplates’ to v0.0.21; add ‘account.password-change’ etc; '
+      , '+ account@0.0.4     Ready to test ‘account’ system on modulus; '
     ]
 };
 
 
-//// https://github.com/splendido/accounts-templates-core#configuration
+//// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#options
 AccountsTemplates.configure({
-    //these are the default values
-    showPlaceholders: true        // unchanged in CONFIG_PAT
+    showPlaceholders: true
   , showLabels: false             // was `displayFormLabels`
-  , continuousValidation: true    // unchanged in CONFIG_PAT
-  , showForgotPasswordLink: true  // unchanged in CONFIG_PAT
+  , continuousValidation: true
+  , showForgotPasswordLink: true
   , enablePasswordChange: true
+
+  , homeRoutePath: '/'
+  , privacyUrl: '/privacy'
+  , termsUrl: '/terms'
 });
+
 
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#routing
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
