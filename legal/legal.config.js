@@ -1,7 +1,7 @@
 Config.legal = {
     name:         'Legal'
   , slug:         'legal'
-  , version:      '0.0.1-1'
+  , version:      '0.0.2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -23,6 +23,7 @@ Config.legal = {
     }
   , changelog: [
         '+ 0.0.1-1           create ‘legal’ as a feature of ‘looptopia@0.1.3-5’; '
+      , '+ legal@0.0.2       mock-merge into develop/looptopia@0.1.3-9; '
     ]
 };
 
