@@ -1,7 +1,7 @@
 Config.users = {
     name:         'Users'
   , slug:         'users'
-  , version:      '0.0.2'
+  , version:      '0.0.4'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -19,6 +19,7 @@ Config.users = {
   , changelog: [
         '+ users@0.0.1-1     create ‘users’ as a feature of ‘looptopia@0.1.3-9’; '
       , '+ users@0.0.2       merge into develop/looptopia@0.1.3-9; '
+      , '+ users@0.0.4       disable ‘users/list’; '
     ]
 };
 
