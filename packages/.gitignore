@@ -10,3 +10,7 @@ iron-dynamic-template
 handlebar-helpers
 jquery-datatables
 luma-component
+autoform
+simple-schema
+collection2
+moment
