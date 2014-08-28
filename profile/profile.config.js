@@ -1,7 +1,7 @@
 Config.profile = {
     name:         'Profile'
   , slug:         'profile'
-  , version:      '0.0.1-1'
+  , version:      '0.0.2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -23,6 +23,7 @@ Config.profile = {
     }
   , changelog: [
         '+ 0.0.1-1           create ‘profile’ as a feature of ‘looptopia@0.1.3-5’; '
+      , '+ profile@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
     ]
 };
 
