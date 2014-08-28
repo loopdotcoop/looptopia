@@ -64,10 +64,10 @@ _No dependencies._
 
 ### `$ mrt add accounts-templates-foundation`  
 
-__accounts-templates-foundation:__ Accounts templates styled for Zurb Foundation.  
+__accounts-templates-foundation:__ [Accounts templates](https://github.com/splendido/accounts-templates-foundation/) styled for Zurb Foundation.  
 `accounts-templates-core`
 
-__accounts-templates-core:__ Meteor sign up and sign in templates core package.  
+[accounts-templates-core:](https://github.com/splendido/accounts-templates-core) Meteor sign up and sign in templates core package.  
 `iron-router`
 `accounts-t9n`  
 
@@ -75,7 +75,7 @@ __accounts-t9n:__ Translations for the meteor account's error messages.
 _No dependencies._
 
 __iron-router:__ Routing specifically designed for Meteor.  
-Note that we must run `$ mrt add iron-router` to use this directly, even though it’s been installed by `accounts-templates-core`.  
+Run `$ mrt add iron-router` to use this directly, even though it’s been installed by `accounts-templates-core`.  
 `iron-layout`
 
 __iron-layout:__ Dynamic layouts which enable rendering dynamic templates into regions on a page.  
@@ -108,39 +108,27 @@ __luma-component:__ Blaze component mixins and base class.
 _No dependencies._
 
 
+### `$ mrt add autoform`  
+
+[autoform:](https://github.com/aldeed/meteor-autoform/) Forms with automatic insert, update, and validation.  
+`collection2`
+`simple-schema`
+`moment`
+ 
+[collection2:](https://github.com/aldeed/meteor-collection2) Attach SimpleSchema to a Meteor.Collection.  
+`simple-schema`
+
+[simple-schema:](https://github.com/aldeed/meteor-simple-schema) A simple schema validation object with reactivity.  
+_No dependencies._
+
+[moment:](https://github.com/acreeger/meteor-moment.git) For parsing, validating, manipulating, and formatting dates.
+_No dependencies._
+
+
 
 
 Changelog
 ---------
 
-+                   Initial commit
-+ 0.0.1-1           create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; 
-+ 0.0.1-2           improve ‘.gitignore’; 
-+ 0.0.1-3           initialise Meteor:  
-                    `$ mrt create tmp/looptopia` … `$ mv tmp/looptopia/.[!.]* tmp/looptopia/* ./`  
-                    `$ rm -rf tmp`; 
-+ 0.0.1-4           paste ‘Meteor Packages’ section into ‘README.md’ from ‘20140802-ldcore-…tryout/’; 
-+ 0.0.1-5           `rm` the three default `looptopia.*` files;  add ‘client-config.js’, ‘home.html’; 
-+ 0.0.1-6           replace ‘package.json’ with ‘both/config.js’; 
-+ 0.0.1-7           `$ mrt add zurb-foundation; mrt add less`; follows loopdotcoop.github.io@0.1.0; 
-+ 0.1.0             looptopia holding page release; 
-+ 0.1.1-1           `$ mrt remove insecure autopublish`; `$ mrt add accounts-password`;  
-                    `$ mrt add accounts-templates-foundation`; add ‘Meteor Packages’ to ‘README.md’;  
-                    basic routing works, based on ‘20140802-ldcore-model-initial-tryout/’; 
-+ 0.1.1-2           can log in and out;  
-                    add `AccountsTemplates.` to ‘accounts-templates-core/…/lib/signinForm.js:301’;  
-                    same fix for ‘…signinForm.js:272’; 
-+ 0.1.1-3           `$ mrt add handlebar-helpers`; show ‘Sign In’ if anon user; hide accounts forms; 
-+ 0.1.1-4           `{{ $.Config.name }}` in templates; ‘looptopia.less’ like loopdotcoop.github.io; 
-+ 0.1.2             tidy until we enable user-registration; 
-+ 0.1.3-1           fix iron-router http://stackoverflow.com/a/25409128; 
-+ 0.1.3-2           `$ mrt add jquery-datatables`; 
-+ 0.1.3-3           ‘Topians’ collection and very simple ‘/list-topians/’ route; 
-+ 0.1.3-4           As a temporary measure, `$ mrt add coffeescript` (Meteor Packages), so that...;  
-                    ‘datatable-patch.coffee’ will work as a stopgap fix of `DataTableComponent`; 
-+ 0.1.3-5           reorganise as a set of nine features, plus a ‘lib’ directory; 
-+ 0.1.3-6           The project can run with only the ‘about’ feature present; 
-+ 0.1.3-7           all templates contain a `<tt class="x">` element; 
-+ 0.1.3-8           ‘notfound’ functionality now in ‘about’; ‘utility’ feature removed; 
-+ 0.1.3-9           widget areas, eg `{ path:"/", name:"Sign Out", id:"sign-out", order:"high" }`; 
-+ looptopia@0.1.4   all features at version 0.0.2; 
+See ‘about/about.config.js’.
+

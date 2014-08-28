@@ -1,7 +1,7 @@
 Config.dashboard = {
     name:         'Dashboard'
   , slug:         'dashboard'
-  , version:      '0.0.2'
+  , version:      '0.0.4'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -22,12 +22,9 @@ Config.dashboard = {
         ]
     }
   , changelog: [
-        '+ 0.0.1-1           create ‘dashboard’ as a feature of ‘looptopia@0.1.3-5’; '
-      , '+ dashboard@0.0.2   mock-merge into develop/looptopia@0.1.3-9; '
+        '+ dashboard@0.0.1-1   create ‘dashboard’ as a feature of ‘looptopia@0.1.3-5’; '
+      , '+ dashboard@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
+      , '+ dashboard@0.0.4     simpler `AccountsTemplates.ensureSignedIn`; '
     ]
 }
 
-//// https://github.com/splendido/accounts-templates-core#routing
-AccountsTemplates.configure({
-    postSignInRoutePath: '/dashboard'
-});

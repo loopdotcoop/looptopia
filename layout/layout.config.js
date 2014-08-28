@@ -16,7 +16,7 @@ Config.layout = {
         'Beth Walker <info@loop.coop>'
     ]
   , changelog: [
-        '+ 0.0.1-1           create ‘layout’ as a feature of ‘looptopia@0.1.3-5’; '
+        '+ layout@0.0.1-1    create ‘layout’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ layout@0.0.2      mock-merge into develop/looptopia@0.1.3-9; '
     ]
 };

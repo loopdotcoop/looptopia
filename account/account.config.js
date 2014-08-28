@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.2'
+  , version:      '0.0.4'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -25,44 +25,61 @@ Config.account = {
         ]
     }
   , changelog: [
-        '+ 0.0.1-1           create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
-      , '+ account@0.0.2   mock-merge into develop/looptopia@0.1.3-9; '
+        '+ account@0.0.1-1   create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
+      , '+ account@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
+      , '+ account@0.0.3-1   Update ‘AccountsTemplates’ to v0.0.21; add ‘account.password-change’ etc; '
+      , '+ account@0.0.4     Ready to test ‘account’ system on modulus; '
     ]
 };
 
 
-//// https://github.com/splendido/accounts-templates-core#configuration
+//// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#options
 AccountsTemplates.configure({
-    //these are the default values
     showPlaceholders: true
-  , displayFormLabels: false
+  , showLabels: false             // was `displayFormLabels`
   , continuousValidation: true
   , showForgotPasswordLink: true
+  , enablePasswordChange: true
+
+  , homeRoutePath: '/'
+  , privacyUrl: '/privacy'
+  , termsUrl: '/terms'
 });
 
-//// https://github.com/splendido/accounts-templates-core#routing
-//// More routes can be added elsewhere in the app, eg:
-////     postSignInRoutePath: '/dashboard'
-////     postSignUpRoutePath: '/profile'
-AccountsTemplates.configure({
-    signInRoutePath:       '/account/sign-in'
-  , signInRouteName:       'account.sign-in' // default is 'signIn'
-  , signInRouteTemplate:   'account.sign-in'
 
-  , signUpRoutePath:       '/account/register'
-  , signUpRouteName:       'account.register' // default is 'signUpPage'
-  , signUpRouteTemplate:   'account.register'
-
-  , forgotPwdRoutePath:    '/account/forgot'
-  , forgotPwdRouteName:    'account.forgot'
-  , forgotPwdRouteTemplate:'account.forgot'
+//// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#routing
+AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
+    path: '/account/register',
+    template: 'account.register',
+    redirect: '/profile'
+});
+AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
+    path: '/account/sign-in',
+    template: 'account.sign-in',
+    redirect: '/dashboard'
+});
+AccountsTemplates.configureRoute('forgotPwd', { // name: 'atForgotPwd'
+    path: '/account/password-forgot',
+    template: 'account.password-forgot',
+    redirect: '/account/password-retrieve'
+});
+AccountsTemplates.configureRoute('resetPwd', { // name: 'atResetPwd' @todo test this
+    path: '/account/password-reset',
+    template: 'account.password-reset',
+    redirect: '/'
+});
+AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
+    path: '/account/password-change',
+    template: 'account.password-change',
+    redirect: '/'
 });
 
-//// https://github.com/splendido/accounts-templates-core/tree/v0.0.12#signup-fields-customization
+//// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#form-fields-configuration
 // @todo language 
 
-//// https://github.com/splendido/accounts-templates-core#setup
+//// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#setup
 //// Must be run after all `AccountsTemplates.configure()` calls have been made.
 Meteor.startup(function () {
     AccountsTemplates.init();
 });
+
