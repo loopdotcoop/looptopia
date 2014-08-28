@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.1-2'
+  , version:      '0.0.2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -26,6 +26,7 @@ Config.account = {
     }
   , changelog: [
         '+ 0.0.1-1           create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
+      , '+ account@0.0.2   mock-merge into develop/looptopia@0.1.3-9; '
     ]
 };
 
