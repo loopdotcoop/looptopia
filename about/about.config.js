@@ -8,7 +8,7 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.8-fix.2'
+      , version:      '0.1.8-fix.3'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -60,6 +60,7 @@ Config = {
           , '+ looptopia@0.1.6        ready to test ‘account’ system on modulus; '
           , '+ looptopia@0.1.8-fix.1  fix double-slash in password-reset link; ' 
           , '+ looptopia@0.1.8-fix.2  fix “By clicking Register ...” links; ' 
+          , '+ looptopia@0.1.8-fix.3  disable ‘users/list’; ' 
 
         ]
     }
