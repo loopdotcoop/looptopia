@@ -2,7 +2,7 @@
 //// The key is a babelslug, followed by hyphen, followed by a Meteor connection ID (like a session ID for anon users).
 //// The value is the unix timestamp in milliseconds, which allows us to clear out old and unused babelslugs.
 //// Two examples are shown here:
-var recentBabelslugs = {
+var recentBabelslugs = { // @todo for a multi-servo project, move this functionality to a shared mongoDB collection
     // 'MagentaMouse-KukNJw4d4vjGzzrQa': 1409341347912,
     // 'BlueChessCat-YYJWMWTPq7RFWdKr6': 1409341399283
 };
@@ -46,6 +46,7 @@ Meteor.methods({
     }
 });
 
+
 if (Meteor.isServer) {
     Accounts.onCreateUser(function (options, user) {
 
@@ -67,8 +68,12 @@ if (Meteor.isServer) {
         //// Remove the babelslug, as it’s not needed any more.
         delete recentBabelslugs[babelslug];
 
+        //// Record the username (‘info@loop.coop’ gets a special username).
+        options.profile = options.profile || {};
+        options.profile.username = 'info@loop.coop' === options.email ? 'red-cat' : babelslug;
+
         //// The registration is valid, so record it as usual. http://docs.meteor.com/#accounts_oncreateuser
-        if (options.profile) { user.profile = options.profile; }
+        user.profile = options.profile;
         return user;
     });
 

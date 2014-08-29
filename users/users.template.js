@@ -1,12 +1,15 @@
 if (Meteor.isClient) {
 
-    Template['users.list'].users = function () {
-        return Meteor.users.find({});
-    };
-
     Template['users.list'].usersTable = function () {
         return {
             columns: [{
+                title:   'Username'
+              , data:    'profile'
+              , mRender: function (data, type, row) {
+                    if (! data || ! data.username) { return '-'; }
+                    return data.username;
+                }
+            },{
                 title:   'Email'
               , data:    'emails'
               , mRender: function (data, type, row) {
@@ -23,6 +26,9 @@ if (Meteor.isClient) {
             },{
                 title: 'Created At'
               , data:  'createdAt'
+              , mRender: function (data, type, row) {
+                    return data || '-';
+                }
             },{
                 title: 'ID'
               , data:  '_id'
