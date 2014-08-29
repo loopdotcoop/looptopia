@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.7-2'
+  , version:      '0.0.8'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -35,6 +35,7 @@ Config.account = {
       , '+ account@0.0.7-2   ‘account-hear-about’ and ‘account-babelslug’ register fields;  \n' +
         '                    when rendering the ‘register’ form, generate a BabelSlug and show it to the user;  \n' +
         '                    ensure submitted babelslug is expected; '
+      , '+ account@0.0.8     need to fix ‘users/list’ before continuing babelslug work; '
     ]
 };
 
