@@ -10,12 +10,14 @@ if (Meteor.isClient) {
                 title:   'Email'
               , data:    'emails'
               , mRender: function (data, type, row) {
+                    if (! data || ! data[0]) { return '-'; }
                     return data[0].address; // `data[0]` is the primary email address
                 }
             },{
                 title:   'Verified'
               , data:    'emails'
               , mRender: function (data, type, row) {
+                    if (! data || ! data[0]) { return '-'; }
                     return data[0].verified ? 'yes' : 'no'; // `data[0]` is the primary email address
                 }
             },{
