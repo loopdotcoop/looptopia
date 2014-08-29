@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.6'
+  , version:      '0.0.7-1'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -17,7 +17,8 @@ Config.account = {
     ]
   , widgets: { // add account links to the 'registered' and 'unregistered' widget areas
         'registered': [
-            { path:'/', name:'Sign Out', id:'sign-out', order:'high' } // 'click #sign-out' will trigger `Meteor.logout();`
+            { path:'/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
+          , { path:'/', name:'Sign Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
         ]
       , 'unregistered': [
             { path:'/account/sign-in' , name:'Sign In'  }
@@ -30,6 +31,7 @@ Config.account = {
       , '+ account@0.0.3-1   Update ‘AccountsTemplates’ to v0.0.21; add ‘account.password-change’ etc; '
       , '+ account@0.0.4     Ready to test ‘account’ system on modulus; '
       , '+ account@0.0.6     fix double-slash in password-reset link; fix “By clicking Register ...” links; '
+      , '+ account@0.0.7-1   move ‘profile’ into ‘account’; '
     ]
 };
 
