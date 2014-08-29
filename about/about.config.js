@@ -16,6 +16,7 @@ Config = {
         }
       , organization: 'Loop.Coop'
       , author:       'Rich Plastow <info@loop.coop>'
+      , webmaster:    'info@loop.coop'
       , year:         '2014'
       , license:      'GPL v2'
       , type:         'website' // http://ogp.me/#types

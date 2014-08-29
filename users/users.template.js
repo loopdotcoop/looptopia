@@ -1,5 +1,9 @@
 if (Meteor.isClient) {
 
+    Template['users.list'].users = function () {
+        return Meteor.users.find({});
+    };
+
     Template['users.list'].usersTable = function () {
         return {
             columns: [{
@@ -23,7 +27,7 @@ if (Meteor.isClient) {
             }]
  
           , subscription: 'usersTable'
-          , debug: false
+          , debug: true
         };
     };
 
