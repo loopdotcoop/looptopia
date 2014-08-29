@@ -21,6 +21,12 @@ var recentBabelslugsHousekeeping = function () {
 };
 
 
+//// @todo check user db.
+var usernameExists = function () {
+    return false;
+};
+
+
 Meteor.methods({
     babelslug: function () {
         var i, key, babelslug;
@@ -32,12 +38,9 @@ Meteor.methods({
         //// Try, 200 times, to find a username which has not been taken. @todo this is quite brute-force ... can we come up with a more elegant solution?
         for (i=200; i>0; i--) {
             babelslug = numberToPhrase( Math.floor(Math.random() * 50000) );
-            if ( 3 !== babelslug.split('-').length ) { continue; } // we are only using three-part usernames at present
-            if (! recentBabelslugs[babelslug]) { break; } // @todo check user db
-            // console.log(recentBabelslugs);
-            // console.log('clash ' + babelslug);
+            if ( 3 === babelslug.split('-').length && ! recentBabelslugs[babelslug] && ! usernameExists(babelslug) ) { break; } // we are only using three-part usernames at present
         }
-        if (! babelslug) { throw new Meteor.Error(500, "Cannot generate a username! Please email " + Config.about.webmaster); }
+        if (! i) { throw new Meteor.Error(500, "Cannot generate a username! Please email " + Config.about.webmaster); } // @todo check `(! i)` can ever be truthy
         recentBabelslugs[babelslug] = { // later, when the form is submitted, we will check that the babelslug value is expected
             now: Date.now() // allows `recentBabelslugsHousekeeping()` to find stale babelslugs
           , cid: this.connection.id
@@ -63,6 +66,9 @@ if (Meteor.isServer) {
         }
         if (! recentBabelslugs[babelslug]) {
             throw new Meteor.Error(500, "Your registration form expired after 15 minutes. Please refresh the browser and try again."); // The ‘username’ value is unexpected, so this may actually be a hack attempt
+        }
+        if ( usernameExists(babelslug) ) {
+            throw new Meteor.Error(500, "The ‘username’ is already in use."); // prevent two `Meteor.user` records having the same username, which could happen on a multi-servo project, until we change `recentBabelslugs` to a shared mongoDB collection @todo
         }
 
         //// Remove the babelslug, as it’s not needed any more.
