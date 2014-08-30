@@ -8,7 +8,7 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.8'
+      , version:      '0.1.10'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -16,6 +16,7 @@ Config = {
         }
       , organization: 'Loop.Coop'
       , author:       'Rich Plastow <info@loop.coop>'
+      , webmaster:    'info@loop.coop'
       , year:         '2014'
       , license:      'GPL v2'
       , type:         'website' // http://ogp.me/#types
@@ -58,11 +59,14 @@ Config = {
           , '+ looptopia@0.1.4        all features at version 0.0.2; '
           , '+ looptopia@0.1.5-1      bump after release 0.1.4; '
           , '+ looptopia@0.1.6        ready to test ‘account’ system on modulus; '
-          , '+ looptopia@0.1.8-fix.1  fix double-slash in password-reset link; ' 
-          , '+ looptopia@0.1.8-fix.2  fix “By clicking Register ...” links; ' 
-          , '+ looptopia@0.1.8-fix.3  disable ‘users/list’; ' 
-          , '+ looptopia@0.1.8-fix.4  don’t show ‘About This Project’ on 404 page; ' 
-          , '+ looptopia@0.1.8        ok for live server, up until 1st Sept; ' 
+          , '+ looptopia@0.1.8-fix.1  fix double-slash in password-reset link; '
+          , '+ looptopia@0.1.8-fix.2  fix “By clicking Register ...” links; '
+          , '+ looptopia@0.1.8-fix.3  disable ‘users/list’; '
+          , '+ looptopia@0.1.8-fix.4  don’t show ‘About This Project’ on 404 page; '
+          , '+ looptopia@0.1.8        ok for live server, up until 1st Sept; '
+          , '+ looptopia@0.1.9-1      BabelSlug for username; need to prevent user records from sharing a username; '
+          , '+ looptopia@0.1.9-2      ‘account.register’ form is functional and styled; '
+          , '+ looptopia@0.1.10       Proper registration, and ‘users.list’ is protected; '
 
         ]
     }

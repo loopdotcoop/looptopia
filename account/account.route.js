@@ -1,9 +1,9 @@
-//// https://github.com/splendido/accounts-templates-core/tree/v0.0.12#content-protection
-Router.onBeforeAction(AccountsTemplates.ensureSignedIn, {
-    only: ['account.password-change']
-});
-
 Router.map(function() {
+    this.route('account.profile', {
+            path: '/account/profile'
+          , onBeforeAction: AccountsTemplates.ensureSignedIn // https://github.com/splendido/accounts-templates-core/tree/v0.0.21#content-protection
+        }
+    );
     this.route('account.register', {
             path: '/account/register'
         }
@@ -26,6 +26,7 @@ Router.map(function() {
     );
     this.route('account.password-change', {
             path: '/account/password-change'
+          , onBeforeAction: AccountsTemplates.ensureSignedIn // https://github.com/splendido/accounts-templates-core/tree/v0.0.21#content-protection
         }
     );
 });
