@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.9-2'
+  , version:      '0.0.9-3'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -25,6 +25,16 @@ Config.account = {
           , { path:'/account/register', name:'Register' }
         ]
     }
+  , ageGroupData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
+        { code:'' , label:'Please select your age group' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
+      , { code:'c', label:'Under 8'  } // codes step through the alphabet in threes, in case we want finer granuality of age-groups later on
+      , { code:'f', label:'8 to 15'  }
+      , { code:'i', label:'16 or 17' }
+      , { code:'l', label:'18 to 25' }
+      , { code:'o', label:'26 to 40' }
+      , { code:'r', label:'41 to 65' }
+      , { code:'u', label:'Over 65'  }
+    ]
   , hearAboutData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
         { code:'m', label:'Word of mouth'                                , prompt:false } // `prompt` is falsey, so the 'account-hear-about-text' field will be hidden when this is selected
       , { code:'e', label:'At a festival or party'                       , prompt:'Which one?' }
@@ -49,6 +59,7 @@ Config.account = {
       , '+ account@0.0.9-1   `account.babelslug.js:usernameCount()` prevents user records from sharing a username; '
       , '+ account@0.0.9-2   `account-hear-about-code` and `account-hear-about-text` fields;  \n' +
         '                    better display of `createdAt` field in the ‘users.list’ template; '
+      , '+ account@0.0.9-3   `account-age-group` field; ‘Age’ column in ‘users.list’; '
     ]
 };
 
@@ -98,6 +109,13 @@ AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#form-fields-configuration
 AccountsTemplates.addFields([
     {
+        _id: 'account-age-group-code'
+      , type: 'text'
+      , displayName: "Age group"
+      , maxLength: 1
+      , required: true
+    }
+  , {
         _id: 'account-hear-about-code'
       , type: 'text'
       , displayName: "How did you hear about Loop.Coop?"
@@ -107,7 +125,7 @@ AccountsTemplates.addFields([
   , {
         _id: 'account-hear-about-text'
       , type: 'text'
-      , displayName: "More details please!"
+      , displayName: "..."
       , maxLength: 64
     }
   , {

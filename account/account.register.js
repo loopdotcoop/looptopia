@@ -4,6 +4,32 @@ if (Meteor.isClient) {
     Template['account.register'].rendered = function() {
 
 
+        //// Clientside modification of the “Age group” field, converting it from `<input type="text">` to `<select>`. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
+        !function () {
+            var
+                agcId = 'AT_field_account-age-group-code' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
+              , $agc = $('#' + agcId)
+              , placeholder = $agc.attr('placeholder')
+              , select = ''
+            ;
+
+            //// Build HTML for the dropdown menu.
+            select += '<select id="' + agcId + '" name="' + agcId + '">\n';
+            Config.account.ageGroupData.forEach(function (data) {
+                select += '  <option value="' + data.code + '">' + data.label + '</option>\n';
+            });
+            select += '</select>\n';
+
+            //// Replace the simple text-field with the heading and dropdown menu.
+            $agc
+               .before('<p>' + placeholder + '</p>\n' + select)
+               .remove()
+            ;
+            $agc = $('#' + agcId); // make `$agc` a reference to the new dropdown menu
+
+        }()
+
+
         //// Clientside modification of the “How did you hear about us?” fields.
         !function () {
             var

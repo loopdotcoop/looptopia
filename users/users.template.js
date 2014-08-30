@@ -40,6 +40,19 @@ if (Meteor.isClient) {
                     );
                 }
             },{
+                title: 'Age'
+              , data:  'profile'
+              , mRender: function (data, type, row) {
+                    if (! data || ! data.agc) { return '-'; }
+                    var agLabel = '-';
+                    Config.account.ageGroupData.forEach(function (configData) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
+                        if (configData.code === data.agc) {
+                            agLabel = data.agc + ':&nbsp;' + configData.label;
+                        }
+                    });
+                    return agLabel;
+                }
+            },{
                 title: 'Hear About'
               , data:  'profile'
               , mRender: function (data, type, row) {

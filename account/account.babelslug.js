@@ -79,6 +79,7 @@ if (Meteor.isServer) {
         options.profile.username = 'info@loop.coop' === options.email ? 'red-cat' : babelslug;
 
         //// Record other account registration data.
+        if (options.profile['account-age-group-code'])  { options.profile.agc = options.profile['account-age-group-code'];  }
         if (options.profile['account-hear-about-code']) { options.profile.hac = options.profile['account-hear-about-code']; }
         if (options.profile['account-hear-about-text']) { options.profile.hat = options.profile['account-hear-about-text']; }
 
