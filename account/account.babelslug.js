@@ -78,6 +78,10 @@ if (Meteor.isServer) {
         options.profile = options.profile || {};
         options.profile.username = 'info@loop.coop' === options.email ? 'red-cat' : babelslug;
 
+        //// Record other account registration data.
+        if (options.profile['account-hear-about-code']) { options.profile.hac = options.profile['account-hear-about-code']; }
+        if (options.profile['account-hear-about-text']) { options.profile.hat = options.profile['account-hear-about-text']; }
+
         //// The registration is valid, so record it as usual. http://docs.meteor.com/#accounts_oncreateuser
         user.profile = options.profile;
         return user;

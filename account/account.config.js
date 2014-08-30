@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.9-1'
+  , version:      '0.0.9-2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -25,6 +25,16 @@ Config.account = {
           , { path:'/account/register', name:'Register' }
         ]
     }
+  , hearAboutData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
+        { code:'m', label:'Word of mouth'                                , prompt:false } // `prompt` is falsey, so the 'account-hear-about-text' field will be hidden when this is selected
+      , { code:'e', label:'At a festival or party'                       , prompt:'Which one?' }
+      , { code:'t', label:'Traditional media (magazines, TV, radio, etc)', prompt:'What was the article or show?' }
+      , { code:'s', label:'Social media (Facebook, Twitter, etc)'        , prompt:'Where and how?' }
+      , { code:'g', label:'Search engine (Google, Yahoo, etc)'           , prompt:'What were you searching for?' }
+      , { code:'w', label:'Some other website'                           , prompt:'Which web page?' }
+      , { code:'x', label:'...or something else completely...'           , prompt:'More details please!' }
+    ]
+
   , changelog: [
         '+ account@0.0.1-1   create ‘account’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ account@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
@@ -37,6 +47,8 @@ Config.account = {
         '                    ensure submitted babelslug is expected; '
       , '+ account@0.0.8     need to fix ‘users/list’ before continuing babelslug work; '
       , '+ account@0.0.9-1   `account.babelslug.js:usernameCount()` prevents user records from sharing a username; '
+      , '+ account@0.0.9-2   `account-hear-about-code` and `account-hear-about-text` fields;  \n' +
+        '                    better display of `createdAt` field in the ‘users.list’ template; '
     ]
 };
 
@@ -86,13 +98,19 @@ AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#form-fields-configuration
 AccountsTemplates.addFields([
     {
-  //       _id: 'account-hear-about'
-  //     , type: 'text'
-  //     , displayName: "How did you hear about Loop.Coop?"
-  //     , maxLength: 140
-  //     , required: true
-  //   }
-  // , {
+        _id: 'account-hear-about-code'
+      , type: 'text'
+      , displayName: "How did you hear about Loop.Coop?"
+      , maxLength: 1
+      , required: true
+    }
+  , {
+        _id: 'account-hear-about-text'
+      , type: 'text'
+      , displayName: "More details please!"
+      , maxLength: 64
+    }
+  , {
         _id: 'account-babelslug'
       , type: 'text'
       , displayName: "Your username will be"
