@@ -4,7 +4,44 @@ if (Meteor.isClient) {
     Template['account.register'].rendered = function() {
 
 
-        //// Clientside modification of the “Age group” field, converting it from `<input type="text">` to `<select>`. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
+        //// Place the ‘email’ and ‘password’ fields next to each other for desktop screen widths, and improve placeholder text.
+        !function () {
+            var
+                $eml = $('#AT_field_email')
+              , $pwd = $('#AT_field_password')
+              , $emlPa = $eml.parent()
+              , $pwdPa = $pwd.parent()
+              , $pwdRow = $emlPa.parent()
+            ;
+
+            //// Fix columns.
+            $emlPa.removeClass('large-12').addClass('large-6');
+            $pwdPa.removeClass('large-12').addClass('large-6').insertAfter($emlPa);
+            $eml.prop('placeholder', 'Enter your Email');
+            $pwd.prop('placeholder', 'Choose a password');
+
+        }()
+
+
+        //// Modify the username field.
+        !function () {
+            var
+                $babelslug = $('#AT_field_account-babelslug')
+              , placeholder = $babelslug.prop('placeholder')
+            ;
+            $babelslug
+               .before('<p class="pre-username">' + placeholder + ':</p><h2 id="account-babelslug-display">...</h2>')
+               .prop('value', '...')
+               .css('display', 'none')
+            ;
+            Meteor.call('babelslug', function (error, result) {
+                $('#account-babelslug-display').text(error || result.split('_')[0]); // `result` is in the form 'RedMouse-auk3Tbt92LDv5nNSM'
+                if (! error) { $babelslug.prop('value', result); } // using `attr()` instead of `prop()` would allow you to ‘Inspect Element’ the value attribute
+            });
+        }()
+
+
+        //// Modify the “Age group” field, converting it from `<input type="text">` to `<select>`. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
         !function () {
             var
                 agcId = 'AT_field_account-age-group-code' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
@@ -22,7 +59,7 @@ if (Meteor.isClient) {
 
             //// Replace the simple text-field with the heading and dropdown menu.
             $agc
-               .before('<p>' + placeholder + '</p>\n' + select)
+               .before('<div class="select-box"><p class="heading">' + placeholder + '</p>\n' + select + '</div>')
                .remove()
             ;
             $agc = $('#' + agcId); // make `$agc` a reference to the new dropdown menu @todo do we need this now?
@@ -30,7 +67,7 @@ if (Meteor.isClient) {
         }()
 
 
-        //// Clientside modification of the “Based in” field, converting it from `<input type="text">` to `<select>`. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
+        //// Modify the “Based in” field, converting it from `<input type="text">` to `<select>`. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
         !function () {
             var
                 bicId = 'AT_field_account-based-in-code' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
@@ -48,7 +85,7 @@ if (Meteor.isClient) {
 
             //// Replace the simple text-field with the heading and dropdown menu.
             $bic
-               .before('<p>' + placeholder + '</p>\n' + select)
+               .before('<div class="select-box"><p class="heading">' + placeholder + '</p>\n' + select + '</div>')
                .remove()
             ;
             $bic = $('#' + bicId); // make `$bic` a reference to the new dropdown menu @todo do we need this now?
@@ -56,7 +93,7 @@ if (Meteor.isClient) {
         }()
 
 
-        //// Clientside modification of the “How did you hear about us?” fields.
+        //// Modify the “How did you hear about us?” fields.
         !function () {
             var
                 hacId = 'AT_field_account-hear-about-code' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
@@ -70,7 +107,7 @@ if (Meteor.isClient) {
                     Config.account.hearAboutData.forEach(function (data) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
                         if (data.code === code) {
                             if (data.prompt) {
-                                $hat.fadeIn().prop('placeholder', data.prompt);
+                                $hat.fadeIn().focus().prop('placeholder', data.prompt);
                             } else {
                                 $hat.fadeOut().prop('placeholder', '');
                             }
@@ -88,7 +125,7 @@ if (Meteor.isClient) {
 
             //// Replace the simple text-field with the heading and dropdown menu.
             $hac
-               .before('<p>' + hacPlaceholder + '</p>\n' + select)
+               .before('<div class="select-box"><p class="heading">' + hacPlaceholder + '</p>\n' + select + '</div>')
                .remove()
             ;
             $hac = $('#' + hacId); // make `$hac` a reference to the new dropdown menu
@@ -102,25 +139,7 @@ if (Meteor.isClient) {
         }()
 
 
-        //// Clientside modification of the username field.
-        !function () {
-            var
-                $babelslug = $('#AT_field_account-babelslug')
-              , placeholder = $babelslug.prop('placeholder')
-            ;
-            $babelslug
-               .before('<p>' + placeholder + ' <b id="account-babelslug-display">...</b></p>')
-               .prop('value', '...')
-               .css('display', 'none')
-            ;
-            Meteor.call('babelslug', function (error, result) {
-                $('#account-babelslug-display').text(error || result.split('_')[0]); // `result` is in the form 'RedMouse-auk3Tbt92LDv5nNSM'
-                if (! error) { $babelslug.prop('value', result); }
-            });
-        }()
-
-
-        //// Clientside addition to the “Newsletter Opt” field, hiding it and adding a `<checkbox>` controller. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
+        //// Modify the “Newsletter Opt” field, hiding it and adding a `<checkbox>` controller. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
         !function () {
             var $nloDesc, $nloCheck
                 nloId = 'AT_field_account-newsletter-opt'
@@ -133,8 +152,8 @@ if (Meteor.isClient) {
 
             //// Hide the simple text-field, and show the description and checkbox.
             $nloText
-               .before('<p id="' + nloId + '-description">' + placeholder + '</p>\n<input type="checkbox" id="' + nloId + '-check">')
-               // .css('display', 'none')
+               .before('<div class="newsletter-opt  columns  large-6 large-offset-3  medium-8 medium-offset-2"><input type="checkbox" id="' + nloId + '-check"><p id="' + nloId + '-description">' + placeholder + '</p></div>')
+               .css('display', 'none')
             ;
             $nloDesc  = $('#' + nloId + '-description'); // a reference to the new description
             $nloCheck = $('#' + nloId + '-check'); // a reference to the new checkbox

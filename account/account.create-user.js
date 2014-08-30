@@ -1,99 +1,37 @@
-//// A lookup-table whose keys are generated each time an ‘account.register’ form is rendered using the `babelslug()` method.
-//// The key is a babelslug, followed by hyphen, followed by a Meteor connection ID (like a session ID for anon users).
-//// The value is the unix timestamp in milliseconds, which allows us to clear out old and unused babelslugs.
-//// Two examples are shown here:
-var recentBabelslugs = { // @todo for a multi-servo project, move this functionality to a shared mongoDB collection
-    // 'MagentaMouse-KukNJw4d4vjGzzrQa': 1409341347912,
-    // 'BlueChessCat-YYJWMWTPq7RFWdKr6': 1409341399283
-};
-
-
-//// Housekeeping on the `recentBabelslugs` lut.
-var recentBabelslugsHousekeeping = function () {
-    var key
-      , now = Date.now()
-    ;
-    for (key in recentBabelslugs) {
-        if (15 * 60 * 1000 < now - recentBabelslugs[key]) { // allow a user 15 minutes to fill in the registration form
-            delete recentBabelslugs[key];
-        }
-    }
-};
-
-
-//// Check how many times a given `username` exists in the user database. If all’s well, this should only ever return `0` or `1`.
-var usernameCount = function (username) {
-    return Meteor.users.find({ 'profile.username': username }).count();
-};
-
-
-Meteor.methods({
-    babelslug: function () {
-        var i, key, babelslug;
-        if (this.isSimulation) { return; } // clientside stub (return value is ignored)
-
-        //// Housekeeping on the `recentBabelslugs` lut.
-        recentBabelslugsHousekeeping();
-
-        //// Try, 200 times, to find a username which has not been taken. @todo this is quite brute-force ... can we come up with a more elegant solution?
-        for (i=200; i>0; i--) {
-            babelslug = numberToPhrase( Math.floor(Math.random() * 50000) );
-            if ( 3 === babelslug.split('-').length && ! recentBabelslugs[babelslug] && ! usernameCount(babelslug) ) { break; } // we are only using three-part usernames at present
-        }
-        if (! i) { throw new Meteor.Error(500, "Cannot generate a username! Please email " + Config.about.webmaster); } // @todo check `(! i)` can ever be truthy
-        recentBabelslugs[babelslug] = { // later, when the form is submitted, we will check that the babelslug value is expected
-            now: Date.now() // allows `recentBabelslugsHousekeeping()` to find stale babelslugs
-          , cid: this.connection.id
-        }
-        return babelslug + '_' + this.connection.id; // @todo is `this.connection.id` ever some unexpected value, for example `null`?
-    }
-});
-
-
 if (Meteor.isServer) {
-    Accounts.onCreateUser(function (options, user) {
-
-        var babelslug, connectionId;
-
-        //// Housekeeping on the `recentBabelslugs` lut.
-        recentBabelslugsHousekeeping();
-
-        //// Validate the value of `<input id="AT_field_account-babelslug" ...>`.
-        babelslug    = options.profile['account-babelslug'].split('_')[0];
-        connectionId = options.profile['account-babelslug'].split('_')[1];
-        if (! babelslug || ! connectionId) {
-            throw new Meteor.Error(500, "The ‘username’ field is invalid."); // @todo better error-code than 500?
-        }
-        if (! recentBabelslugs[babelslug]) {
-            throw new Meteor.Error(500, "Your registration form expired after 15 minutes. Please refresh the browser and try again."); // The ‘username’ value is unexpected, so this may actually be a hack attempt
-        }
-        if ( usernameCount(babelslug) ) {
-            throw new Meteor.Error(500, "The ‘username’ is already in use."); // prevent two `Meteor.user` records having the same username, which could happen on a multi-servo project, until we change `recentBabelslugs` to a shared mongoDB collection @todo
-        }
-
-        //// Remove the babelslug, as it’s not needed any more.
-        delete recentBabelslugs[babelslug];
-
-        //// Record the username (‘info@loop.coop’ gets a special username).
-        options.profile = options.profile || {};
-        options.profile.username = 'info@loop.coop' === options.email ? 'red-cat' : babelslug;
-
-        //// Record other account registration data.
-        if (options.profile['account-age-group-code'])  { options.profile.agc = options.profile['account-age-group-code'];  }
-        if (options.profile['account-based-in-code'])   { options.profile.bic = options.profile['account-based-in-code'];   }
-        if (options.profile['account-hear-about-code']) { options.profile.hac = options.profile['account-hear-about-code']; }
-        if (options.profile['account-hear-about-text']) { options.profile.hat = options.profile['account-hear-about-text']; }
-        if (options.profile['account-newsletter-opt'])  { options.profile.nlo = options.profile['account-newsletter-opt']; }
-
-        //// The registration is valid, so record it as usual. http://docs.meteor.com/#accounts_oncreateuser
-        user.profile = options.profile;
-        return user;
-    });
-
-
-    //// BabelSlug, from Rich Plastow’s work, 2014-02-09.
     var
-        ucs2 = [
+
+        //// A lookup-table whose keys are generated each time an ‘account.register’ form is rendered using the `babelslug()` method.
+        //// The key is a babelslug, followed by hyphen, followed by a Meteor connection ID (like a session ID for anon users).
+        //// The value is the unix timestamp in milliseconds, which allows us to clear out old and unused babelslugs.
+        //// Two examples are shown here:
+        recentBabelslugs = { // @todo for a multi-servo project, move this functionality to a shared mongoDB collection
+            // 'MagentaMouse-KukNJw4d4vjGzzrQa': 1409341347912,
+            // 'BlueChessCat-YYJWMWTPq7RFWdKr6': 1409341399283
+        }
+
+
+        //// Clear out stale elements in the `recentBabelslugs` lookup-table.
+      , recentBabelslugsHousekeeping = function () {
+            var key
+              , now = Date.now()
+            ;
+            for (key in recentBabelslugs) {
+                if (15 * 60 * 1000 < now - recentBabelslugs[key]) { // allow a user 15 minutes to fill in the registration form
+                    delete recentBabelslugs[key];
+                }
+            }
+        }
+
+
+        //// Check how many times a given `username` exists in the user database. If all’s well, this should only ever return `0` or `1`.
+      , usernameCount = function (username) {
+            return Meteor.users.find({ 'profile.username': username }).count();
+        }
+
+
+        //// BabelSlug, from Rich Plastow’s work, 2014-02-09.
+      , ucs2 = [
             [ // animal
                 { en:'slug'  ,es:'babosa'    ,ru:'\u0441\u043B\u0438\u0437\u043D\u044F\u043A',fr:'limace'    ,zh:'\u86DE\u8753',ar:'\u064A\u0631\u0642\u0627\u0646\u0629' }
               , { en:'mouse' ,es:'rat\u00F3n',ru:'\u043C\u044B\u0448\u044C'                  ,fr:'souris'    ,zh:'\u9F20\u6807',ar:'\u0641\u0623\u0631'                   }
@@ -118,7 +56,7 @@ if (Meteor.isServer) {
               , { en:'green'  ,es:'verde'   ,ru:[1079,1077,1083,1077,1085,1099,1081]          ,fr:'vert'   ,zh:[32511]      ,ar:[1571,1582,1590,1585]                          }
               // , { en:'cyan'   ,es:'cian'    ,ru:[1075,1086,1083,1091,1073,1086,1081]          ,fr:'cyan'   ,zh:[38738]      ,ar:[1587,1605,1575,1608,1610]                     }
               , { en:'blue'   ,es:'azul'    ,ru:[1089,1080,1085,1080,1081]                    ,fr:'bleu'   ,zh:[34013]      ,ar:[1571,1586,1585,1602]                          }
-              , { en:'violet' ,es:'magenta' ,ru:[1087,1091,1088,1087,1091,1088,1085,1099,1081],fr:'magenta',zh:[27915,32418],ar:[1571,1585,1580,1608,1575,1606,1610]           }
+              , { en:'purple' ,es:'magenta' ,ru:[1087,1091,1088,1087,1091,1088,1085,1099,1081],fr:'magenta',zh:[27915,32418],ar:[1571,1585,1580,1608,1575,1606,1610]           } // @todo translate purple (these are for magenta)
             ]
           , [ // emotion @todo convert remaining languages from 2014-Work/BabelSlug/README.md
                 { en:'-'        ,es:'-'          ,fr:'-'          }
@@ -179,5 +117,75 @@ if (Meteor.isServer) {
             return phrase.join('-');
         }
     ;
+
+
+
+
+    Meteor.methods({
+
+        babelslug: function () {
+            var i, key, babelslug;
+            if (this.isSimulation) { return; } // clientside stub (return value is ignored)
+
+            //// Housekeeping on the `recentBabelslugs` lut.
+            recentBabelslugsHousekeeping();
+
+            //// Try, 200 times, to find a username which has not been taken. @todo this is quite brute-force ... can we come up with a more elegant solution?
+            for (i=200; i>0; i--) {
+                babelslug = numberToPhrase( Math.floor(Math.random() * 50000) );
+                if ( 3 === babelslug.split('-').length && ! recentBabelslugs[babelslug] && ! usernameCount(babelslug) ) { break; } // we are only using three-part usernames at present
+            }
+            if (! i) { throw new Meteor.Error(500, "Cannot generate a username! Please email " + Config.about.webmaster); } // @todo check `(! i)` can ever be truthy
+            recentBabelslugs[babelslug] = { // later, when the form is submitted, we will check that the babelslug value is expected
+                now: Date.now() // allows `recentBabelslugsHousekeeping()` to find stale babelslugs
+              , cid: this.connection.id
+            }
+            return babelslug + '_' + this.connection.id; // @todo is `this.connection.id` ever some unexpected value, for example `null`?
+        }
+
+    });
+
+
+
+
+    Accounts.onCreateUser(function (options, user) {
+
+        var babelslug, connectionId;
+
+        //// Housekeeping on the `recentBabelslugs` lut.
+        recentBabelslugsHousekeeping();
+
+        //// Validate the value of `<input id="AT_field_account-babelslug" ...>`.
+        babelslug    = options.profile['account-babelslug'].split('_')[0];
+        connectionId = options.profile['account-babelslug'].split('_')[1];
+        if (! babelslug || ! connectionId) {
+            throw new Meteor.Error(500, "The ‘username’ field is invalid."); // @todo better error-code than 500?
+        }
+        if (! recentBabelslugs[babelslug]) {
+            throw new Meteor.Error(500, "Your registration form expired after 15 minutes. Please refresh the browser and try again."); // The ‘username’ value is unexpected, so this may actually be a hack attempt
+        }
+        if ( usernameCount(babelslug) ) {
+            throw new Meteor.Error(500, "The ‘username’ is already in use."); // prevent two `Meteor.user` records having the same username, which could happen on a multi-servo project, until we change `recentBabelslugs` to a shared mongoDB collection @todo
+        }
+
+        //// Remove the babelslug, as it’s not needed any more.
+        delete recentBabelslugs[babelslug];
+
+        //// Record the username (‘info@loop.coop’ gets a special username).
+        options.profile = options.profile || {};
+        options.profile.username = 'info@loop.coop' === options.email ? 'red-cat' : babelslug;
+
+        //// Record other account registration data.
+        if (options.profile['account-age-group-code'])  { options.profile.agc = options.profile['account-age-group-code'];  }
+        if (options.profile['account-based-in-code'])   { options.profile.bic = options.profile['account-based-in-code'];   }
+        if (options.profile['account-hear-about-code']) { options.profile.hac = options.profile['account-hear-about-code']; }
+        if (options.profile['account-hear-about-text']) { options.profile.hat = options.profile['account-hear-about-text']; }
+        if (options.profile['account-newsletter-opt'])  { options.profile.nlo = options.profile['account-newsletter-opt']; }
+
+        //// The registration is valid, so record it as usual. http://docs.meteor.com/#accounts_oncreateuser
+        user.profile = options.profile;
+        return user;
+
+    });
 
 }

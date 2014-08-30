@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.9-5'
+  , version:      '0.0.10'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -25,8 +25,10 @@ Config.account = {
           , { path:'/account/register', name:'Register' }
         ]
     }
-  , ageGroupData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
-        { code:'' , label:'Please select your age group' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
+
+    //// `ageGroupData`, `basedInData`, and `hearAboutData` are used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element in each is the default.
+  , ageGroupData: [
+        { code:'' , label:'What’s your age group?' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
       , { code:'c', label:'Under 8'  } // codes step through the alphabet in threes, in case we want finer granuality later on
       , { code:'f', label:'8 to 15'  }
       , { code:'i', label:'16 or 17' }
@@ -36,22 +38,23 @@ Config.account = {
       , { code:'u', label:'Over 65'  }
     ]
   , basedInData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
-        { code:'' , label:'Please tell us where you’re based' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
+        { code:'' , label:'Where are you based?' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
       , { code:'b', label:'Brighton and Hove' }
       , { code:'s', label:'Sussex'  }
       , { code:'l', label:'London' }
       , { code:'u', label:'Elsewhere in the UK' }
       , { code:'e', label:'Elsewhere on planet Earth' }
-      , { code:'x', label:'The planet Looptopia' }
+      , { code:'x', label:'Planet Looptopia' }
     ]
   , hearAboutData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
-        { code:'m', label:'Word of mouth'                                , prompt:false } // `prompt` is falsey, so the 'account-hear-about-text' field will be hidden when this is selected
-      , { code:'e', label:'At a festival or party'                       , prompt:'Which one?' }
-      , { code:'t', label:'Traditional media (magazines, TV, radio, etc)', prompt:'What was the article or show?' }
-      , { code:'s', label:'Social media (Facebook, Twitter, etc)'        , prompt:'Where and how?' }
-      , { code:'g', label:'Search engine (Google, Yahoo, etc)'           , prompt:'What were you searching for?' }
-      , { code:'w', label:'Some other website'                           , prompt:'Which web page?' }
-      , { code:'x', label:'...or something else completely...'           , prompt:'More details please!' }
+        { code:'' , label:'How did you hear about us?'         , prompt:false }
+      , { code:'m', label:'Word of mouth'                      , prompt:false } // `prompt` is falsey, so the 'account-hear-about-text' field will be hidden when this is selected
+      , { code:'e', label:'At a festival or party'             , prompt:'Which one?' }
+      , { code:'t', label:'Traditional media (print, TV, etc)' , prompt:'Whereabouts, exactly?' }
+      , { code:'s', label:'Social media (Twitter, etc)', prompt:'Where and how?' }
+      , { code:'g', label:'Search engine (Google, etc)'        , prompt:'What were you searching for?' }
+      , { code:'w', label:'Some other website'                 , prompt:'Which web page?' }
+      , { code:'x', label:'...or something else...'            , prompt:'More details please!' }
     ]
 
   , changelog: [
@@ -71,6 +74,7 @@ Config.account = {
       , '+ account@0.0.9-3   `account-age-group` field; ‘Age’ column in ‘users.list’; '
       , '+ account@0.0.9-4   `account-based-in` field; ‘Based In’ column in ‘users.list’; '
       , '+ account@0.0.9-5   `account-newsletter-opt` field; ‘Opt’ column in ‘users.list’; '
+      , '+ account@0.0.10    ‘register’ form is working well; ‘account.babelslug.js’ renamed ‘account.create-user.js’; '
     ]
 };
 
@@ -120,6 +124,12 @@ AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#form-fields-configuration
 AccountsTemplates.addFields([
     {
+        _id: 'account-babelslug'
+      , type: 'text'
+      , displayName: "Your username will be"
+      , required: true
+    }
+  , {
         _id: 'account-age-group-code'
       , type: 'text'
       , displayName: "Age group"
@@ -136,21 +146,13 @@ AccountsTemplates.addFields([
   , {
         _id: 'account-hear-about-code'
       , type: 'text'
-      , displayName: "How did you hear about Loop.Coop?"
       , maxLength: 1
-      , required: true
     }
   , {
         _id: 'account-hear-about-text'
       , type: 'text'
       , displayName: "..."
       , maxLength: 64
-    }
-  , {
-        _id: 'account-babelslug'
-      , type: 'text'
-      , displayName: "Your username will be"
-      , required: true
     }
   , {
         _id: 'account-newsletter-opt'
