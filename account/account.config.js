@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.9-3'
+  , version:      '0.0.9-4'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -27,13 +27,22 @@ Config.account = {
     }
   , ageGroupData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
         { code:'' , label:'Please select your age group' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
-      , { code:'c', label:'Under 8'  } // codes step through the alphabet in threes, in case we want finer granuality of age-groups later on
+      , { code:'c', label:'Under 8'  } // codes step through the alphabet in threes, in case we want finer granuality later on
       , { code:'f', label:'8 to 15'  }
       , { code:'i', label:'16 or 17' }
       , { code:'l', label:'18 to 25' }
       , { code:'o', label:'26 to 40' }
       , { code:'r', label:'41 to 65' }
       , { code:'u', label:'Over 65'  }
+    ]
+  , basedInData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
+        { code:'' , label:'Please tell us where you’re based' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
+      , { code:'b', label:'Brighton and Hove' }
+      , { code:'s', label:'Sussex'  }
+      , { code:'l', label:'London' }
+      , { code:'u', label:'Elsewhere in the UK' }
+      , { code:'e', label:'Elsewhere on planet Earth' }
+      , { code:'x', label:'The planet Looptopia' }
     ]
   , hearAboutData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
         { code:'m', label:'Word of mouth'                                , prompt:false } // `prompt` is falsey, so the 'account-hear-about-text' field will be hidden when this is selected
@@ -60,6 +69,7 @@ Config.account = {
       , '+ account@0.0.9-2   `account-hear-about-code` and `account-hear-about-text` fields;  \n' +
         '                    better display of `createdAt` field in the ‘users.list’ template; '
       , '+ account@0.0.9-3   `account-age-group` field; ‘Age’ column in ‘users.list’; '
+      , '+ account@0.0.9-4   `account-based-in` field; ‘Based In’ column in ‘users.list’; '
     ]
 };
 
@@ -112,6 +122,13 @@ AccountsTemplates.addFields([
         _id: 'account-age-group-code'
       , type: 'text'
       , displayName: "Age group"
+      , maxLength: 1
+      , required: true
+    }
+  , {
+        _id: 'account-based-in-code'
+      , type: 'text'
+      , displayName: "Based in"
       , maxLength: 1
       , required: true
     }

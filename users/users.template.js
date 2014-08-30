@@ -53,6 +53,19 @@ if (Meteor.isClient) {
                     return agLabel;
                 }
             },{
+                title: 'Based In'
+              , data:  'profile'
+              , mRender: function (data, type, row) {
+                    if (! data || ! data.bic) { return '-'; }
+                    var biLabel = '-';
+                    Config.account.basedInData.forEach(function (configData) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
+                        if (configData.code === data.bic) {
+                            biLabel = data.bic + ':&nbsp;' + configData.label;
+                        }
+                    });
+                    return biLabel;
+                }
+            },{
                 title: 'Hear About'
               , data:  'profile'
               , mRender: function (data, type, row) {

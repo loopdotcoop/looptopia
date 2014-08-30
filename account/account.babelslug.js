@@ -80,6 +80,7 @@ if (Meteor.isServer) {
 
         //// Record other account registration data.
         if (options.profile['account-age-group-code'])  { options.profile.agc = options.profile['account-age-group-code'];  }
+        if (options.profile['account-based-in-code'])   { options.profile.bic = options.profile['account-based-in-code'];   }
         if (options.profile['account-hear-about-code']) { options.profile.hac = options.profile['account-hear-about-code']; }
         if (options.profile['account-hear-about-text']) { options.profile.hat = options.profile['account-hear-about-text']; }
 

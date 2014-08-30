@@ -25,7 +25,33 @@ if (Meteor.isClient) {
                .before('<p>' + placeholder + '</p>\n' + select)
                .remove()
             ;
-            $agc = $('#' + agcId); // make `$agc` a reference to the new dropdown menu
+            $agc = $('#' + agcId); // make `$agc` a reference to the new dropdown menu @todo do we need this now?
+
+        }()
+
+
+        //// Clientside modification of the “Based in” field, converting it from `<input type="text">` to `<select>`. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
+        !function () {
+            var
+                bicId = 'AT_field_account-based-in-code' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
+              , $bic = $('#' + bicId)
+              , placeholder = $bic.attr('placeholder')
+              , select = ''
+            ;
+
+            //// Build HTML for the dropdown menu.
+            select += '<select id="' + bicId + '" name="' + bicId + '">\n';
+            Config.account.basedInData.forEach(function (data) {
+                select += '  <option value="' + data.code + '">' + data.label + '</option>\n';
+            });
+            select += '</select>\n';
+
+            //// Replace the simple text-field with the heading and dropdown menu.
+            $bic
+               .before('<p>' + placeholder + '</p>\n' + select)
+               .remove()
+            ;
+            $bic = $('#' + bicId); // make `$bic` a reference to the new dropdown menu @todo do we need this now?
 
         }()
 
