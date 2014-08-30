@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.8'
+  , version:      '0.0.9-1'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -36,48 +36,48 @@ Config.account = {
         '                    when rendering the ‘register’ form, generate a BabelSlug and show it to the user;  \n' +
         '                    ensure submitted babelslug is expected; '
       , '+ account@0.0.8     need to fix ‘users/list’ before continuing babelslug work; '
+      , '+ account@0.0.9-1   `account.babelslug.js:usernameCount()` prevents user records from sharing a username; '
     ]
 };
 
 
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#options
 AccountsTemplates.configure({
-    showPlaceholders: true
-  , showLabels: false // was `displayFormLabels`
-  , continuousValidation: true
+    showPlaceholders:       true
+  , showLabels:             false // was `displayFormLabels`
+  , continuousValidation:   true
   , showForgotPasswordLink: true
-  , enablePasswordChange: true
-  , confirmPassword: false
-
-  , homeRoutePath: '/'
-  , privacyUrl: '/legal/privacy'
-  , termsUrl: '/legal/terms'
+  , enablePasswordChange:   true
+  , confirmPassword:        false
+  , homeRoutePath:          '/'
+  , privacyUrl:             '/legal/privacy'
+  , termsUrl:               '/legal/terms'
 });
 
 
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#routing
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
-    path: 'account/register',
+    path:     'account/register',
     template: 'account.register',
     redirect: '/account/profile'
 });
 AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
-    path: 'account/sign-in',
+    path:     'account/sign-in',
     template: 'account.sign-in',
     redirect: '/dashboard'
 });
 AccountsTemplates.configureRoute('forgotPwd', { // name: 'atForgotPwd'
-    path: 'account/password-forgot',
+    path:     'account/password-forgot',
     template: 'account.password-forgot',
     redirect: '/account/password-retrieve'
 });
 AccountsTemplates.configureRoute('resetPwd', { // name: 'atResetPwd' @todo test this
-    path: 'account/password-reset',
+    path:     'account/password-reset',
     template: 'account.password-reset',
     redirect: '/'
 });
 AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
-    path: 'account/password-change',
+    path:     'account/password-change',
     template: 'account.password-change',
     redirect: '/'
 });
