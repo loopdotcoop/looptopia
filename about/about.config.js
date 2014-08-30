@@ -59,12 +59,12 @@ Config = {
           , '+ looptopia@0.1.4        all features at version 0.0.2; '
           , '+ looptopia@0.1.5-1      bump after release 0.1.4; '
           , '+ looptopia@0.1.6        ready to test ‘account’ system on modulus; '
-          , '+ looptopia@0.1.8-fix.1  fix double-slash in password-reset link; ' 
-          , '+ looptopia@0.1.8-fix.2  fix “By clicking Register ...” links; ' 
-          , '+ looptopia@0.1.8-fix.3  disable ‘users/list’; ' 
-          , '+ looptopia@0.1.8-fix.4  don’t show ‘About This Project’ on 404 page; ' 
-          , '+ looptopia@0.1.8        ok for live server, up until 1st Sept; ' 
-          , '+ looptopia@0.1.9-1      BabelSlug for username; need to prevent user records from sharing a username; ' 
+          , '+ looptopia@0.1.8-fix.1  fix double-slash in password-reset link; '
+          , '+ looptopia@0.1.8-fix.2  fix “By clicking Register ...” links; '
+          , '+ looptopia@0.1.8-fix.3  disable ‘users/list’; '
+          , '+ looptopia@0.1.8-fix.4  don’t show ‘About This Project’ on 404 page; '
+          , '+ looptopia@0.1.8        ok for live server, up until 1st Sept; '
+          , '+ looptopia@0.1.9-1      BabelSlug for username; need to prevent user records from sharing a username; '
 
         ]
     }
