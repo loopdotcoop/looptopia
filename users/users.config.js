@@ -1,7 +1,7 @@
 Config.users = {
     name:         'Users'
   , slug:         'users'
-  , version:      '0.0.8'
+  , version:      '0.0.10'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -22,6 +22,7 @@ Config.users = {
       , '+ users@0.0.4       disable ‘users/list’; '
       , '+ users@0.0.6       qik fix for incomplete user records `if (! data || ! data[0]) { return "-"; }`; '
       , '+ users@0.0.8       simpler publish just using ‘DataTable’; ‘account.babelslug’ records username on register; '
+      , '+ legal@0.0.10      must have special email address to access ‘users.list’; '
     ]
 };
 
