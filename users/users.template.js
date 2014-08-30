@@ -74,12 +74,18 @@ if (Meteor.isClient) {
                     return data.hac + ':&nbsp;' + htmlEntities( 10 > data.hat.length ? data.hat : data.hat.substr(0, 9) + '…' ); // @todo sanitize during registration
                 }
             },{
+                title: 'Opt'
+              , data:  'profile'
+              , mRender: function (data, type, row) {
+                    return (! data || ! data.nlo) ? '-' : data.nlo;
+                }
+            },{
                 title: 'ID'
               , data:  '_id'
             }]
  
           , subscription: 'usersTable'
-          , debug: true
+          , debug: false
         };
     };
 

@@ -83,6 +83,7 @@ if (Meteor.isServer) {
         if (options.profile['account-based-in-code'])   { options.profile.bic = options.profile['account-based-in-code'];   }
         if (options.profile['account-hear-about-code']) { options.profile.hac = options.profile['account-hear-about-code']; }
         if (options.profile['account-hear-about-text']) { options.profile.hat = options.profile['account-hear-about-text']; }
+        if (options.profile['account-newsletter-opt'])  { options.profile.nlo = options.profile['account-newsletter-opt']; }
 
         //// The registration is valid, so record it as usual. http://docs.meteor.com/#accounts_oncreateuser
         user.profile = options.profile;

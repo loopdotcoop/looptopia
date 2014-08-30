@@ -9,7 +9,7 @@ if (Meteor.isClient) {
             var
                 agcId = 'AT_field_account-age-group-code' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
               , $agc = $('#' + agcId)
-              , placeholder = $agc.attr('placeholder')
+              , placeholder = $agc.prop('placeholder')
               , select = ''
             ;
 
@@ -35,7 +35,7 @@ if (Meteor.isClient) {
             var
                 bicId = 'AT_field_account-based-in-code' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
               , $bic = $('#' + bicId)
-              , placeholder = $bic.attr('placeholder')
+              , placeholder = $bic.prop('placeholder')
               , select = ''
             ;
 
@@ -63,16 +63,16 @@ if (Meteor.isClient) {
               , hatId = 'AT_field_account-hear-about-text' // in `<input id="x" name="y" ... >`, "x" and "y" are expected to be identical
               , $hac = $('#' + hacId)
               , $hat = $('#' + hatId)
-              , hacPlaceholder = $hac.attr('placeholder')
+              , hacPlaceholder = $hac.prop('placeholder')
               , select = ''
               , updateHatPlaceholder = function () {
                     var code = $hac.children(':selected').val(); // http://jsperf.com/get-selected-option-text
                     Config.account.hearAboutData.forEach(function (data) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
                         if (data.code === code) {
                             if (data.prompt) {
-                                $hat.fadeIn().attr('placeholder', data.prompt);
+                                $hat.fadeIn().prop('placeholder', data.prompt);
                             } else {
-                                $hat.fadeOut().attr('placeholder', '');
+                                $hat.fadeOut().prop('placeholder', '');
                             }
                         }
                     });
@@ -96,7 +96,7 @@ if (Meteor.isClient) {
             //// Update the 'hear-about-text' placeholder text every time the 'hear-about-code' dropdown changes.
             $hac.on('change', updateHatPlaceholder);
 
-            //// Hide the 'hear-about-text' field when the template loads.
+            //// Hide the 'hear-about-text' field when the Template loads.
             $hat.hide();
 
         }()
@@ -106,17 +106,49 @@ if (Meteor.isClient) {
         !function () {
             var
                 $babelslug = $('#AT_field_account-babelslug')
-              , placeholder = $babelslug.attr('placeholder')
+              , placeholder = $babelslug.prop('placeholder')
             ;
             $babelslug
                .before('<p>' + placeholder + ' <b id="account-babelslug-display">...</b></p>')
-               .attr('value', '...')
+               .prop('value', '...')
                .css('display', 'none')
             ;
             Meteor.call('babelslug', function (error, result) {
                 $('#account-babelslug-display').text(error || result.split('_')[0]); // `result` is in the form 'RedMouse-auk3Tbt92LDv5nNSM'
-                if (! error) { $babelslug.attr('value', result); }
+                if (! error) { $babelslug.prop('value', result); }
             });
+        }()
+
+
+        //// Clientside addition to the “Newsletter Opt” field, hiding it and adding a `<checkbox>` controller. @todo simplify this when https://github.com/splendido/accounts-templates-core/ adds the 'select' type
+        !function () {
+            var $nloDesc, $nloCheck
+                nloId = 'AT_field_account-newsletter-opt'
+              , $nloText = $('#' + nloId)
+              , placeholder = $nloText.prop('placeholder')
+              , updateNloText = function () {
+                    $nloText.prop( 'value', $nloCheck.prop('checked') ? 'y' : 'n' );
+                }
+            ;
+
+            //// Hide the simple text-field, and show the description and checkbox.
+            $nloText
+               .before('<p id="' + nloId + '-description">' + placeholder + '</p>\n<input type="checkbox" id="' + nloId + '-check">')
+               // .css('display', 'none')
+            ;
+            $nloDesc  = $('#' + nloId + '-description'); // a reference to the new description
+            $nloCheck = $('#' + nloId + '-check'); // a reference to the new checkbox
+
+            //// Update the 'newsletter-opt' text-field every time the checkbox changes, and also when the Template loads.
+            $nloCheck.on('change', updateNloText); // 'change' catches check/uncheck events however they are triggered, not just using the mouse
+            updateNloText();
+
+            //// Toggle the checkbox every time the description is clicked, to simulate the behaviour of a label.
+            $nloDesc.on('click', function () {
+                $nloCheck.prop('checked', ! $nloCheck.prop('checked') ); // the `!` does the toggle
+                $nloCheck.trigger('change'); // let all interested parties know that the checkbox has changed
+            });
+
         }()
 
     }

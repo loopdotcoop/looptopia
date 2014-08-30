@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.9-4'
+  , version:      '0.0.9-5'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -70,6 +70,7 @@ Config.account = {
         '                    better display of `createdAt` field in the ‘users.list’ template; '
       , '+ account@0.0.9-3   `account-age-group` field; ‘Age’ column in ‘users.list’; '
       , '+ account@0.0.9-4   `account-based-in` field; ‘Based In’ column in ‘users.list’; '
+      , '+ account@0.0.9-5   `account-newsletter-opt` field; ‘Opt’ column in ‘users.list’; '
     ]
 };
 
@@ -150,6 +151,14 @@ AccountsTemplates.addFields([
       , type: 'text'
       , displayName: "Your username will be"
       , required: true
+    }
+  , {
+        _id: 'account-newsletter-opt'
+      , type: 'text'
+      , displayName: "Newsletter opt-in"
+      , placeholder: "Tick here if you would like to receive occasional news from Looptopia, and invites to Loop.Coop parties."
+      , maxLength: 1 // 'y' for a ticked checkbox, 'n' otherwise
+      , required: true // jQuery in ‘account.register.js’ will hide this field, and then fill it according to the state of a dynamically-added checkbox
     }
 ]);
 
