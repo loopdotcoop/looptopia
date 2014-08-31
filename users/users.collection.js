@@ -1,7 +1,11 @@
 Meteor.users.allow({
-    insert: function () { return true; }
-  , update: function () { return true; }
-  , remove: function () { return true; }
+    insert: function () { return false; }
+  , update: function (userId, doc) {
+        if (userId && doc._id && doc._id === userId) { return true; } // users can change their own `Meteor.users` doc, but nobody else’s // @todo text effectiveness
+    }
+  , remove: function (userId, doc) {
+        if (userId && doc._id && doc._id === userId) { return true; } // users can delete their own `Meteor.users` doc, but nobody else’s // @todo text effectiveness
+    }
 });
 
 

@@ -25,7 +25,7 @@ Config.users = {
       , '+ users@0.0.6       qik fix for incomplete user records `if (! data || ! data[0]) { return "-"; }`; '
       , '+ users@0.0.8       simpler publish just using ‘DataTable’; ‘account.babelslug’ records username on register; '
       , '+ users@0.0.10      must have special email address to access ‘users.list’; '
-      , '+ users@0.0.12      schema and `Meteor.users.attachSchema()` for ‘AutoForm’ in ‘account/edit’; '
+      , '+ users@0.0.12      `Config.users.schemaProfile / schemaEmail / schema` for ‘AutoForm’ in ‘account/edit’; '
     ]
 };
 
