@@ -106,6 +106,8 @@
       {{#each widgets 'footer-left'}}
       <a href="{{ path }}" id="{{ id }}">{{ name }}</a>
       {{/each}}
+      <a href="http://loop.coop/legal/privacy.html" target="_blank" title="Read the {{ $.Config.about.organization }} privacy policy">Privacy</a>
+      <a href="http://loop.coop/legal/terms.html" target="_blank" title="Read the {{ $.Config.about.organization }} terms of use">Terms</a>
     </div>
     <div class="medium-6 small-12 columns ldc-copyright">
       <span>&copy;{{ $.Config.about.year }} {{ $.Config.about.organization }}</span>

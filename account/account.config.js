@@ -92,8 +92,8 @@ AccountsTemplates.configure({
   , enablePasswordChange:   true
   , confirmPassword:        false
   , homeRoutePath:          '/'
-  , privacyUrl:             '/legal/privacy'
-  , termsUrl:               '/legal/terms'
+  , privacyUrl:             'http://loop.coop/legal/privacy.html'
+  , termsUrl:               'http://loop.coop/legal/terms.html'
 });
 
 

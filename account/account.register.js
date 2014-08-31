@@ -170,6 +170,19 @@ if (Meteor.isClient) {
 
         }()
 
+
+        //// Modify the ‘Privacy Policy’ and ‘Terms of Use’ links. https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+        !function () {
+            $('.at-agreement a[href*="legal/privacy"]')
+               .prop('target', '_blank')
+               .prop('title', 'Read the ' + Config.about.organization + ' privacy policy')
+            ;
+            $('.at-agreement a[href*="legal/terms"]')
+               .prop('target', '_blank')
+               .prop('title', 'Read the ' + Config.about.organization + ' terms of use')
+            ;
+        }()
+
     }
 
 }
