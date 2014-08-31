@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.10'
+  , version:      '0.0.11-1'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -17,7 +17,7 @@ Config.account = {
     ]
   , widgets: { // add account links to the 'registered' and 'unregistered' widget areas
         'registered': [
-            { path:'/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
+            { path:'/account/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
           , { path:'/', name:'Sign Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
         ]
       , 'unregistered': [
@@ -75,6 +75,7 @@ Config.account = {
       , '+ account@0.0.9-4   `account-based-in` field; ‘Based In’ column in ‘users.list’; '
       , '+ account@0.0.9-5   `account-newsletter-opt` field; ‘Opt’ column in ‘users.list’; '
       , '+ account@0.0.10    ‘register’ form is working well; ‘account.babelslug.js’ renamed ‘account.create-user.js’; '
+      , '+ account@0.0.11-1  fix ‘/profile/’ to ‘/account/profile/’; move ‘layout.template.js()’ to ‘about.helper.js’; '
     ]
 };
 
