@@ -8,7 +8,7 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.10'
+      , version:      '0.1.11-1'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -67,6 +67,7 @@ Config = {
           , '+ looptopia@0.1.9-1      BabelSlug for username; need to prevent user records from sharing a username; '
           , '+ looptopia@0.1.9-2      ‘account.register’ form is functional and styled; '
           , '+ looptopia@0.1.10       Proper registration, and ‘users.list’ is protected; '
+          , '+ looptopia@0.1.11-1     ‘account/profile’ and ‘account/delete’ work; “September 1st” text removed; '
 
         ]
     }
