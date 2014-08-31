@@ -1,11 +1,5 @@
 if (Meteor.isClient) {
 
-    Template.layout.events({
-        'click #sign-out': function () {
-            Meteor.logout();
-        }
-    });
-
     //// Append widgets which have been registered in the `Config` object.
     Template.layout.widgets = function(area, options) {
         var key, obj
