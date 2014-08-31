@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
 
     //// When rendering the ‘register’ form, generate a BabelSlug and show it to the user.
-    Template['account.register'].rendered = function() {
+    Template['account.register'].rendered = Template['account.profile'].rendered = function() { // @todo better solution to this quick fix
 
 
         //// Place the ‘email’ and ‘password’ fields next to each other for desktop screen widths, and improve placeholder text.
@@ -152,7 +152,7 @@ if (Meteor.isClient) {
 
             //// Hide the simple text-field, and show the description and checkbox.
             $nloText
-               .before('<div class="newsletter-opt  columns  large-6 large-offset-3  medium-8 medium-offset-2"><input type="checkbox" id="' + nloId + '-check"><p id="' + nloId + '-description">' + placeholder + '</p></div>')
+               .before('<div class="newsletter-opt  columns  large-8 large-offset-2  medium-8 medium-offset-2"><input type="checkbox" id="' + nloId + '-check"><p id="' + nloId + '-description">' + placeholder + '</p></div>')
                .css('display', 'none')
             ;
             $nloDesc  = $('#' + nloId + '-description'); // a reference to the new description

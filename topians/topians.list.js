@@ -9,10 +9,13 @@ if (Meteor.isClient) {
             columns: [{
                 title: 'Rand'
               , data:  'rand'
+            },{
+                title: 'ID'
+              , data:  '_id'
             }]
           // , rows: Topians.find({}).fetch()
           , subscription: 'topiansTable'
-          , debug: 'all'
+          , debug: false
         };
     };
 

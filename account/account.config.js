@@ -1,7 +1,7 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.10'
+  , version:      '0.0.11-2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -17,7 +17,7 @@ Config.account = {
     ]
   , widgets: { // add account links to the 'registered' and 'unregistered' widget areas
         'registered': [
-            { path:'/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
+            { path:'/account/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
           , { path:'/', name:'Sign Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
         ]
       , 'unregistered': [
@@ -36,15 +36,16 @@ Config.account = {
       , { code:'o', label:'26 to 40' }
       , { code:'r', label:'41 to 65' }
       , { code:'u', label:'Over 65'  }
+      , { code:'x', label:'Don’t be nosey' }
     ]
   , basedInData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
         { code:'' , label:'Where are you based?' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
       , { code:'b', label:'Brighton and Hove' }
-      , { code:'s', label:'Sussex'  }
+      , { code:'s', label:'Elsewhere in Sussex'  }
       , { code:'l', label:'London' }
       , { code:'u', label:'Elsewhere in the UK' }
       , { code:'e', label:'Elsewhere on planet Earth' }
-      , { code:'x', label:'Planet Looptopia' }
+      , { code:'x', label:'Don’t be nosey' }
     ]
   , hearAboutData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
         { code:'' , label:'How did you hear about us?'         , prompt:false }
@@ -54,7 +55,7 @@ Config.account = {
       , { code:'s', label:'Social media (Twitter, etc)', prompt:'Where and how?' }
       , { code:'g', label:'Search engine (Google, etc)'        , prompt:'What were you searching for?' }
       , { code:'w', label:'Some other website'                 , prompt:'Which web page?' }
-      , { code:'x', label:'...or something else...'            , prompt:'More details please!' }
+      , { code:'z', label:'...or something else...'            , prompt:'More details please!' }
     ]
 
   , changelog: [
@@ -75,6 +76,9 @@ Config.account = {
       , '+ account@0.0.9-4   `account-based-in` field; ‘Based In’ column in ‘users.list’; '
       , '+ account@0.0.9-5   `account-newsletter-opt` field; ‘Opt’ column in ‘users.list’; '
       , '+ account@0.0.10    ‘register’ form is working well; ‘account.babelslug.js’ renamed ‘account.create-user.js’; '
+      , '+ account@0.0.11-1  fix ‘/profile/’ to ‘/account/profile/’; move ‘layout.template.js()’ to ‘about.helper.js’; '
+      , '+ account@0.0.11-2  `$ mrt add collection2` to allow access to `attachSchema()`;  \n' +
+        '                    ‘account/profile’ functional and styled; ‘account/delete’ functional and styled; '
     ]
 };
 
@@ -117,7 +121,7 @@ AccountsTemplates.configureRoute('resetPwd', { // name: 'atResetPwd' @todo test 
 AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
     path:     'account/password-change',
     template: 'account.password-change',
-    redirect: '/'
+    redirect: '/account/profile'
 });
 
 
@@ -158,7 +162,7 @@ AccountsTemplates.addFields([
         _id: 'account-newsletter-opt'
       , type: 'text'
       , displayName: "Newsletter opt-in"
-      , placeholder: "Tick here if you would like to receive occasional news from Looptopia, and invites to Loop.Coop parties."
+      , placeholder: "Tick here to receive Email invitations to Loop.Coop parties."
       , maxLength: 1 // 'y' for a ticked checkbox, 'n' otherwise
       , required: true // jQuery in ‘account.register.js’ will hide this field, and then fill it according to the state of a dynamically-added checkbox
     }
@@ -174,3 +178,12 @@ Meteor.startup(function () {
     AccountsTemplates.init();
 });
 
+
+//// For the ‘sign-out’ widget, defined above.
+if (Meteor.isClient) {
+    Template.layout.events({
+        'click #sign-out': function () {
+            Meteor.logout();
+        }
+    });
+}

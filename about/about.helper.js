@@ -8,6 +8,14 @@ if (Meteor.isClient) {
         if (user && user.emails && user.emails[0] && 'info@loop.coop' === user.emails[0].address) { return true; }
     });
 
+    //// Show the current user’s `username`.
+    UI.registerHelper('username', function() {
+        var user = Meteor.user();
+        if (user && user.profile && user.profile.username) {
+            return user.profile.username;
+        }
+    });
+
 }
 
 //// http://stackoverflow.com/a/19131165

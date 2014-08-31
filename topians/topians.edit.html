@@ -1,16 +1,16 @@
 <head>
-<!-- topians.list.html -->
+<!-- topians.edit.html -->
 </head>
 
-<template name="topians.list">
-  <tt class="x">topians.list.html
+<template name="topians.edit">
+  <tt class="x">topians.edit.html
      {{$.Config.topians.version}}</tt>
 
   <div class="row">
     <div class="large-12 columns">
       {{#if isSuper}}
-        <h1>List Topians</h1>
-          {{> DataTable topiansTable }}
+        <h1>Edit Topian</h1>
+          Edit a topian.
       {{else}}
         <h3>Oops!</h3>
         <p>This is a restricted area.</p>

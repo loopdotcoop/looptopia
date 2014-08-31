@@ -1,18 +1,5 @@
 if (Meteor.isClient) {
 
-    Template.layout.events({
-        'click #sign-out': function () {
-            Meteor.logout();
-        }
-    });
-
-    Template.layout.username = function() { // @todo change to username
-        var user = Meteor.user();
-        if (user && user.emails) {
-            return user.emails[0].address;
-        }
-    };
-
     //// Append widgets which have been registered in the `Config` object.
     Template.layout.widgets = function(area, options) {
         var key, obj
