@@ -27,16 +27,16 @@ Config.home = {
 '          <p>We’re giving you a sneak preview because we’re keen to open up a dialogue about Looptopia from the beginning. Want a feature that isn’t there? Think something should be changed? Want to help build this world? Then get in touch and let’s talk.</p>' // @todo link to contact
 
   , registered:
-'          <div class="message">' +
-'            <h3>Right now, Looptopia is just empty space</h3> ' +
-// '            <h3>You have entered Looptopia</h3> ' +
-// '            <p>This is a young planet. The landscape is bare at the moment, waiting to be filled with music.</p> ' +
+'          <div class="instructions">' +
+// '            <h3>Right now, Looptopia is just empty space</h3> ' +
+'            <h3>You have entered Looptopia</h3> ' +
+'            <p>This is a young planet. The landscape is bare at the moment, waiting to be filled with music.</p> ' +
 // '            <p>Take a look around and keep an eye out for signs of life. Rumour has it of rhythmical rock forms, melodic plant life, and a curious species born to boogie.</p>' +
-// '            <p>Take a look around if you like, but there are no signs of life yet. Rumour has it that rhythmical rock forms will be uncovered on Friday 5th September.</p>' +
-// '            <p style="text-align:center; font-weight:bold;">Drag to look around. Click to move.</p>' +
-'            <p style="text-align:center;">A silent landscape is due to appear tomorrow, Tuesday&nbsp;2nd&nbsp;September.</p>' +
-'          </div>' +
-'          <iframe src="http://loop.coop/empty-space.html" width="100%" height="450px" style="width:100%; height:450px; border-radius:30px; overflow:hidden; border-width:0;"></iframe>'
+'            <p>Take a look around if you like, but there are no signs of life yet. Rumour has it that rhythmical rock forms will be uncovered on Friday 5th September.</p>' +
+'            <p style="text-align:center; font-weight:bold;">Drag to look around. Click to move.</p>' +
+// '            <p style="text-align:center;">A silent landscape is due to appear tomorrow, Tuesday&nbsp;2nd&nbsp;September.</p>' +
+'          </div>'
+// '          <iframe src="http://loop.coop/empty-space.html" width="100%" height="450px" style="width:100%; height:450px; border-radius:30px; overflow:hidden; border-width:0;"></iframe>'
 
 
   , changelog: [
