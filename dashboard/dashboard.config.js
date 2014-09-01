@@ -18,7 +18,7 @@ Config.dashboard = {
     ]
   , widgets: { // add a link to the 'registered' widget area
         'registered': [
-            { path:'/dashboard', name:'Dashboard' }
+            { path:'/dashboard', name:'Dashboard', tmpt:'dashboard' }
         ]
     }
   , changelog: [

@@ -32,6 +32,12 @@ if (Meteor.isClient) {
         return result;
     });
 
+    //// Allow Templates to add a `...class="active"...` attribute to active links.
+    UI.registerHelper('activeIfTemplateIs', function (template) {
+        var currentRoute = Router.current();
+        return currentRoute && template === currentRoute.lookupTemplate() ? 'active' : '';
+    });
+
 }
 
 //// http://stackoverflow.com/a/19131165

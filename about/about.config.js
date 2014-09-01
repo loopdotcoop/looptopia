@@ -8,7 +8,6 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.11-5'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -24,7 +23,9 @@ Config = {
       , contributors: [
             'Beth Walker <info@loop.coop>'
         ]
+
       , widgets: {} // can be filled with widget areas, eg 'footer-left'
+
       , changelog: [
             '+                        Initial commit'
           , '+ looptopia@0.0.1-1      create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; '
@@ -72,8 +73,10 @@ Config = {
           , '+ looptopia@0.1.11-3     move `widgets` helper from ‘layout.template.js’ to ‘about.helper.js’; '
           , '+ looptopia@0.1.11-4     use `widgets` in ‘dashboard.html’; '
           , '+ looptopia@0.1.11-5     styled `widgets` in ‘dashboard.html’; '
+          , '+ looptopia@0.1.11-6     `activeIfTemplateIs` helper gives ‘/dashboard’ link the `active` class; '
 
         ]
+      , version:        '0.1.11-6'
     }
 }
 

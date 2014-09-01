@@ -81,7 +81,7 @@
         <div class="medium-6 small-12 columns ldc-menu">
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
-          <a href="{{ path }}" id="{{ id }}">{{#if $eq name '_username_'}}{{ username }}{{else}}{{ name }}{{/if}}</a>
+          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}">{{#if $eq name '_username_'}}{{ username }}{{else}}{{ name }}{{/if}}</a>
           {{/each}}
 {{else}}
           {{#each widgets 'unregistered'}}
