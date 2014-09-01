@@ -79,8 +79,9 @@ Config = {
           , '+ looptopia@0.1.12       explanatory message on homepage for unregistered users;  \n' +
             '                         registered users see `<iframe src="http://loop.coop/empty-space.html" ...>`; '
           , '+ looptopia@0.2.0        September 1st empty-space release; '
+          , '+ looptopia@0.2.1-1      bump after release 0.2.0; improve ‘/dashboard’; '
         ]
-      , version:        '0.2.0'
+      , version:        '0.2.1-1'
     }
 }
 
