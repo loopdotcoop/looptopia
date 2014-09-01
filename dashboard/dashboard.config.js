@@ -34,6 +34,7 @@ Config.dashboard = {
       , '+ dashboard@0.0.2     mock-merge into develop/looptopia@0.1.3-9; '
       , '+ dashboard@0.0.4     simpler `AccountsTemplates.ensureSignedIn`; '
       , '+ dashboard@0.0.5-1   Add ‘Dashboard’ heading; ‘Looptopia’ play icon replace ‘Launch Party’ icon; '
+      , '+ dashboard@0.0.6     finish feature branch; '
     ]
-  , version:        '0.0.5-1'
+  , version:        '0.0.6'
 }
