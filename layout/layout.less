@@ -46,6 +46,9 @@
 .foundicon-torso:before {
   content: "\f019";
 }
+.foundicon-youtube:before {
+  content: "\f00e";
+}
 
 
 
@@ -99,7 +102,11 @@ button, .button {
 a.active, a.active:hover {
     color: #444;
     cursor: default;
+    &[href$='dashboard'] {
+        display: none;
+    }
 }
+
 
 
 
@@ -112,7 +119,52 @@ a.active, a.active:hover {
 
 
 
-/* Header and Footer */
+//// The <iframe> containing the app.
+#iframe-blocker.active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(.2,.2,.2,.7);
+}
+#iframe {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    // border: 4px solid blue;
+    border-width: 0;
+}
+
+
+
+
+//// Logo at the top of the page.
+#banner {
+    >div {
+        text-align: center;
+        >a {
+            display: inline-block;
+            position: relative; // allow `z-index: 10` to take effect
+            z-index: 10; // prevent `#header` overlaying the banner
+            padding-top: 8px;
+            opacity: .8;
+            transition: opacity .2s ease-out;
+            &:hover {
+                opacity: 1;
+            }
+            >img {
+                width: 150px;
+                height: 50px;
+            }
+        }
+    }
+}
+
+
+
+
+//// Header and Footer.
 
 #header,
 #footer {
@@ -140,6 +192,11 @@ a.active, a.active:hover {
     }
 }
 @media only screen and (min-width: 40.063em) {
+    #header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
     #header,
     #footer {
         padding-bottom: 10px;
@@ -196,3 +253,5 @@ html, body {
         height: @footer-height; // responsive
     } 
 }
+
+

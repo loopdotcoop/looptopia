@@ -7,10 +7,13 @@
      {{$.Config.home.version}}</tt>
 
   <div class="row">
-    <div class="large-12 columns">
-      <div class="dashboard">
+    <div class="large-8 large-push-2 columns">
+      <div class="at">
       {{#if $.Meteor.user}}
         {{{$.Config.home.registered}}}
+        <div class="medium-10 medium-push-1 columns">
+          <a target="_blank" href="http://looptopian-launch.eventbrite.co.uk/" class="medium radius button expand" style="padding-left:5px; padding-right:5px;">Buy Tickets for The Looptopian Launch, September 27th</a>
+        </div>
       {{else}}
         <div class="message">
           {{{$.Config.home.unregistered}}}
@@ -21,16 +24,6 @@
         </div>
       {{/if}}
       </div>
-    </div>
-    <div class="large-12 columns">
-      <br>
-      <p>For The Looptopian Launch on September 27th:</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="medium-4 medium-push-4 small-8 small-push-2 columns">
-      <a target="_blank" href="http://looptopian-launch.eventbrite.co.uk/" class="large radius button expand">Buy Tickets Here</a>
     </div>
   </div>
 

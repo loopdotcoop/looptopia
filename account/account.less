@@ -1,8 +1,21 @@
 .at {
+    border-radius: 20px; // responsive
+    background-color: #333;
     h3 {
         font-size: 1.6875rem; // the natural Foundation size, which ‘AccountsTemplates’ overrides
     }
+    label {
+        color: #ccc;
+    }
 }
+
+@media only screen and (min-width: 40.063em) {
+    .at {
+        margin-top: 40px;
+        border-radius: 40px;
+    }
+}
+
 .at-form {
     text-align: center;
     input {

@@ -8,23 +8,24 @@
 
   <div class="row">
     <div class="large-12 columns">
-      <h1>{{ username }} Profile</h1>
 
-      {{#autoForm schema=$.Config.users.schema id="edit-user" doc=editingDoc type="method" meteormethod="editUser"}}
-      <div class="at-form">{{! not really an ‘at-form’, but helps style things up quickly @todo less fractious styling }}
-        <div class="large-12 columns" style="text-align:left;">{{> afQuickField name="emails.0.address" placeholder="Enter your Email"}}</div>
-        <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.agc" options=agcOptions}}<label style="position:absolute; margin-top:-4.5em;">Age group:</label></div>{{! label after select, to avoid pushing special arrow upwards @todo better solution }}
-        <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.bic" options=bicOptions}}<label style="position:absolute; margin-top:-4.5em;">Based-in:</label></div>
-        {{> afFieldInput name="profile.nlo" id="AT_field_account-newsletter-opt" placeholder="Tick here to receive Email invitations to Loop.Coop parties."}}
-        <div class="large-offset-3 large-6 columns">
-          <button type="submit" class="large radius button expand">Save Profile</button>
-          <!--<button type="reset" class="btn btn-default">Reset</button>-->
+      <div class="at">{{! style identically to ‘AccountsTemplates’ forms}}
+        <h3>{{ username }} Profile</h3>
+        {{#autoForm schema=$.Config.users.schema id="edit-user" doc=editingDoc type="method" meteormethod="editUser"}}
+        <div class="at-form">{{! not really an ‘at-form’, but helps style things up quickly @todo less fractious styling }}
+          <div class="large-12 columns" style="text-align:left;">{{> afQuickField name="emails.0.address" placeholder="Enter your Email"}}</div>
+          <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.agc" options=agcOptions}}<label style="position:absolute; margin-top:-4.5em;">Age group:</label></div>{{! label after select, to avoid pushing special arrow upwards @todo better solution }}
+          <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.bic" options=bicOptions}}<label style="position:absolute; margin-top:-4.5em;">Based-in:</label></div>
+          {{> afFieldInput name="profile.nlo" id="AT_field_account-newsletter-opt" placeholder="Tick here to receive Email invitations to Loop.Coop parties."}}
+          <div class="large-offset-3 large-6 columns">
+            <button type="submit" class="large radius button expand">Save Profile</button>
+            <!--<button type="reset" class="btn btn-default">Reset</button>-->
+          </div>
         </div>
+        {{/autoForm}}
+        <div style="text-align:center;" class="large-6 columns"><a href="/account/password-change">Change password...</a></div>
+        <div style="text-align:center;" class="large-6 columns"><a href="/account/delete">Delete account...</a></div>
       </div>
-      {{/autoForm}}
-      <hr>
-      <div style="text-align:center;" class="large-6 columns"><a href="/account/password-change">Change password...</a></div>
-      <div style="text-align:center;" class="large-6 columns"><a href="/account/delete">Delete account...</a></div>
 
     </div>
   </div>
