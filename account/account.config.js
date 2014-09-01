@@ -26,7 +26,7 @@ Config.account = {
         ]
         //// http://zurb.com/playground/foundation-icons
       , 'dashboard': [
-            { path:'/account/profile', name:'My Profile', class:'foundicon-torso' } 
+            { path:'/account/profile', name:'Profile', class:'foundicon-torso' } 
         ]
     }
 

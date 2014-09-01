@@ -46,6 +46,9 @@
 .foundicon-torso:before {
   content: "\f019";
 }
+.foundicon-youtube:before {
+  content: "\f00e";
+}
 
 
 
@@ -99,7 +102,11 @@ button, .button {
 a.active, a.active:hover {
     color: #444;
     cursor: default;
+    &[href$='dashboard'] {
+        display: none;
+    }
 }
+
 
 
 
