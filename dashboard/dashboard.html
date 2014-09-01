@@ -12,7 +12,7 @@
         <div class="dismiss-button"><a href="/"><span>&times;</span></a></div>
         <h2 class="heading">Dashboard</h2>
         {{#each widgets 'dashboard'}}
-        <a href="{{ path }}" id="{{ id }}" class="{{ class }}">{{ name }}</a>
+        <a href="{{ path }}" id="{{ id }}" class="{{ class }}">{{{ name }}}</a>
         {{/each}}
         <div class="message">
           {{{ $.Config.home.unregistered }}}

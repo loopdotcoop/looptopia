@@ -17,10 +17,10 @@ Config.account = {
   , widgets: { // add account links to the 'registered', 'unregistered', and 'dashboard' widget areas
         'registered': [
             { path:'/account/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
-          , { path:'/', name:'Sign Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+          , { path:'/', name:'Sign&nbsp;Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
         ]
       , 'unregistered': [
-            { path:'/account/sign-in' , name:'Sign In'  }
+            { path:'/account/sign-in' , name:'Sign&nbsp;In'  }
           , { path:'/account/register', name:'Register' }
         ]
         //// http://zurb.com/playground/foundation-icons
