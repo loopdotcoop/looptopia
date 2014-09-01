@@ -1,0 +1,46 @@
+/** dashboard.less */
+
+.dashboard {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #333;
+    text-align: center;
+    >a {
+        display: inline-block;
+        width: 125px;
+        height: 123px;
+        padding: 10px;
+        margin: 3px 3px 8px 3px;
+        background-color: #eee;
+        border-radius: 10px;
+        text-align: center;
+        font-family: 'Podkova', verdana, sans-serif;
+        font-size: 20px;
+        &:before {
+            display: block;
+            margin: 5px auto 0 auto;
+            font-size: 72px;
+            line-height: 1;
+        }
+    }
+}
+
+@media only screen and (min-width: 40.063em) {
+    .dashboard {
+        margin-top: 40px;
+        border-radius: 40px;
+        >a {
+            width: 250px;
+            height: 246px;
+            padding: 20px;
+            margin: 6px 6px 16px 6px;
+            border-radius: 20px;
+            font-size: 40px;
+            &:before {
+                margin: 10px auto 0 auto;
+                font-size: 144px;
+                line-height: 1.1;
+            }
+        }
+    }
+}
