@@ -72,13 +72,22 @@
   <div id="wrap" class="no-js index"><!--<![endif]-->
     <div id="main">
 
+      <iframe id="iframe" src="http://loop.coop/empty-space.html"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
+      <div id="iframe-blocker" class="{{#if $neq currentPath '/'}}active{{/if}}"></div>
+
+      <div id="banner">
+        <div class="large-12 columns">
+          <a href="/" title="The Looptopia homepage"><img src="/layout/img/loopdotcoop-blue-grey-pink-v1-150x50.png" alt="Loop.Coop logo"></a>
+        </div>
+      </div>
+
       <div id="header">
-        <div class="medium-6 small-12 columns ldc-social">
+        <div class="medium-4 columns ldc-social">
           <!--<a target="_blank" href="https://github.com/loopdotcoop"      ><span class="foundicon-github"  ></span></a>-->
           <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="foundicon-facebook"></span></a>
-          <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon">@loopdotcoop</span></span></a>
+          <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon"><span class="show-for-large-up">@loopdotcoop</span></span></span></a>
         </div>
-        <div class="medium-6 small-12 columns ldc-menu">
+        <div class="medium-4 columns ldc-menu">
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
           <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}">{{#if $eq name '_username_'}}{{ username }}{{else}}{{ name }}{{/if}}</a>
