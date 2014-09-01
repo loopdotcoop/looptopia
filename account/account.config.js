@@ -1,7 +1,6 @@
 Config.account = {
     name:         'Account'
   , slug:         'account'
-  , version:      '0.0.11-2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -83,7 +82,9 @@ Config.account = {
       , '+ account@0.0.11-1  fix ‘/profile/’ to ‘/account/profile/’; move ‘layout.template.js()’ to ‘about.helper.js’; '
       , '+ account@0.0.11-2  `$ mrt add collection2` to allow access to `attachSchema()`;  \n' +
         '                    ‘account/profile’ functional and styled; ‘account/delete’ functional and styled; '
+      , '+ account@0.0.12    all forms in a box like dashboard; back to dashboard after saving profile; '
     ]
+  , version:      '0.0.12'
 };
 
 

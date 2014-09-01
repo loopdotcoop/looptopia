@@ -27,6 +27,15 @@ if (Meteor.isClient) {
 
     });
 
+    //// Go to the dashboard after a successful submission of the ‘profile’ form.
+    AutoForm.hooks({
+        'edit-user': {
+            onSuccess: function(operation, result, template) {
+                Router.go('dashboard');
+            }
+        }
+    });
+
 }
 
 
