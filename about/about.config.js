@@ -76,8 +76,10 @@ Config = {
           , '+ looptopia@0.1.11-6     `activeIfTemplateIs` helper gives ‘/dashboard’ link the `active` class; '
           , '+ looptopia@0.1.11-7     redirect to dashboard after register; dismiss dashboard to return to ‘/’ home; '
           , '+ looptopia@0.1.11-8     explanatory message as dashboard widget; ‘Launch Party’ dashboard icon; '
+          , '+ looptopia@0.1.12       explanatory message on homepage for unregistered users;  \n' +
+            '                         registered users see `<iframe src="http://loop.coop/empty-space.html" ...>`; '
         ]
-      , version:        '0.1.11-8'
+      , version:        '0.1.12'
     }
 }
 
