@@ -1,7 +1,6 @@
 Config.layout = {
     name:         'Layout'
   , slug:         'layout'
-  , version:      '0.0.2'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -18,7 +17,9 @@ Config.layout = {
   , changelog: [
         '+ layout@0.0.1-1    create ‘layout’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ layout@0.0.2      mock-merge into develop/looptopia@0.1.3-9; '
+      , '+ layout@0.0.3-1    `#iframe` fills screen; `#iframe-blocker.active` dims iframe and catches mouse events; '
     ]
+  , version:     '0.0.3-1'
 };
 
 Router.configure({
