@@ -80,8 +80,9 @@ Config = {
             '                         registered users see `<iframe src="http://loop.coop/empty-space.html" ...>`; '
           , '+ looptopia@0.2.0        September 1st empty-space release; '
           , '+ looptopia@0.2.1-1      bump after release 0.2.0; improve ‘/dashboard’; '
+          , '+ looptopia@0.2.1-2      ‘layout’ amends: iframe and iframe-blocker, Loop.Coop logo at top of every page; '
         ]
-      , version:        '0.2.1-1'
+      , version:        '0.2.1-2'
     }
 }
 
