@@ -8,7 +8,11 @@
 
   <div class="row">
     <div class="large-12 columns">
-      <h1>{{ $.Config.about.name }} Dashboard</h1>
+      <div class="dashboard">
+        {{#each widgets 'dashboard'}}
+        <a href="{{ path }}" id="{{ id }}" class="{{ class }}">{{ name }}</a>
+        {{/each}}
+      </div>
     </div>
   </div>
 

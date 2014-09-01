@@ -1,1 +1,0 @@
-// moved functionality to ‘about.helper.js’

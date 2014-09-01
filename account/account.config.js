@@ -24,6 +24,12 @@ Config.account = {
             { path:'/account/sign-in' , name:'Sign In'  }
           , { path:'/account/register', name:'Register' }
         ]
+        //// http://zurb.com/playground/foundation-icons
+      , 'dashboard': [
+            { path:'/account/profile', name:'My Profile', class:'foundicon-torso' } 
+          , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', class:'foundicon-facebook' }
+          , { path:'https://twitter.com/loopdotcoop', name:'Twitter', class:'foundicon-twitter' }
+        ]
     }
 
     //// `ageGroupData`, `basedInData`, and `hearAboutData` are used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element in each is the default.
