@@ -78,8 +78,9 @@ Config = {
           , '+ looptopia@0.1.11-8     explanatory message as dashboard widget; ‘Launch Party’ dashboard icon; '
           , '+ looptopia@0.1.12       explanatory message on homepage for unregistered users;  \n' +
             '                         registered users see `<iframe src="http://loop.coop/empty-space.html" ...>`; '
+          , '+ looptopia@0.2.0        September 1st empty-space release; '
         ]
-      , version:        '0.1.12'
+      , version:        '0.2.0'
     }
 }
 
