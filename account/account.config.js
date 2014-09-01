@@ -107,7 +107,7 @@ AccountsTemplates.configure({
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
     path:     'account/register',
     template: 'account.register',
-    redirect: '/account/profile'
+    redirect: '/dashboard'
 });
 AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
     path:     'account/sign-in',

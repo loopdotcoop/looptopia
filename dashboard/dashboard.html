@@ -9,6 +9,7 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="dashboard">
+        <div class="dismiss-button"><a href="/"><span>&times;</span></a></div>
         {{#each widgets 'dashboard'}}
         <a href="{{ path }}" id="{{ id }}" class="{{ class }}">{{ name }}</a>
         {{/each}}

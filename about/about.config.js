@@ -74,9 +74,10 @@ Config = {
           , '+ looptopia@0.1.11-4     use `widgets` in ‘dashboard.html’; '
           , '+ looptopia@0.1.11-5     styled `widgets` in ‘dashboard.html’; '
           , '+ looptopia@0.1.11-6     `activeIfTemplateIs` helper gives ‘/dashboard’ link the `active` class; '
+          , '+ looptopia@0.1.11-7     redirect to dashboard after register; dismiss dashboard to return to ‘/’ home; '
 
         ]
-      , version:        '0.1.11-6'
+      , version:        '0.1.11-7'
     }
 }
 
