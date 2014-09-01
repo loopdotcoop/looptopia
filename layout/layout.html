@@ -74,14 +74,14 @@
 
       <div id="header">
         <div class="medium-6 small-12 columns ldc-social">
-          <a target="_blank" href="https://github.com/loopdotcoop"      ><span class="foundicon-github"  ></span></a>
+          <!--<a target="_blank" href="https://github.com/loopdotcoop"      ><span class="foundicon-github"  ></span></a>-->
           <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="foundicon-facebook"></span></a>
           <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon">@loopdotcoop</span></span></a>
         </div>
         <div class="medium-6 small-12 columns ldc-menu">
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
-          <a href="{{ path }}" id="{{ id }}">{{#if $eq name '_username_'}}{{ username }}{{else}}{{ name }}{{/if}}</a>
+          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}">{{#if $eq name '_username_'}}{{ username }}{{else}}{{ name }}{{/if}}</a>
           {{/each}}
 {{else}}
           {{#each widgets 'unregistered'}}
@@ -106,6 +106,8 @@
       {{#each widgets 'footer-left'}}
       <a href="{{ path }}" id="{{ id }}">{{ name }}</a>
       {{/each}}
+      <a href="http://loop.coop/legal/privacy.html" target="_blank" title="Read the {{ $.Config.about.organization }} privacy policy">Privacy</a>
+      <a href="http://loop.coop/legal/terms.html" target="_blank" title="Read the {{ $.Config.about.organization }} terms of use">Terms</a>
     </div>
     <div class="medium-6 small-12 columns ldc-copyright">
       <span>&copy;{{ $.Config.about.year }} {{ $.Config.about.organization }}</span>

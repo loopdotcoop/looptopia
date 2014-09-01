@@ -14,7 +14,9 @@ Topians.allow({
 //// Client only.
 
 if (Meteor.isClient) {
+
     Meteor.subscribe('topians');
+
 }
 
 

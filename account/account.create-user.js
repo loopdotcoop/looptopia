@@ -61,11 +61,11 @@ if (Meteor.isServer) {
           , [ // emotion @todo convert remaining languages from 2014-Work/BabelSlug/README.md
                 { en:'-'        ,es:'-'          ,fr:'-'          }
               , { en:'happy'    ,es:'feliz'      ,fr:'heureux'    }
-              , { en:'sad'      ,es:'triste'     ,fr:'triste'     }
+              // , { en:'sad'      ,es:'triste'     ,fr:'triste'     }
               , { en:'laughing' ,es:'risa'       ,fr:'rire'       }
               , { en:'sleepy'   ,es:'soñoliento' ,fr:'somnolent'  }
               , { en:'surprised',es:'sorprendido',fr:'étonné'     }
-              , { en:'playful'  ,es:'juguetón'   ,fr:'espiègle'   }
+              // , { en:'playful'  ,es:'juguetón'   ,fr:'espiègle'   }
               , { en:'confused' ,es:'confundido' ,fr:'embrouillé' }
             ]
         ]

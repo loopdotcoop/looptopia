@@ -8,7 +8,6 @@ Config = {
         name:         'Looptopia'
       , slug:         'looptopia' // equivalent to the `'name'` field in ‘package.json’ 
       , initials:     'lta'
-      , version:      '0.1.10'
       , description:  'A cube-shaped planet in the Loop.Coop system.' // no more than 255 characters
       , keywords:     'Brighton, art, music, immersive, app, game, cooperative, party, festival'
       , scripts: {
@@ -24,7 +23,9 @@ Config = {
       , contributors: [
             'Beth Walker <info@loop.coop>'
         ]
+
       , widgets: {} // can be filled with widget areas, eg 'footer-left'
+
       , changelog: [
             '+                        Initial commit'
           , '+ looptopia@0.0.1-1      create ‘package.json’; add ‘Changelog’ and ‘Workflow’ sections to ‘README.md’; '
@@ -67,8 +68,19 @@ Config = {
           , '+ looptopia@0.1.9-1      BabelSlug for username; need to prevent user records from sharing a username; '
           , '+ looptopia@0.1.9-2      ‘account.register’ form is functional and styled; '
           , '+ looptopia@0.1.10       Proper registration, and ‘users.list’ is protected; '
-
+          , '+ looptopia@0.1.11-1     ‘account/profile’ and ‘account/delete’ work; “September 1st” text removed; '
+          , '+ looptopia@0.1.11-2     remove ‘legal’ feature; hard-coded links to ‘http://loop.coop/legal/*’; '
+          , '+ looptopia@0.1.11-3     move `widgets` helper from ‘layout.template.js’ to ‘about.helper.js’; '
+          , '+ looptopia@0.1.11-4     use `widgets` in ‘dashboard.html’; '
+          , '+ looptopia@0.1.11-5     styled `widgets` in ‘dashboard.html’; '
+          , '+ looptopia@0.1.11-6     `activeIfTemplateIs` helper gives ‘/dashboard’ link the `active` class; '
+          , '+ looptopia@0.1.11-7     redirect to dashboard after register; dismiss dashboard to return to ‘/’ home; '
+          , '+ looptopia@0.1.11-8     explanatory message as dashboard widget; ‘Launch Party’ dashboard icon; '
+          , '+ looptopia@0.1.12       explanatory message on homepage for unregistered users;  \n' +
+            '                         registered users see `<iframe src="http://loop.coop/empty-space.html" ...>`; '
+          , '+ looptopia@0.2.0        September 1st empty-space release; '
         ]
+      , version:        '0.2.0'
     }
 }
 
