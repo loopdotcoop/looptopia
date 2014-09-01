@@ -75,9 +75,9 @@ Config = {
           , '+ looptopia@0.1.11-5     styled `widgets` in ‘dashboard.html’; '
           , '+ looptopia@0.1.11-6     `activeIfTemplateIs` helper gives ‘/dashboard’ link the `active` class; '
           , '+ looptopia@0.1.11-7     redirect to dashboard after register; dismiss dashboard to return to ‘/’ home; '
-
+          , '+ looptopia@0.1.11-8     explanatory message as dashboard widget; ‘Launch Party’ dashboard icon; '
         ]
-      , version:        '0.1.11-7'
+      , version:        '0.1.11-8'
     }
 }
 

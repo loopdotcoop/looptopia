@@ -15,7 +15,7 @@ Config.account = {
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
-  , widgets: { // add account links to the 'registered' and 'unregistered' widget areas
+  , widgets: { // add account links to the 'registered', 'unregistered', and 'dashboard' widget areas
         'registered': [
             { path:'/account/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
           , { path:'/', name:'Sign Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
@@ -27,8 +27,6 @@ Config.account = {
         //// http://zurb.com/playground/foundation-icons
       , 'dashboard': [
             { path:'/account/profile', name:'My Profile', class:'foundicon-torso' } 
-          , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', class:'foundicon-facebook' }
-          , { path:'https://twitter.com/loopdotcoop', name:'Twitter', class:'foundicon-twitter' }
         ]
     }
 

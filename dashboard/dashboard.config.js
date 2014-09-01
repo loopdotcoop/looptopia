@@ -16,9 +16,15 @@ Config.dashboard = {
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
-  , widgets: { // add a link to the 'registered' widget area
+  , widgets: { // add a link to the 'registered' and 'dashboard' widget areas
         'registered': [
             { path:'/dashboard', name:'Dashboard', tmpt:'dashboard' }
+        ]
+        //// http://zurb.com/playground/foundation-icons
+      , 'dashboard': [
+            { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', class:'foundicon-chat' } 
+          // , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', class:'foundicon-facebook' }
+          // , { path:'https://twitter.com/loopdotcoop', name:'Twitter', class:'foundicon-twitter' }
         ]
     }
   , changelog: [
@@ -27,4 +33,3 @@ Config.dashboard = {
       , '+ dashboard@0.0.4     simpler `AccountsTemplates.ensureSignedIn`; '
     ]
 }
-
