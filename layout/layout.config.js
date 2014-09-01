@@ -18,8 +18,10 @@ Config.layout = {
         '+ layout@0.0.1-1    create ‘layout’ as a feature of ‘looptopia@0.1.3-5’; '
       , '+ layout@0.0.2      mock-merge into develop/looptopia@0.1.3-9; '
       , '+ layout@0.0.3-1    `#iframe` fills screen; `#iframe-blocker.active` dims iframe and catches mouse events; '
+      , '+ layout@0.0.3-2    `#iframe-blocker` active on all but the home page;  \n'
+        '                    dismiss a popup (actually a route) by clicking anywhere on the background; '
     ]
-  , version:     '0.0.3-1'
+  , version:     '0.0.3-2'
 };
 
 Router.configure({

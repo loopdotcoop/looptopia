@@ -1,5 +1,8 @@
 if (Meteor.isClient) {
-    Helpers.addScope('Config', Config); // https://github.com/raix/Meteor-handlebar-helpers/tree/master#add-objects-to-the-cope
+
+    //// Add some handy variables to Handlebars scope https://github.com/raix/Meteor-handlebar-helpers/tree/master#add-objects-to-the-cope
+    Helpers.addScope('Config', Config);
+    // Helpers.addScope('Router', Router);
 
 
     //// Check whether the current user has superadministrator privileges.
@@ -36,6 +39,11 @@ if (Meteor.isClient) {
     UI.registerHelper('activeIfTemplateIs', function (template) {
         var currentRoute = Router.current();
         return currentRoute && template === currentRoute.lookupTemplate() ? 'active' : '';
+    });
+
+    //// Get the current path.
+    UI.registerHelper('currentPath', function () {
+        return Router.current().path;
     });
 
 }

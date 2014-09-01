@@ -182,12 +182,3 @@ Meteor.startup(function () {
     AccountsTemplates.init();
 });
 
-
-//// For the ‘sign-out’ widget, defined above.
-if (Meteor.isClient) {
-    Template.layout.events({
-        'click #sign-out': function () {
-            Meteor.logout();
-        }
-    });
-}
