@@ -83,18 +83,18 @@
 
       <div id="header">
         <div class="medium-4 columns ldc-social">
-<!--           <a target="_blank" href="https://github.com/loopdotcoop"      ><span class="cbh-github"       ></span></a>-->
-          <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="cbh-facebook-rect"></span></a>
-          <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="cbh-twitter-bird" ><span class="show-for-large-up">@loopdotcoop</span></span></a>
+<!--           <a target="_blank" href="https://github.com/loopdotcoop"      class="nowrap"><span class="cbh-github"       ></span></a>-->
+          <a target="_blank" href="https://www.facebook.com/loopdotcoop" class="nowrap" title="Follow us on Facebook"><span class="cbh-facebook-rect"></span></a>
+          <a target="_blank" href="https://twitter.com/loopdotcoop"      class="nowrap" title="Follow us on Twitter"><span class="cbh-twitter-bird" ><span class="show-for-large-up">@loopdotcoop</span></span></a>
         </div>
         <div class="medium-4 columns ldc-menu">
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
-          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}"><span class="{{ icon }}">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></a>
+          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}} nowrap" title="{{ title }}"><span class="{{ icon }}"><span class="show-for-medium-up">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></span></a>
           {{/each}}
 {{else}}
           {{#each widgets 'unregistered'}}
-          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}"><span class="{{ icon }}">{{{ name }}}</span></a>
+          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}} nowrap" title="{{ title }}"><span class="{{ icon }}"><span class="show-for-medium-up">{{{ name }}}</span></span></a>
           {{/each}}
 {{/if}}
         </div>
@@ -103,6 +103,9 @@
       <article id="yeild">
         <tt class="x">layout.html
            {{$.Config.layout.version}}</tt>
+        <div class="row dismiss-button">
+          <div class="large-12 columns"><a href="/"><span class="cbh-cancel-circled2"></span></a></div>
+        </div>
         {{> yield}}{{! `yield` is a special Iron Router template }}
       </article><!--/#yeild -->
 
@@ -113,7 +116,7 @@
   <div id="footer">
     <div class="medium-6 small-12 columns ldc-legal">
       {{#each widgets 'footer-left'}}
-      <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}"><span class="{{ icon }}">{{{ name }}}</span></a>
+      <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}" title="{{ title }}"><span class="{{ icon }}">{{{ name }}}</span></a>
       {{/each}}
       <a href="http://loop.coop/legal/privacy.html" target="_blank" title="Read the {{ $.Config.about.organization }} privacy policy">Privacy</a>
       <a href="http://loop.coop/legal/terms.html" target="_blank" title="Read the {{ $.Config.about.organization }} terms of use">Terms</a>

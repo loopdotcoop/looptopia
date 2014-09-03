@@ -20,7 +20,7 @@ Config.home = {
   , widgets: {} // can be filled with widget areas, eg 'footer-left'
 
   , unregistered:
-'          <h3>Thanks for visiting the Looptopia Sneak Preview…</h3>' +
+'          <h2>Thanks for visiting the Looptopia Sneak Preview…</h2>' +
 '          <p>Looptopia is a strange and beautiful web app where you can immerse yourself in an otherworldly musical experience.</p> ' +
 '          <p>Version 1 launches September 27th 2014, but we’ve decided to open the doors a little early and give you a sneak preview of Looptopia… as it is being built.</p>' +
 '          <p>Throughout September 2014, you can try out the app and see the world of Looptopia taking shape. New features are being added regularly, new characters are arriving, and more and more of the environment is being unlocked.</p>' +
@@ -29,7 +29,7 @@ Config.home = {
   , registered:
 '          <div class="instructions">' +
 // '            <h3>Right now, Looptopia is just empty space</h3> ' +
-'            <h3>You have entered Looptopia</h3> ' +
+'            <h2>You have entered Looptopia</h2> ' +
 '            <p>This is a young planet. The landscape is bare at the moment, waiting to be filled with music.</p> ' +
 // '            <p>Take a look around and keep an eye out for signs of life. Rumour has it of rhythmical rock forms, melodic plant life, and a curious species born to boogie.</p>' +
 '            <p>Take a look around if you like, but there are no signs of life yet. Rumour has it that rhythmical rock forms will be uncovered on Friday 5th September.</p>' +

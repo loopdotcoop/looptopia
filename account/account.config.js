@@ -16,7 +16,7 @@ Config.account = {
     ]
   , widgets: { // add account links to the 'registered', 'unregistered', and 'dashboard' widget areas
         'registered': [
-            { path:'/account/profile' , name:'_username_'   , title:'Edit your profile', icon:'cbh-user'  , order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
+            { path:'/account/profile' , name:'_username_'   , title:'Edit your profile', icon:'cbh-user'  , tmpt:'account.profile', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
           , { path:'/'                , name:'Sign&nbsp;Out', title:'Sign Out'         , icon:'cbh-logout', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
         ]
       , 'unregistered': [

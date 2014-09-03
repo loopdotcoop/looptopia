@@ -7,12 +7,12 @@ if (Meteor.isClient) {
         }
     });
 
-    //// Dismiss a popup (actually a route) by clicking anywhere on the background. // @todo return to the in-app URL, not just '/'
-    Template.layout.events({
-        'click #iframe-blocker': function () {
-            Router.go('/');
-        }
-    });
+    // //// Dismiss a popup (actually a route) by clicking anywhere on the background. // @todo return to the in-app URL, not just '/'
+    // Template.layout.events({
+    //     'click #iframe-blocker': function () {
+    //         Router.go('/');
+    //     }
+    // });
 
 
 }

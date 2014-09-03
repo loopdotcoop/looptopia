@@ -83,8 +83,9 @@ Config = {
           , '+ looptopia@0.2.1-2      ‘layout’ amends: iframe and iframe-blocker, Loop.Coop logo at top of every page; '
           , '+ looptopia@0.2.2        `<iframe ... src="http://aahdesoot-22112.onmodulus.net/">` ; new instructions; '
           , '+ looptopia@0.2.3-1      switch from Zurb Foundation icons to fontello; '
+          , '+ looptopia@0.2.3-2      all ‘popups’ (which are actually pages) have a ‘dismiss’ button; '
         ]
-      , version:        '0.2.3-1'
+      , version:        '0.2.3-2'
     }
 }
 

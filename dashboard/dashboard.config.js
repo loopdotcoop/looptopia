@@ -18,11 +18,11 @@ Config.dashboard = {
 
   , widgets: { // add a link to the 'registered' and 'dashboard' widget areas
         'registered': [
-            { path:'/dashboard', name:'Dashboard', tmpt:'dashboard' }
+            { path:'/dashboard', name:'Dashboard', tmpt:'dashboard', icon:'cbh-gauge'       , title:'View your dashboard' }
         ]
         //// http://zurb.com/playground/foundation-icons
       , 'dashboard': [
-            { path:'/', name:'Looptopia', tmpt:'dashboard', icon:'cbh-youtube-play', order:'high' }
+            { path:'/'         , name:'Looptopia', tmpt:'dashboard', icon:'cbh-youtube-play', title:'Enter Looptopia' }
           // , { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', icon:'cbh-rocket' }
           // , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', icon:'cbh-facebook-rect' }
           // , { path:'https://twitter.com/loopdotcoop', name:'Twitter', icon:'cbh-twitter-bird' }
