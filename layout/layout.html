@@ -72,8 +72,8 @@
   <div id="wrap" class="no-js index"><!--<![endif]-->
     <div id="main">
 
-      <iframe id="iframe" src="http://aahdesoot-22112.onmodulus.net/"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
-      <div id="iframe-blocker" class="{{#if $not $.Meteor.userId}}active {{/if}}{{#if $neq currentPath '/'}}active{{/if}}"></div>
+<!--       <iframe id="iframe" src="http://aahdesoot-22112.onmodulus.net/"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
+ -->      <div id="iframe-blocker" class="{{#if $not $.Meteor.userId}}active {{/if}}{{#if $neq currentPath '/'}}active{{/if}}"></div>
 
       <div id="banner">
         <div class="large-12 columns">
@@ -83,18 +83,18 @@
 
       <div id="header">
         <div class="medium-4 columns ldc-social">
-          <!--<a target="_blank" href="https://github.com/loopdotcoop"      ><span class="foundicon-github"  ></span></a>-->
-          <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="foundicon-facebook"></span></a>
-          <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon"><span class="show-for-large-up">@loopdotcoop</span></span></span></a>
+<!--           <a target="_blank" href="https://github.com/loopdotcoop"      ><span class="cbh-github"       ></span></a>-->
+          <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="cbh-facebook-rect"></span></a>
+          <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="cbh-twitter-bird" ><span class="show-for-large-up">@loopdotcoop</span></span></a>
         </div>
         <div class="medium-4 columns ldc-menu">
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
-          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</a>
+          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}"><span class="{{ icon }}">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></a>
           {{/each}}
 {{else}}
           {{#each widgets 'unregistered'}}
-          <a href="{{ path }}" id="{{ id }}">{{{ name }}}</a>
+          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}"><span class="{{ icon }}">{{{ name }}}</span></a>
           {{/each}}
 {{/if}}
         </div>
@@ -113,7 +113,7 @@
   <div id="footer">
     <div class="medium-6 small-12 columns ldc-legal">
       {{#each widgets 'footer-left'}}
-      <a href="{{ path }}" id="{{ id }}">{{ name }}</a>
+      <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}"><span class="{{ icon }}">{{{ name }}}</span></a>
       {{/each}}
       <a href="http://loop.coop/legal/privacy.html" target="_blank" title="Read the {{ $.Config.about.organization }} privacy policy">Privacy</a>
       <a href="http://loop.coop/legal/terms.html" target="_blank" title="Read the {{ $.Config.about.organization }} terms of use">Terms</a>

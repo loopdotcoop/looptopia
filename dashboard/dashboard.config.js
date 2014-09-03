@@ -22,10 +22,10 @@ Config.dashboard = {
         ]
         //// http://zurb.com/playground/foundation-icons
       , 'dashboard': [
-            { path:'/', name:'Looptopia', tmpt:'dashboard', class:'foundicon-youtube', order:'high' }
-          // , { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', class:'foundicon-chat' }
-          // , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', class:'foundicon-facebook' }
-          // , { path:'https://twitter.com/loopdotcoop', name:'Twitter', class:'foundicon-twitter' }
+            { path:'/', name:'Looptopia', tmpt:'dashboard', icon:'cbh-youtube-play', order:'high' }
+          // , { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', icon:'cbh-rocket' }
+          // , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', icon:'cbh-facebook-rect' }
+          // , { path:'https://twitter.com/loopdotcoop', name:'Twitter', icon:'cbh-twitter-bird' }
         ]
     }
 

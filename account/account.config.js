@@ -16,16 +16,16 @@ Config.account = {
     ]
   , widgets: { // add account links to the 'registered', 'unregistered', and 'dashboard' widget areas
         'registered': [
-            { path:'/account/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
-          , { path:'/', name:'Sign&nbsp;Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+            { path:'/account/profile' , name:'_username_'   , title:'Edit your profile', icon:'cbh-user'  , order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
+          , { path:'/'                , name:'Sign&nbsp;Out', title:'Sign Out'         , icon:'cbh-logout', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
         ]
       , 'unregistered': [
-            { path:'/account/sign-in' , name:'Sign&nbsp;In'  }
-          , { path:'/account/register', name:'Register' }
+            { path:'/account/register', name:'Register'     , title:'Register'         , icon:'cbh-feather' }
+          , { path:'/account/sign-in' , name:'Sign&nbsp;In' , title:'Sign In'          , icon:'cbh-login' }
         ]
         //// http://zurb.com/playground/foundation-icons
       , 'dashboard': [
-            { path:'/account/profile', name:'Profile', class:'foundicon-torso' } 
+            { path:'/account/profile' , name:'Profile'      , title:'Edit your profile', icon:'cbh-user' } 
         ]
     }
 
