@@ -82,10 +82,13 @@
       </div>
 
       <div id="header">
-        <div class="medium-4 columns ldc-social">
-<!--           <a target="_blank" href="https://github.com/loopdotcoop"      class="nowrap"><span class="cbh-github"       ></span></a>-->
-          <a target="_blank" href="https://www.facebook.com/loopdotcoop" class="nowrap" title="Follow us on Facebook"><span class="cbh-facebook-rect"></span></a>
-          <a target="_blank" href="https://twitter.com/loopdotcoop"      class="nowrap" title="Follow us on Twitter"><span class="cbh-twitter-bird" ><span class="show-for-large-up">@loopdotcoop</span></span></a>
+        <div class="medium-4 columns all-users">
+          {{#each widgets 'all-users'}}
+          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}} nowrap" title="{{ title }}"><span class="{{ icon }}"><span class="show-for-medium-up">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></span></a>
+          {{/each}}
+<!--           <a target="_blank" href="https://github.com/loopdotcoop"       class="nowrap"><span class="cbh-github"       ></span></a>-->
+<!--           <a target="_blank" href="https://www.facebook.com/loopdotcoop" class="nowrap" title="Follow us on Facebook"><span class="cbh-facebook-rect"></span></a> -->
+<!--           <a target="_blank" href="https://twitter.com/loopdotcoop"      class="nowrap" title="Follow us on Twitter"><span class="cbh-twitter-bird" ><span class="show-for-large-up">@loopdotcoop</span></span></a> -->
         </div>
         <div class="medium-4 columns ldc-menu">
 {{#if $.Meteor.userId }}

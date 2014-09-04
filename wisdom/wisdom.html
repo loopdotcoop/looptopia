@@ -1,0 +1,20 @@
+<head>
+<!-- wisdom.html -->
+</head>
+
+<template name="wisdom">
+  <tt class="x">wisdom.html
+     {{$.Config.wisdom.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="wisdom dashboard at">
+        <h2 class="heading">Wisdom</h2>
+        {{#each widgets 'wisdom'}}
+        <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+</template>

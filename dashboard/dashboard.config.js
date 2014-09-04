@@ -18,7 +18,7 @@ Config.dashboard = {
 
   , widgets: { // add a link to the 'registered' and 'dashboard' widget areas
         'registered': [
-            { path:'/dashboard', name:'Dashboard', tmpt:'dashboard', icon:'cbh-gauge'       , title:'View your dashboard' }
+            { path:'/dashboard', name:'Dashboard', tmpt:'dashboard', icon:'cbh-th-1'       , title:'View your dashboard' }
         ]
         //// http://zurb.com/playground/foundation-icons
       , 'dashboard': [
