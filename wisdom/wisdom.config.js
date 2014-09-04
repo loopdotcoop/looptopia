@@ -1,6 +1,6 @@
-Config.chatter = {
-    name:         'Chatter'
-  , slug:         'chatter'
+Config.wisdom = {
+    name:         'Wisdom'
+  , slug:         'wisdom'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -19,19 +19,19 @@ Config.chatter = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'all-users': [
-            { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!' }
+            { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions', order:'high' }
         ]
       , 'dashboard': [
-            { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!' }
+            { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions', order:'high' }
         ]
-      , 'chatter': [
-            { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', icon:'cbh-facebook-rect', title:'Follow us on Facebook' }
-          , { path:'https://twitter.com/loopdotcoop'     , name:'Twitter' , icon:'cbh-twitter-bird' , title:'Follow us on Twitter' }
+      , 'wisdom': [
+            { path:'xx', name:'XX', icon:'cbh-facebook-rect', title:'Follow us on Facebook' }
+          , { path:'yy', name:'YY', icon:'cbh-twitter-bird' , title:'Follow us on Twitter' }
         ]
     }
 
   , changelog: [
-        '+ chatter@0.0.1-1   `init-chatter` feature of ‘looptopia@0.2.3-2’; '
+        '+ wisdom@0.0.1-1   `init-wisdom` feature of ‘looptopia@0.2.3-2’; '
     ]
   , version:      '0.0.1-1'
 }
