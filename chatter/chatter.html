@@ -1,0 +1,20 @@
+<head>
+<!-- chatter.html -->
+</head>
+
+<template name="chatter">
+  <tt class="x">chatter.html
+     {{$.Config.chatter.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="chatter dashboard at">
+        <h2 class="heading">Chatter</h2>
+        {{#each widgets 'chatter'}}
+        <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+</template>

@@ -37,7 +37,7 @@ p {
 }
 a {
     transition: color .2s ease-out; // 'ease-out' for sudden start and slow finish
-    &:hover {
+    &:hover, &:active {
         color: #d0d;
     }
 }
@@ -48,7 +48,7 @@ button, .button {
     }
 }
 a.active, a.active:hover {
-    color: #333;
+    color: #d0d;
     cursor: default;
     // &[href$='dashboard'] {
     //     display: none;
@@ -120,7 +120,7 @@ a.active, a.active:hover {
 #header,
 #footer {
     padding-top: 10px;
-    .ldc-social,
+    .ldc-all-users,
     .ldc-menu,
     .ldc-legal,
     .ldc-copyright {
@@ -132,7 +132,7 @@ a.active, a.active:hover {
     .ldc-legal {
         padding-bottom: .5rem; // responsive
     }
-    .ldc-social a {
+    .ldc-all-users a {
         padding: 0 .25rem;
     }
     .ldc-menu a,
@@ -158,7 +158,7 @@ a.active, a.active:hover {
     #header,
     #footer {
         padding-bottom: 10px;
-        .ldc-social,
+        .ldc-all-users,
         .ldc-legal {
             text-align: left;  // responsive
             padding-bottom: 0; // responsive
