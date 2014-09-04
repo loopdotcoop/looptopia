@@ -1,5 +1,5 @@
 Config.you = {
-    name:         'you'
+    name:         'You'
   , slug:         'you'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
@@ -14,18 +14,24 @@ Config.you = {
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
-  , widgets: { // add ‘you’ links to the 'registered', 'unregistered', and 'dashboard' widget areas
+
+    //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
+  , widgets: {
         'registered': [
-            { path:'/you/profile' , name:'_username_'   , title:'Edit your profile', icon:'cbh-user'  , tmpt:'you.profile', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
-          , { path:'/'                , name:'Sign&nbsp;Out', title:'Sign Out'         , icon:'cbh-logout', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:'cbh-user'   , tmpt:'you', order:'high' }
         ]
       , 'unregistered': [
-            { path:'/you/register', name:'Register'     , title:'Register'         , icon:'cbh-feather' }
-          , { path:'/you/sign-in' , name:'Sign&nbsp;In' , title:'Sign In'          , icon:'cbh-login' }
+            { path:'/you/register', name:'Register'       , title:'Register'             , icon:'cbh-feather' }
+          , { path:'/you/sign-in' , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login' }
         ]
-        //// http://zurb.com/playground/foundation-icons
       , 'dashboard': [
-            { path:'/you/profile' , name:'Profile'      , title:'Edit your profile', icon:'cbh-user' } 
+            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:'cbh-user'   , order:'high' }
+        ]
+      , 'you': [
+            { path:'/you/profile' , name:'Edit Profile'   , title:'Edit your profile'    , icon:'cbh-user' }
+          , { path:'/'            , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+          , { path:'/you/password-change', name:'Change Password', title:'Change your password' , icon:'cbh-ellipsis' }
+          , { path:'/you/delete'  , name:'Delete Account' , title:'Delete your account'  , icon:'cbh-trash-1' }
         ]
     }
 
@@ -83,9 +89,10 @@ Config.you = {
       , '+ account@0.0.11-2  `$ mrt add collection2` to allow access to `attachSchema()`;  \n' +
         '                    ‘account/profile’ functional and styled; ‘account/delete’ functional and styled; '
       , '+ account@0.0.12    all forms in a box like dashboard; back to dashboard after saving profile; '
-      , '+ you@0.1.1.1       change ‘account’ to ‘you’; '
+      , '+ you@0.1.1-1       change ‘account’ to ‘you’; '
+      , '+ you@0.1.1-2       create a dashboard for the ‘/you’ route; '
     ]
-  , version:  '0.1.1.1'
+  , version:  '0.1.1-2'
 };
 
 

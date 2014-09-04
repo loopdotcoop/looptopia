@@ -1,4 +1,9 @@
 Router.map(function() {
+    this.route('you', {
+            path: '/you'
+          , onBeforeAction: AccountsTemplates.ensureSignedIn // https://github.com/splendido/accounts-templates-core/tree/v0.0.21#content-protection
+        }
+    );
     this.route('you.profile', {
             path: '/you/profile'
           , onBeforeAction: AccountsTemplates.ensureSignedIn // https://github.com/splendido/accounts-templates-core/tree/v0.0.21#content-protection
