@@ -1,10 +1,10 @@
 <head>
-<!-- account.profile.html -->
+<!-- you.profile.html -->
 </head>
 
-<template name="account.profile">
-  <tt class="x">account.profile.html
-     {{$.Config.account.version}}</tt>
+<template name="you.profile">
+  <tt class="x">you.profile.html
+     {{$.Config.you.version}}</tt>
 
   <div class="row">
     <div class="large-12 columns">
@@ -16,15 +16,15 @@
           <div class="large-12 columns" style="text-align:left;">{{> afQuickField name="emails.0.address" placeholder="Enter your Email"}}</div>
           <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.agc" options=agcOptions}}<label style="position:absolute; margin-top:-4.5em;">Age group:</label></div>{{! label after select, to avoid pushing special arrow upwards @todo better solution }}
           <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.bic" options=bicOptions}}<label style="position:absolute; margin-top:-4.5em;">Based-in:</label></div>
-          {{> afFieldInput name="profile.nlo" id="AT_field_account-newsletter-opt" placeholder="Tick here to receive Email invitations to Loop.Coop parties."}}
+          {{> afFieldInput name="profile.nlo" id="AT_field_you-newsletter-opt" placeholder="Tick here to receive Email invitations to Loop.Coop parties."}}
           <div class="large-offset-3 large-6 columns">
             <button type="submit" class="large radius button expand">Save Profile</button>
             <!--<button type="reset" class="btn btn-default">Reset</button>-->
           </div>
         </div>
         {{/autoForm}}
-        <div style="text-align:center;" class="large-6 columns"><a href="/account/password-change">Change password...</a></div>
-        <div style="text-align:center;" class="large-6 columns"><a href="/account/delete">Delete account...</a></div>
+        <div style="text-align:center;" class="large-6 columns"><a href="/you/password-change">Change password...</a></div>
+        <div style="text-align:center;" class="large-6 columns"><a href="/you/delete">Delete account...</a></div>
       </div>
 
     </div>

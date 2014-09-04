@@ -45,7 +45,7 @@ if (Meteor.isClient) {
               , mRender: function (data, type, row) {
                     if (! data || ! data.agc) { return '-'; }
                     var agLabel = '-';
-                    Config.account.ageGroupData.forEach(function (configData) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
+                    Config.you.ageGroupData.forEach(function (configData) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
                         if (configData.code === data.agc) {
                             agLabel = data.agc + ':&nbsp;' + configData.label;
                         }
@@ -58,7 +58,7 @@ if (Meteor.isClient) {
               , mRender: function (data, type, row) {
                     if (! data || ! data.bic) { return '-'; }
                     var biLabel = '-';
-                    Config.account.basedInData.forEach(function (configData) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
+                    Config.you.basedInData.forEach(function (configData) { // `forEach()` has no `break`, so we waste a few loop cycles for the sake of tidy code
                         if (configData.code === data.bic) {
                             biLabel = data.bic + ':&nbsp;' + configData.label;
                         }
