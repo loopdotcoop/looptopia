@@ -11,7 +11,6 @@ Config.chatter = {
   , year:         '2014'
   , license:      'GPL v2'
   , type:         'website' // http://ogp.me/#types
-  , url:          'http://looptopia.loop.coop/dashboard'
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
@@ -21,8 +20,8 @@ Config.chatter = {
         'all-users': [
             { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!' }
         ]
-      , 'dashboard': [
-            { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!' }
+      , 'kaboodle': [
+            { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!', order:'high' }
         ]
       , 'chatter': [
             { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', icon:'cbh-facebook-rect', title:'Follow us on Facebook' }

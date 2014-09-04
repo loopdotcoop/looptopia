@@ -11,7 +11,6 @@ Config.wisdom = {
   , year:         '2014'
   , license:      'GPL v2'
   , type:         'website' // http://ogp.me/#types
-  , url:          'http://looptopia.loop.coop/dashboard'
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
@@ -21,8 +20,8 @@ Config.wisdom = {
         'all-users': [
             { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
         ]
-      , 'dashboard': [
-            { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions', order:'high' }
+      , 'kaboodle': [
+            { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
         ]
       , 'wisdom': [
             { path:'xx', name:'XX', icon:'cbh-facebook-rect', title:'Follow us on Facebook' }

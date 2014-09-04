@@ -1,16 +1,16 @@
 <head>
-<!-- dashboard.html -->
+<!-- kaboodle.html -->
 </head>
 
-<template name="dashboard">
-  <tt class="x">dashboard.html
-     {{$.Config.dashboard.version}}</tt>
+<template name="kaboodle">
+  <tt class="x">kaboodle.html
+     {{$.Config.kaboodle.version}}</tt>
 
   <div class="row">
     <div class="large-12 columns">
-      <div class="dashboard at">
-        <h2 class="heading">Dashboard</h2>
-        {{#each widgets 'dashboard'}}
+      <div class="kaboodle dashboard at">
+        <h2 class="heading">Kaboodle</h2>
+        {{#each widgets 'kaboodle'}}
         <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
         {{/each}}
         <div class="message">

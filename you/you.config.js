@@ -24,8 +24,8 @@ Config.you = {
             { path:'/you/register', name:'Register'       , title:'Register'             , icon:'cbh-feather' }
           , { path:'/you/sign-in' , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login' }
         ]
-      , 'dashboard': [
-            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:'cbh-user'   , order:'high' }
+      , 'kaboodle': [
+            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:'cbh-user' }
         ]
       , 'you': [
             { path:'/you/profile' , name:'Edit Profile'   , title:'Edit your profile'    , icon:'cbh-user' }
@@ -114,12 +114,12 @@ AccountsTemplates.configure({
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
     path:     'you/register',
     template: 'you.register',
-    redirect: '/dashboard'
+    redirect: '/kaboodle'
 });
 AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
     path:     'you/sign-in',
     template: 'you.sign-in',
-    redirect: '/dashboard'
+    redirect: '/kaboodle'
 });
 AccountsTemplates.configureRoute('forgotPwd', { // name: 'atForgotPwd'
     path:     'you/password-forgot',

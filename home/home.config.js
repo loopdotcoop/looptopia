@@ -12,7 +12,6 @@ Config.home = {
   , year:         '2014'
   , license:      'GPL v2'
   , type:         'website' // http://ogp.me/#types
-  , url:          'http://looptopia.loop.coop/'
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
