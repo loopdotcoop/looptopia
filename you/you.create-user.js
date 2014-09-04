@@ -1,7 +1,7 @@
 if (Meteor.isServer) {
     var
 
-        //// A lookup-table whose keys are generated each time an ‘account.register’ form is rendered using the `babelslug()` method.
+        //// A lookup-table whose keys are generated each time an ‘you.register’ form is rendered using the `babelslug()` method.
         //// The key is a babelslug, followed by hyphen, followed by a Meteor connection ID (like a session ID for anon users).
         //// The value is the unix timestamp in milliseconds, which allows us to clear out old and unused babelslugs.
         //// Two examples are shown here:
@@ -155,9 +155,9 @@ if (Meteor.isServer) {
         //// Housekeeping on the `recentBabelslugs` lut.
         recentBabelslugsHousekeeping();
 
-        //// Validate the value of `<input id="AT_field_account-babelslug" ...>`.
-        babelslug    = options.profile['account-babelslug'].split('_')[0];
-        connectionId = options.profile['account-babelslug'].split('_')[1];
+        //// Validate the value of `<input id="AT_field_you-babelslug" ...>`.
+        babelslug    = options.profile['you-babelslug'].split('_')[0];
+        connectionId = options.profile['you-babelslug'].split('_')[1];
         if (! babelslug || ! connectionId) {
             throw new Meteor.Error(500, "The ‘username’ field is invalid."); // @todo better error-code than 500?
         }
@@ -175,12 +175,12 @@ if (Meteor.isServer) {
         options.profile = options.profile || {};
         options.profile.username = 'info@loop.coop' === options.email ? 'red-cat' : babelslug;
 
-        //// Record other account registration data.
-        if (options.profile['account-age-group-code'])  { options.profile.agc = options.profile['account-age-group-code'];  }
-        if (options.profile['account-based-in-code'])   { options.profile.bic = options.profile['account-based-in-code'];   }
-        if (options.profile['account-hear-about-code']) { options.profile.hac = options.profile['account-hear-about-code']; }
-        if (options.profile['account-hear-about-text']) { options.profile.hat = options.profile['account-hear-about-text']; }
-        if (options.profile['account-newsletter-opt'])  { options.profile.nlo = options.profile['account-newsletter-opt']; }
+        //// Record other registration data.
+        if (options.profile['you-age-group-code'])  { options.profile.agc = options.profile['you-age-group-code'];  }
+        if (options.profile['you-based-in-code'])   { options.profile.bic = options.profile['you-based-in-code'];   }
+        if (options.profile['you-hear-about-code']) { options.profile.hac = options.profile['you-hear-about-code']; }
+        if (options.profile['you-hear-about-text']) { options.profile.hat = options.profile['you-hear-about-text']; }
+        if (options.profile['you-newsletter-opt'])  { options.profile.nlo = options.profile['you-newsletter-opt']; }
 
         //// The registration is valid, so record it as usual. http://docs.meteor.com/#accounts_oncreateuser
         user.profile = options.profile;

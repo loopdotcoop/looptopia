@@ -1,0 +1,20 @@
+<head>
+<!-- you.html -->
+</head>
+
+<template name="you">
+  <tt class="x">you.html
+     {{$.Config.you.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="you dashboard at">
+        <h2 class="heading">All about<br>{{ username }}</h2>
+        {{#each widgets 'you'}}
+        <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+</template>
