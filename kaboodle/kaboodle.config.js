@@ -18,13 +18,7 @@ Config.kaboodle = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'registered': [
-            { path:'/kaboodle', name:'Kaboodle' , icon:'cbh-th-1'        , title:'View your kaboodle', tmpt:'kaboodle' }
-        ]
-      , 'kaboodle': [
-            // { path:'/'        , name:'Looptopia', icon:'cbh-youtube-play', title:'Enter Looptopia' }
-          // , { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', icon:'cbh-rocket' }
-          // , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', icon:'cbh-facebook-rect' }
-          // , { path:'https://twitter.com/loopdotcoop', name:'Twitter', icon:'cbh-twitter-bird' }
+            { path:'/kaboodle', name:'Holdall', icon:'cbh-holdall', title:'View your kaboodle', tmpt:'kaboodle' }
         ]
     }
 

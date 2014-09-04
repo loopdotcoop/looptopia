@@ -75,33 +75,37 @@
 <!--       <iframe id="iframe" src="http://aahdesoot-22112.onmodulus.net/"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
  -->      <div id="iframe-blocker" class="{{#if $not $.Meteor.userId}}active {{/if}}{{#if $neq currentPath '/'}}active{{/if}}"></div>
 
-      <div id="banner">
-        <div class="large-12 columns">
-          <a href="/" title="The Looptopia homepage"><img src="/layout/img/loopdotcoop-blue-grey-pink-v1-150x50.png" alt="Loop.Coop logo"></a>
-        </div>
-      </div>
-
-      <div id="header">
-        <div class="medium-4 columns all-users">
+      <div id="ldc-header">
+        <div><!-- explicit table-row -->
           {{#each widgets 'all-users'}}
-          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}} nowrap" title="{{ title }}"><span class="{{ icon }}"><span class="show-for-medium-up">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></span></a>
+          <div class="ldc-all-users">
+            <a href="{{ path }}" id="{{ id }}" class="ldc-icon {{ activeIfTemplateIs tmpt}}" title="{{ title }}"><div class="ldc-icon {{ icon }}"></div><h6><span>{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></h6></a>
+          </div>
           {{/each}}
-<!--           <a target="_blank" href="https://github.com/loopdotcoop"       class="nowrap"><span class="cbh-github"       ></span></a>-->
-<!--           <a target="_blank" href="https://www.facebook.com/loopdotcoop" class="nowrap" title="Follow us on Facebook"><span class="cbh-facebook-rect"></span></a> -->
-<!--           <a target="_blank" href="https://twitter.com/loopdotcoop"      class="nowrap" title="Follow us on Twitter"><span class="cbh-twitter-bird" ><span class="show-for-large-up">@loopdotcoop</span></span></a> -->
-        </div>
-        <div class="medium-4 columns ldc-menu">
+          <div class="ldc-left-message">
+            <a href="/wisdom" title="Xx">Xx Lorem ipsum et wisi delor fugit aliquando</a>
+          </div>
+          <div class="ldc-banner">
+            <a href="/" title="The Looptopia homepage"><img src="/layout/img/loopdotcoop-blue-grey-pink-v1-150x50.png" alt="Loop.Coop"></a>
+          </div>
+          <div class="ldc-right-message">
+            <span href="/you" title="{{ username }}">grenouille-embrouillé-et-magenta</span>
+          </div>
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
-          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}} nowrap" title="{{ title }}"><span class="{{ icon }}"><span class="show-for-medium-up">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></span></a>
+          <div class="ldc-registered">
+            <a href="{{ path }}" id="{{ id }}" class="ldc-icon {{ activeIfTemplateIs tmpt}}" title="{{ title }}"><div class="{{ icon }}"></div><h6><span>{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></h6></a>
+          </div>
           {{/each}}
 {{else}}
           {{#each widgets 'unregistered'}}
-          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}} nowrap" title="{{ title }}"><span class="{{ icon }}"><span class="show-for-medium-up">{{{ name }}}</span></span></a>
+          <div class="ldc-unregistered">
+            <a href="{{ path }}" id="{{ id }}" class="ldc-icon {{ activeIfTemplateIs tmpt}}" title="{{ title }}"><div class="{{ icon }}"></div><h6><span>{{{ name }}}</span></h6></a>
+          </div>
           {{/each}}
 {{/if}}
         </div>
-      </div><!--/#header -->
+      </div><!--/#ldc-header -->
 
       <article id="yeild">
         <tt class="x">layout.html
@@ -115,8 +119,8 @@
     </div><!--/#main -->
   </div><!--/#wrap -->
 
-  <!-- #footer -->
-  <div id="footer">
+  <!-- #ldc-footer -->
+  <div id="ldc-footer">
     <div class="medium-6 small-12 columns ldc-legal">
       {{#each widgets 'footer-left'}}
       <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}" title="{{ title }}"><span class="{{ icon }}">{{{ name }}}</span></a>
@@ -127,7 +131,7 @@
     <div class="medium-6 small-12 columns ldc-copyright">
       <span>&copy;{{ $.Config.about.year }} {{ $.Config.about.organization }}</span>
     </div>
-  </div><!--/#footer -->
+  </div><!--/#ldc-footer -->
 
 </template>
 

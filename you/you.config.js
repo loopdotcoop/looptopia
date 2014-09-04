@@ -1,3 +1,13 @@
+//// Return the appropriate icon-class for the current user. Used by `Config.you.widgets.registered.icon`.
+var userIcon = function () {
+    var user = Meteor.user();
+    if (user && user.profile && user.profile.username) {
+        return 'cbh-babelslug-' + user.profile.username.split('-').pop();
+    }
+    return 'cbh-user'; // fallback
+}
+
+
 Config.you = {
     name:         'You'
   , slug:         'you'
@@ -18,19 +28,19 @@ Config.you = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'registered': [
-            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:'cbh-user'   , tmpt:'you', order:'high' }
+            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:userIcon   , tmpt:'you', order:'high' }
         ]
       , 'unregistered': [
             { path:'/you/register', name:'Register'       , title:'Register'             , icon:'cbh-feather' }
-          , { path:'/you/sign-in' , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login' }
+          , { path:'/you/sign-in' , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login-1' }
         ]
       , 'kaboodle': [
             { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:'cbh-user' }
         ]
       , 'you': [
             { path:'/you/profile' , name:'Edit Profile'   , title:'Edit your profile'    , icon:'cbh-user' }
-          , { path:'/'            , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
-          , { path:'/you/password-change', name:'Change Password', title:'Change your password' , icon:'cbh-ellipsis' }
+          , { path:'/'            , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout-1' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+          , { path:'/you/password-change', name:'Change Password', title:'Change your password' , icon:'cbh-lock' }
           , { path:'/you/delete'  , name:'Delete Account' , title:'Delete your account'  , icon:'cbh-trash-1' }
         ]
     }
@@ -190,4 +200,5 @@ AccountsTemplates.addFields([
 Meteor.startup(function () {
     AccountsTemplates.init();
 });
+
 
