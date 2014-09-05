@@ -88,8 +88,9 @@ Config = {
           , '+ looptopia@0.2.6        redone release; '
           , '+ looptopia@0.2.7-1      serverside `Config.about` has `env` field, which equals `NODE_ENV` at startup; '
           , '+ looptopia@0.2.8        “No WebGL” alert, and don’t render the `<iframe>`; '
+          , '+ looptopia@0.2.10       Always render the `<iframe>`; '
         ]
-      , version:        '0.2.8'
+      , version:        '0.2.10'
     }
 }
 
