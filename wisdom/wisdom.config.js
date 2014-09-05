@@ -18,7 +18,7 @@ Config.wisdom = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'all-users': [
-            { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
+            { path:'/wisdom', name:'Eh?!', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
         ]
       , 'kaboodle': [
             { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }

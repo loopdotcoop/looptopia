@@ -24,8 +24,10 @@ Config.chatter = {
             { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!', order:'high' }
         ]
       , 'chatter': [
-            { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', icon:'cbh-facebook-rect', title:'Follow us on Facebook' }
-          , { path:'https://twitter.com/loopdotcoop'     , name:'Twitter' , icon:'cbh-twitter-bird' , title:'Follow us on Twitter' }
+            { path:'https://www.facebook.com/loopdotcoop'      , name:'Facebook'    , icon:'cbh-facebook-squared', title:'Follow us on Facebook' }
+          , { path:'https://twitter.com/loopdotcoop'           , name:'Twitter'     , icon:'cbh-twitter'         , title:'Follow us on Twitter' }
+          , { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', icon:'cbh-rocket'          , title:'It’s in Brighton on 27th September' }
+          // , { path:'https://github.com/loopdotcoop'      , name:'GitHub'  , icon:'cbh-github-1'     , title:'Check out our GitHub repos' }
         ]
     }
 

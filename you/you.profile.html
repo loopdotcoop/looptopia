@@ -13,7 +13,7 @@
         <h2>Profile</h2>
         {{#autoForm schema=$.Config.users.schema id="edit-user" doc=editingDoc type="method" meteormethod="editUser"}}
         <div class="at-form">{{! not really an ‘at-form’, but helps style things up quickly @todo less fractious styling }}
-          <div class="large-12 columns" style="text-align:left;">{{> afQuickField name="emails.0.address" placeholder="Enter your Email"}}</div>
+          <div id="ldc-email" class="large-12 columns" style="text-align:left;">{{> afQuickField name="emails.0.address" placeholder="Enter your Email"}}</div>
           <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.agc" options=agcOptions}}<label style="position:absolute; margin-top:-4.5em;">Age group:</label></div>{{! label after select, to avoid pushing special arrow upwards @todo better solution }}
           <div class="large-6 columns select-box" style="padding-bottom:1em;">{{> afFieldInput name="profile.bic" options=bicOptions}}<label style="position:absolute; margin-top:-4.5em;">Based-in:</label></div>
           {{> afFieldInput name="profile.nlo" id="AT_field_you-newsletter-opt" placeholder="Tick here to receive Email invitations to Loop.Coop parties."}}

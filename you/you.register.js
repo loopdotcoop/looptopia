@@ -3,6 +3,9 @@ if (Meteor.isClient) {
     //// When rendering the ‘register’ form, generate a BabelSlug and show it to the user.
     Template['you.register'].rendered = Template['you.profile'].rendered = function() { // @todo better solution to this quick fix
 
+        //// Focus on the ‘Email Address’ field.
+        $('#AT_field_email').focus();
+
 
         //// Place the ‘email’ and ‘password’ fields next to each other for desktop screen widths, and improve placeholder text.
         !function () {
