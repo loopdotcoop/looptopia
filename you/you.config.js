@@ -28,20 +28,20 @@ Config.you = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'registered': [
-            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:userIcon   , tmpt:'you', order:'high' }
+            { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon   , tmpt:'you', order:'high' }
         ]
       , 'unregistered': [
-            { path:'/you/register', name:'Register'       , title:'Register'             , icon:'cbh-feather' }
-          , { path:'/you/sign-in' , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login-1' }
+            { path:'/you/register'       , name:'Register'       , title:'Register'             , icon:'cbh-feather' }
+          , { path:'/you/sign-in'        , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login-1' }
         ]
       , 'kaboodle': [
-            { path:'/you/'        , name:'You'            , title:'Account settings, etc', icon:'cbh-user' }
+            { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon }
         ]
       , 'you': [
-            { path:'/you/profile' , name:'Edit Profile'   , title:'Edit your profile'    , icon:'cbh-user' }
-          , { path:'/'            , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout-1' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+            { path:'/you/profile'        , name:'Edit Profile'   , title:'Edit your profile'    , icon:userIcon }
+          , { path:'/'                   , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout-1' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
           , { path:'/you/password-change', name:'Change Password', title:'Change your password' , icon:'cbh-lock' }
-          , { path:'/you/delete'  , name:'Delete Account' , title:'Delete your account'  , icon:'cbh-trash-1' }
+          , { path:'/you/delete'         , name:'Delete Account' , title:'Delete your account'  , icon:'cbh-trash-1' }
         ]
     }
 
@@ -71,7 +71,7 @@ Config.you = {
       , { code:'m', label:'Word of mouth'                      , prompt:false } // `prompt` is falsey, so the 'you-hear-about-text' field will be hidden when this is selected
       , { code:'e', label:'At a festival or party'             , prompt:'Which one?' }
       , { code:'t', label:'Traditional media (print, TV, etc)' , prompt:'Whereabouts, exactly?' }
-      , { code:'s', label:'Social media (Twitter, etc)', prompt:'Where and how?' }
+      , { code:'s', label:'Social media (Twitter, etc)'        , prompt:'Where and how?' }
       , { code:'g', label:'Search engine (Google, etc)'        , prompt:'What were you searching for?' }
       , { code:'w', label:'Some other website'                 , prompt:'Which web page?' }
       , { code:'z', label:'...or something else...'            , prompt:'More details please!' }

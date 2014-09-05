@@ -83,13 +83,13 @@
           </div>
           {{/each}}
           <div class="ldc-left-message">
-            <a href="/wisdom" title="Xx">Xx Lorem ipsum et wisi delor fugit aliquando</a>
+            {{! <a href="/wisdom" title="Xx">Xx Lorem ipsum et wisi delor fugit aliquando</a> }}
           </div>
           <div class="ldc-banner">
             <a href="/" title="The Looptopia homepage"><img src="/layout/img/loopdotcoop-blue-grey-pink-v1-150x50.png" alt="Loop.Coop"></a>
           </div>
           <div class="ldc-right-message">
-            <span href="/you" title="{{ username }}">grenouille-embrouillé-et-magenta</span>
+            {{! <span href="/you" title="{ { username } }">grenouille-embrouillé-et-magenta</span> }}
           </div>
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
