@@ -8,13 +8,15 @@
 
   <div class="row">
     <div class="large-12 columns">
-      {{#if isSuper}}
-        <h1>List Users</h1>
-          {{> DataTable usersTable }}
-      {{else}}
-        <h3>Oops!</h3>
-        <p>This is a restricted area.</p>
-      {{/if}}
+      <div class="table at">
+        {{#if isSuper}}
+          <h1>List Users</h1>
+            {{> DataTable usersTable }}
+        {{else}}
+          <h3>Oops!</h3>
+          <p>This is a restricted area.</p>
+        {{/if}}
+      </div>
     </div>
   </div>
 

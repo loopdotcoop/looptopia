@@ -86,10 +86,16 @@ Config = {
           , '+ looptopia@0.2.3-2      all ‘popups’ (which are actually pages) have a ‘dismiss’ button; '
           , '+ looptopia@0.2.4        various UI tweaks and renamed features; '
           , '+ looptopia@0.2.6        redone release; '
+          , '+ looptopia@0.2.7-1      serverside `Config.about` has `env` field, which equals `NODE_ENV` at startup; '
+          , '+ looptopia@0.2.8        “No WebGL” alert, and don’t render the `<iframe>`; '
         ]
-      , version:        '0.2.6'
+      , version:        '0.2.8'
     }
 }
+
+//// 'development' on localhost, 'production' on modulus.
+if ('object' === typeof process) { Config.about.env = process.env.NODE_ENV; } // @todo is this ever used?
+
 
 Router.configure({
     notFoundTemplate: 'about.not-found' // catchall 404 https://github.com/EventedMind/iron-router#route-options
