@@ -325,9 +325,10 @@ html, body {
 //// Dismiss button.
 .dismiss-button {
     >div {
-        text-align: right;
         position: relative; // allow `z-index: 10` to take effect
-        z-index: 999;
+        margin-top: 10px;
+        text-align: right;
+        z-index: 10;
         >a {
             padding: 0; // responsive
             font-size: 32px; // responsive
@@ -337,6 +338,7 @@ html, body {
 @media only screen and (min-width: 40.063em) {
     .dismiss-button {
         >div {
+            margin-top: 20px;
             >a {
                 padding: 0; // responsive
                 font-size: 48px; // responsive
@@ -367,7 +369,7 @@ html, body {
     .at {
         margin-top: -57px; // responsive
         // padding-top: 15px; // responsive
-        border-radius: 34px; // responsive
+        border-radius: 22px 34px 22px 22px; // responsive
     }
 }
 

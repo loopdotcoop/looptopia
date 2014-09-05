@@ -1,6 +1,6 @@
-Config.kaboodle = {
-    name:         'Kaboodle'
-  , slug:         'kaboodle'
+Config.holdall = {
+    name:         'Holdall'
+  , slug:         'holdall'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -18,7 +18,7 @@ Config.kaboodle = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'registered': [
-            { path:'/kaboodle', name:'Holdall', icon:'cbh-holdall', title:'View your kaboodle', tmpt:'kaboodle' }
+            { path:'/holdall', name:'Holdall', icon:'cbh-holdall', title:'View your holdall', tmpt:'holdall' }
         ]
     }
 
@@ -29,6 +29,7 @@ Config.kaboodle = {
       , '+ dashboard@0.0.5-1   Add ‘Dashboard’ heading; ‘Looptopia’ play icon replace ‘Launch Party’ icon; '
       , '+ dashboard@0.0.6     finish feature branch; '
       , '+ kaboodle@0.1.1-1    change ‘dashboard’ to ‘kaboodle’; '
+      , '+ holdall@0.1.2       change ‘kaboodle’ to ‘holdall’; '
     ]
-  , version:       '0.1.1-1'
+  , version:       '0.1.2'
 }

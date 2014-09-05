@@ -34,7 +34,7 @@ Config.you = {
             { path:'/you/register'       , name:'Register'       , title:'Register'             , icon:'cbh-feather' }
           , { path:'/you/sign-in'        , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login-1' }
         ]
-      , 'kaboodle': [
+      , 'holdall': [
             { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon }
         ]
       , 'you': [
@@ -124,12 +124,12 @@ AccountsTemplates.configure({
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
     path:     'you/register',
     template: 'you.register',
-    redirect: '/kaboodle'
+    redirect: '/holdall'
 });
 AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
     path:     'you/sign-in',
     template: 'you.sign-in',
-    redirect: '/kaboodle'
+    redirect: '/holdall'
 });
 AccountsTemplates.configureRoute('forgotPwd', { // name: 'atForgotPwd'
     path:     'you/password-forgot',

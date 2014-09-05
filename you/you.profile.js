@@ -27,11 +27,11 @@ if (Meteor.isClient) {
 
     });
 
-    //// Go to ‘/kaboodle’ after a successful submission of the ‘profile’ form.
+    //// Go to ‘/holdall’ after a successful submission of the ‘profile’ form.
     AutoForm.hooks({
         'edit-user': {
             onSuccess: function(operation, result, template) {
-                Router.go('kaboodle');
+                Router.go('holdall');
             }
         }
     });

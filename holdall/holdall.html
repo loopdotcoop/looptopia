@@ -1,16 +1,16 @@
 <head>
-<!-- kaboodle.html -->
+<!-- holdall.html -->
 </head>
 
-<template name="kaboodle">
-  <tt class="x">kaboodle.html
-     {{$.Config.kaboodle.version}}</tt>
+<template name="holdall">
+  <tt class="x">holdall.html
+     {{$.Config.holdall.version}}</tt>
 
   <div class="row">
     <div class="large-12 columns">
-      <div class="kaboodle dashboard at">
-        <h2 class="ldc-heading">Your Stuff</h2>
-        {{#each widgets 'kaboodle'}}
+      <div class="holdall dashboard at">
+        <h2 class="ldc-heading">Your Holdall</h2>
+        {{#each widgets 'holdall'}}
         <a href="{{ path }}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
           <div>{{! table-row}}
             <div class="{{ icon }}"></div>

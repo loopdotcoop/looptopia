@@ -20,8 +20,8 @@ Config.wisdom = {
         'all-users': [
             { path:'/wisdom', name:'Eh?!', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
         ]
-      , 'kaboodle': [
-            { path:'/wisdom', name:'Wisdom', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
+      , 'holdall': [
+            { path:'/wisdom', name:'Eh?!', tmpt:'wisdom', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
         ]
       , 'wisdom': [
             { path:'xx', name:'XX', icon:'cbh-facebook-rect', title:'Follow us on Facebook' }
