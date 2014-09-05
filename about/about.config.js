@@ -85,8 +85,9 @@ Config = {
           , '+ looptopia@0.2.3-1      switch from Zurb Foundation icons to fontello; '
           , '+ looptopia@0.2.3-2      all ‘popups’ (which are actually pages) have a ‘dismiss’ button; '
           , '+ looptopia@0.2.4        various UI tweaks and renamed features; '
+          , '+ looptopia@0.2.6        redone release; '
         ]
-      , version:        '0.2.4'
+      , version:        '0.2.6'
     }
 }
 
