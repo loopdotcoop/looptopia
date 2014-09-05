@@ -9,9 +9,9 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="you dashboard at">
-        <h2 class="heading">All About You</h2>
+        <h3>All About You</h3>
         {{#each widgets 'you'}}
-        <a href="{{ path }}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
+        <a href="{{ path }}" target="{{#if $exists target}}{{ target }}{{/if}}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
           <div>{{! table-row}}
             <div class="{{ icon }}"></div>
           </div>

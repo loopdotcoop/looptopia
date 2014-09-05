@@ -60,9 +60,9 @@ if (Meteor.isClient) {
             });
             select += '</select>\n';
 
-            //// Replace the simple text-field with the heading and dropdown menu.
+            //// Replace the simple text-field with the dropdown menu.
             $agc
-               .before('<div class="select-box"><p class="heading">' + placeholder + '</p>\n' + select + '</div>')
+               .before('<div class="select-box">\n' + select + '</div>')
                .remove()
             ;
             $agc = $('#' + agcId); // make `$agc` a reference to the new dropdown menu @todo do we need this now?
@@ -86,9 +86,9 @@ if (Meteor.isClient) {
             });
             select += '</select>\n';
 
-            //// Replace the simple text-field with the heading and dropdown menu.
+            //// Replace the simple text-field with the dropdown menu.
             $bic
-               .before('<div class="select-box"><p class="heading">' + placeholder + '</p>\n' + select + '</div>')
+               .before('<div class="select-box">\n' + select + '</div>')
                .remove()
             ;
             $bic = $('#' + bicId); // make `$bic` a reference to the new dropdown menu @todo do we need this now?
@@ -126,9 +126,9 @@ if (Meteor.isClient) {
             });
             select += '</select>\n';
 
-            //// Replace the simple text-field with the heading and dropdown menu.
+            //// Replace the simple text-field with the dropdown menu.
             $hac
-               .before('<div class="select-box"><p class="heading">' + hacPlaceholder + '</p>\n' + select + '</div>')
+               .before('<div class="select-box">\n' + select + '</div>')
                .remove()
             ;
             $hac = $('#' + hacId); // make `$hac` a reference to the new dropdown menu

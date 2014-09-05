@@ -24,15 +24,16 @@ Config.chatter = {
             { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!', order:'high' }
         ]
       , 'chatter': [
-            { path:'https://www.facebook.com/loopdotcoop'      , name:'Facebook'    , icon:'cbh-facebook-squared', title:'Follow us on Facebook' }
-          , { path:'https://twitter.com/loopdotcoop'           , name:'Twitter'     , icon:'cbh-twitter'         , title:'Follow us on Twitter' }
-          , { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', icon:'cbh-rocket'          , title:'It’s in Brighton on 27th September' }
-          // , { path:'https://github.com/loopdotcoop'      , name:'GitHub'  , icon:'cbh-github-1'     , title:'Check out our GitHub repos' }
+            { target:'_blank', path:'https://www.facebook.com/loopdotcoop'      , name:'Facebook'    , icon:'cbh-facebook-squared', title:'Follow us on Facebook' }
+          , { target:'_blank', path:'https://twitter.com/loopdotcoop'           , name:'Twitter'     , icon:'cbh-twitter'         , title:'Follow us on Twitter' }
+          , { target:'_blank', path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', icon:'cbh-rocket'          , title:'It’s in Brighton on 27th September' }
+          // , { target:'_blank', path:'https://github.com/loopdotcoop'      , name:'GitHub'  , icon:'cbh-github-1'     , title:'Check out our GitHub repos' }
         ]
     }
 
   , changelog: [
         '+ chatter@0.0.1-1   `init-chatter` feature of ‘looptopia@0.2.3-2’; '
+      , '+ chatter@0.0.2     `target="_blank"` on links; heading “Social Chatter and Party Invites; '
     ]
-  , version:      '0.0.1-1'
+  , version:      '0.0.2'
 }

@@ -9,9 +9,9 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="wisdom dashboard at">
-        <h2 class="heading">Wisdom</h2>
+        <h3>Wisdom</h3>
         {{#each widgets 'wisdom'}}
-        <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
+        <a href="{{ path }}" target="{{#if $exists target}}{{ target }}{{/if}}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
         {{/each}}
       </div>
     </div>

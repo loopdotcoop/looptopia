@@ -10,7 +10,7 @@
     <div class="large-12 columns">
 
       <div class="at">{{! style identically to ‘AccountsTemplates’ forms}}
-        <h2>Profile</h2>
+        <h3>Profile</h3>
         {{#autoForm schema=$.Config.users.schema id="edit-user" doc=editingDoc type="method" meteormethod="editUser"}}
         <div class="at-form">{{! not really an ‘at-form’, but helps style things up quickly @todo less fractious styling }}
           <div id="ldc-email" class="large-12 columns" style="text-align:left;">{{> afQuickField name="emails.0.address" placeholder="Enter your Email"}}</div>

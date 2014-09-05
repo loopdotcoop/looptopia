@@ -354,12 +354,14 @@ html, body {
 .at {
     position: relative; // allow `z-index: 3` to take effect
     margin-top: -40px; // responsive
-    // padding-top: 35px; // responsive
     border-radius: 22px; // responsive
     background-color: #333;
     z-index: 3;
     h3 {
-        font-size: 1.6875rem; // the natural Foundation size, which ‘AccountsTemplates’ overrides
+        padding: 0 30px; // responsive
+        font-size: 1.4rem; // the natural Foundation size, which ‘AccountsTemplates’ overrides
+        font-weight: 400; // ‘AccountsTemplates’ has set this to '800'
+        line-height: 1.1;
     }
     label {
         color: #ccc;
@@ -368,8 +370,11 @@ html, body {
 @media only screen and (min-width: 40.063em) {
     .at {
         margin-top: -57px; // responsive
-        // padding-top: 15px; // responsive
         border-radius: 22px 34px 22px 22px; // responsive
+        h3 {
+            padding: 0 50px; // responsive
+            font-size: 1.6875rem; // the natural Foundation size, which ‘AccountsTemplates’ overrides
+        }
     }
 }
 
