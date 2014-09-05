@@ -84,8 +84,9 @@ Config = {
           , '+ looptopia@0.2.2        `<iframe ... src="http://aahdesoot-22112.onmodulus.net/">` ; new instructions; '
           , '+ looptopia@0.2.3-1      switch from Zurb Foundation icons to fontello; '
           , '+ looptopia@0.2.3-2      all ‘popups’ (which are actually pages) have a ‘dismiss’ button; '
+          , '+ looptopia@0.2.4        various UI tweaks and renamed features; '
         ]
-      , version:        '0.2.3-2'
+      , version:        '0.2.4'
     }
 }
 
