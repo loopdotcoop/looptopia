@@ -1,0 +1,31 @@
+<head>
+<!-- eh.html -->
+</head>
+
+<template name="eh">
+  <tt class="x">eh.html
+     {{$.Config.eh.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="eh at">
+<!--       <h3>Eh?! What’s going on here then?</h3> -->
+      {{#if $.Meteor.user}}
+        {{{$.Config.home.registered}}}
+        <div class="medium-10 medium-push-1 columns">
+          <a target="_blank" href="http://looptopian-launch.eventbrite.co.uk/" class="medium radius button expand" style="padding-left:5px; padding-right:5px;">Buy Tickets for The Looptopian Launch, September 27th</a>
+        </div>
+      {{else}}
+        <div class="message">
+          {{{$.Config.home.unregistered}}}
+          <p style="text-align:center; font-weight:bold;">To try it out, <a href="/you/sign-in">Sign In</a> or</p>
+          <div class="medium-4 medium-push-4 small-8 small-push-2 columns">
+            <a href="/you/register" class="large radius button expand">Register</a>
+          </div>
+        </div>
+      {{/if}}
+      </div>
+    </div>
+  </div>
+
+</template>
