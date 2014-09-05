@@ -9,11 +9,18 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="kaboodle dashboard at">
-        <h2 class="heading">Your Stuff</h2>
+        <h2 class="ldc-heading">Your Stuff</h2>
         {{#each widgets 'kaboodle'}}
-        <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
+        <a href="{{ path }}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
+          <div>{{! table-row}}
+            <div class="{{ icon }}"></div>
+          </div>
+          <div>{{! table-row}}
+            <h4>{{{ name }}}</h4>
+          </div>
+        </a>
         {{/each}}
-        <div class="message">
+        <div class="ldc-message">
           {{{ $.Config.home.unregistered }}}
         </div>
       </div>

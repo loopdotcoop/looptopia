@@ -38,7 +38,7 @@ Config.you = {
             { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon }
         ]
       , 'you': [
-            { path:'/you/profile'        , name:'Edit Profile'   , title:'Edit your profile'    , icon:userIcon }
+            { path:'/you/profile'        , name:'Profile'        , title:'Edit your profile'    , icon:userIcon }
           , { path:'/'                   , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout-1' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
           , { path:'/you/password-change', name:'Change Password', title:'Change your password' , icon:'cbh-lock' }
           , { path:'/you/delete'         , name:'Delete Account' , title:'Delete your account'  , icon:'cbh-trash-1' }

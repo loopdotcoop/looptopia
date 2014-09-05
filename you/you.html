@@ -9,9 +9,16 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="you dashboard at">
-        <h2 class="heading">All about<br>{{ username }}</h2>
+        <h2 class="heading">All About You</h2>
         {{#each widgets 'you'}}
-        <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
+        <a href="{{ path }}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
+          <div>{{! table-row}}
+            <div class="{{ icon }}"></div>
+          </div>
+          <div>{{! table-row}}
+            <h4>{{{ name }}}</h4>
+          </div>
+        </a>
         {{/each}}
       </div>
     </div>

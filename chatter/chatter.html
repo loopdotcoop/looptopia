@@ -11,7 +11,14 @@
       <div class="chatter dashboard at">
         <h2 class="heading">Chatter</h2>
         {{#each widgets 'chatter'}}
-        <a href="{{ path }}" id="{{ id }}" class="{{ icon }}" title="{{ title }}">{{{ name }}}</a>
+        <a href="{{ path }}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
+          <div>{{! table-row}}
+            <div class="{{ icon }}"></div>
+          </div>
+          <div>{{! table-row}}
+            <h4>{{{ name }}}</h4>
+          </div>
+        </a>
         {{/each}}
       </div>
     </div>

@@ -23,8 +23,9 @@ Config.layout = {
       , '+ layout@0.0.4      Loop.Coop logo at top of every page; hide full twitter-id on mobile; '
       , '+ layout@0.1.1-1    combine ‘#banner’ and ‘#header’ into a CSS table with id ‘#ldc-header’; '
       , '+ layout@0.1.1-2    ‘/you’ icon shows current user BabelSlug animal; '
+      , '+ layout@0.1.2      blue dashboard icons; '
     ]
-  , version:     '0.1.1-2'
+  , version:     '0.1.2'
 };
 
 Router.configure({

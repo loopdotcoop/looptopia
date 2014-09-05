@@ -151,42 +151,105 @@ a.active {
 
 
 
-//// Icons.
-.ldc-icon {
-    div {
-        text-align: center;
-        font-size: 2rem; // responsive
-    }
-    h6 {
-        font-size: .7rem; // responsive
-        line-height: .8;
+//// Header icons.
+#ldc-header {
+    .ldc-icon {
+        div {
+            text-align: center;
+            font-size: 2rem; // responsive
+        }
+        h6 {
+            font-size: .7rem; // responsive
+            line-height: .8;
+        }
     }
 }
 @media only screen and (min-width: 40.063em) {
-    .ldc-icon {
-        div {
-            font-size: 3rem; // responsive
-        }
-        h6 {
-            position: relative;
-            height: 1rem;
-            font-size: 1rem; // responsive
-            span {
-                display: block;
-                height: 0;
-                height: 1rem; // @todo remove this line for show-on-hover icon text
-                overflow: hidden;
-                transition: height .2s ease-out; // 'ease-out' for sudden start and slow finish
+    #ldc-header {
+        .ldc-icon {
+            div {
+                font-size: 3rem; // responsive
             }
-        }
-        &:hover {
             h6 {
+                position: relative;
+                height: 1rem;
+                font-size: 1rem; // responsive
                 span {
-                    height: 1rem;
+                    display: block;
+                    height: 0;
+                    height: 1rem; // @todo remove this line for show-on-hover icon text
+                    overflow: hidden;
+                    transition: height .2s ease-out; // 'ease-out' for sudden start and slow finish
+                }
+            }
+            &:hover {
+                h6 {
+                    span {
+                        height: 1rem;
+                    }
                 }
             }
         }
     }
+}
+
+
+
+//// Dashboard icons and messages.
+.dashboard {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    .ldc-icon, .ldc-message {
+        margin: 3px 3px 8px 3px;
+    }
+    .ldc-icon {
+        display: inline-table;
+        width: 125px;
+        height: 125px;
+        padding: 5px 5px 0 5px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #008CBA;
+        transition: background-color .4s ease-out; // 'ease-out' for sudden start and slow finish
+        >div {
+            display: table-row;
+            >* {
+                display: table-cell;
+                vertical-align: middle;
+                color: #eee;
+            }
+            >div {
+                font-size: 64px;
+                line-height: 0;
+            }
+            >h4 {
+                line-height: .9;
+                height: 45px;
+                max-height: 45px;
+                padding-bottom: 10px;
+                overflow: hidden;
+                font-size: 20px;
+            }
+        }
+        &:hover {
+            background-color: #d0d;
+        }
+    }
+    .ldc-message {
+        display: inline-block;
+        background-color: #eee;
+        border-radius: 10px;
+        padding: 10px 12px 10px 15px;
+        color: #333;
+        p {
+            text-align: left;
+            font-size: .8rem;
+        }
+    }
+}
+@media only screen and (min-width: 40.063em) {
+
 }
 
 
