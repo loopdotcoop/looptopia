@@ -1,16 +1,18 @@
 <head>
-<!-- account.register.html -->
+<!-- you.register.html -->
 </head>
 
-<template name="account.register">
-  <tt class="x">account.register.html
-     {{$.Config.account.version}}</tt>
+<template name="you.register">
+  <tt class="x">you.register.html
+     {{$.Config.you.version}}</tt>
 
   <div class="row">
     <div class="large-12 columns">
       {{#if $.Meteor.userId}}
+      <div class="at">{{! style identically to ‘AccountsTemplates’ forms}}
         <h3>Oops!</h3>
         <p>You are aleady a registered user.</p>
+      </div>
       {{else}}
         {{> atForm state='signUp'}}{{! https://github.com/splendido/accounts-templates-core/tree/v0.0.21#templates}}
       {{/if}}

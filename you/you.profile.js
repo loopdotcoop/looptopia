@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
 
     //// Helpers for the ‘profile’ form.
-    Template['account.profile'].helpers({
+    Template['you.profile'].helpers({
 
         editingDoc: function () {
             return Meteor.user();
@@ -9,7 +9,7 @@ if (Meteor.isClient) {
 
       , agcOptions: function () {
             var out = [];
-            Config.account.ageGroupData.forEach(function (data) {
+            Config.you.ageGroupData.forEach(function (data) {
                 out.push({ label:data.label, value:data.code });
             });
             out.shift(); // remove the first element, “What’s your age group?”
@@ -18,7 +18,7 @@ if (Meteor.isClient) {
 
       , bicOptions: function () {
             var out = [];
-            Config.account.basedInData.forEach(function (data) {
+            Config.you.basedInData.forEach(function (data) {
                 out.push({ label:data.label, value:data.code });
             });
             out.shift(); // remove the first element, “Where are you based?”
@@ -27,11 +27,11 @@ if (Meteor.isClient) {
 
     });
 
-    //// Go to the dashboard after a successful submission of the ‘profile’ form.
+    //// Go to ‘/holdall’ after a successful submission of the ‘profile’ form.
     AutoForm.hooks({
         'edit-user': {
             onSuccess: function(operation, result, template) {
-                Router.go('dashboard');
+                Router.go('holdall');
             }
         }
     });

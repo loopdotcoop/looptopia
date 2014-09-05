@@ -1,6 +1,6 @@
-Config.dashboard = {
-    name:         'Dashboard'
-  , slug:         'dashboard'
+Config.holdall = {
+    name:         'Holdall'
+  , slug:         'holdall'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -11,21 +11,14 @@ Config.dashboard = {
   , year:         '2014'
   , license:      'GPL v2'
   , type:         'website' // http://ogp.me/#types
-  , url:          'http://looptopia.loop.coop/dashboard'
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
 
-  , widgets: { // add a link to the 'registered' and 'dashboard' widget areas
+    //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
+  , widgets: {
         'registered': [
-            { path:'/dashboard', name:'Dashboard', tmpt:'dashboard' }
-        ]
-        //// http://zurb.com/playground/foundation-icons
-      , 'dashboard': [
-            { path:'/', name:'Looptopia', tmpt:'dashboard', class:'foundicon-youtube', order:'high' }
-          // , { path:'http://looptopian-launch.eventbrite.co.uk/', name:'Launch Party', class:'foundicon-chat' }
-          // , { path:'https://www.facebook.com/loopdotcoop', name:'Facebook', class:'foundicon-facebook' }
-          // , { path:'https://twitter.com/loopdotcoop', name:'Twitter', class:'foundicon-twitter' }
+            { path:'/holdall', name:'Holdall', icon:'cbh-holdall', title:'View your holdall', tmpt:'holdall' }
         ]
     }
 
@@ -35,6 +28,8 @@ Config.dashboard = {
       , '+ dashboard@0.0.4     simpler `AccountsTemplates.ensureSignedIn`; '
       , '+ dashboard@0.0.5-1   Add ‘Dashboard’ heading; ‘Looptopia’ play icon replace ‘Launch Party’ icon; '
       , '+ dashboard@0.0.6     finish feature branch; '
+      , '+ kaboodle@0.1.1-1    change ‘dashboard’ to ‘kaboodle’; '
+      , '+ holdall@0.1.2       change ‘kaboodle’ to ‘holdall’; '
     ]
-  , version:        '0.0.6'
+  , version:       '0.1.2'
 }

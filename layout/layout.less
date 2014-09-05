@@ -1,59 +1,7 @@
 /** layout.less */
-/* [Foundation icons](http://zurb.com/playground/foundation-icons) */
-
-@font-face {
-  font-family: 'SocialFoundicons';
-  src: url('../layout/font/social_foundicons.eot');
-  src: url('../layout/font/social_foundicons.eot?#iefix') format('embedded-opentype'),
-       url('../layout/font/social_foundicons.woff') format('woff'),
-       url('../layout/font/social_foundicons.ttf') format('truetype'),
-       url('../layout/font/social_foundicons.svg#socialFoundicons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
- 
-[class*="foundicon-"] {
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: inherit;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0 0;
-  background-repeat: repeat;
-}
- 
-[class*="foundicon-"]:before {
-  font-family: "SocialFoundicons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2rem;
-  text-decoration: inherit;
-}
-
-.foundicon-facebook:before {
-  content: "\f003";
-}
-.foundicon-twitter:before {
-  content: "\f004";
-}
-.foundicon-github:before {
-  content: "\f006";
-}
-.foundicon-chat:before {
-  content: "\f018";
-}
-.foundicon-torso:before {
-  content: "\f019";
-}
-.foundicon-youtube:before {
-  content: "\f00e";
-}
 
 
-
-
-/* Color */
+//// Color.
 html, body {
     background-color: #000;
     color: #ccc;
@@ -64,16 +12,14 @@ html, body {
 
 
 
-/* Typography */
-
-// @import url(http://fonts.googleapis.com/css?family=Podkova:400,700);
+//// Typography.
 @import url(http://fonts.googleapis.com/css?family=Podkova:400);
 
 body {
     font-family: verdana, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, button, .button, #header, #footer {
+h1, h2, h3, h4, h5, h6, button, .button, #ldc-header, #ldc-footer {
     font-family: 'Podkova', verdana, sans-serif;
     font-weight: 400;
     line-height: 1.1;
@@ -88,32 +34,29 @@ p {
     text-align: center;
 }
 a {
-    transition: color .2s ease-out; // 'ease-out' for sudden start and slow finish
+    transition: color .4s ease-out; // 'ease-out' for sudden start and slow finish
+    h1, h2, h3, h4, h5, h6, p {
+        transition: color .4s ease-out; // 'ease-out' for sudden start and slow finish
+    }
     &:hover {
         color: #d0d;
+        h1, h2, h3, h4, h5, h6, p {
+            color: #d0d;
+        }
     }
 }
 button, .button {
-    transition: background-color .2s ease-out; // 'ease-out' for sudden start and slow finish
+    transition: background-color .4s ease-out; // 'ease-out' for sudden start and slow finish
     &:hover {
         background-color: #808;
     }
 }
-a.active, a.active:hover {
-    color: #444;
+a.active {
+    color: #d0d;
     cursor: default;
-    &[href$='dashboard'] {
-        display: none;
+    h1, h2, h3, h4, h5, h6, p {
+        color: #d0d;
     }
-}
-
-
-
-
-/* Utility */
-
-.ldc-raise-icon {
-    vertical-align: .7rem;
 }
 
 
@@ -127,6 +70,7 @@ a.active, a.active:hover {
     bottom: 0;
     left: 0;
     background-color: rgba(.2,.2,.2,.7);
+    z-index: 1;
 }
 #iframe {
     position: fixed;
@@ -134,28 +78,71 @@ a.active, a.active:hover {
     height: 100%;
     // border: 4px solid blue;
     border-width: 0;
+    z-index: 0;
 }
 
 
 
 
-//// Logo at the top of the page.
-#banner {
+//// Header.
+#ldc-header {
+    position: relative;
+    display: table;
+    width: 100%;
+    padding: 0 5px 5px 5px;
+    z-index: 2;
     >div {
-        text-align: center;
-        >a {
-            display: inline-block;
-            position: relative; // allow `z-index: 10` to take effect
-            z-index: 10; // prevent `#header` overlaying the banner
-            padding-top: 8px;
-            opacity: .8;
-            transition: opacity .2s ease-out;
-            &:hover {
-                opacity: 1;
+        display: table-row;
+        >div {
+            display: table-cell;
+            vertical-align: top;
+            &.ldc-all-users,
+            &.ldc-registered,
+            &.ldc-unregistered {
+                width: 0;
+                vertical-align: top;
+                line-height: 0; // need to reset this within <h6> elements
             }
-            >img {
-                width: 150px;
-                height: 50px;
+            &.ldc-banner {
+                min-width: 120px; // responsive
+                max-width: 120px; // responsive
+                text-align: center;
+            }
+            &.ldc-left-message,
+            &.ldc-right-message {
+                max-width: 0; // responsive
+                width: 50%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                >a, >span {
+                    display: none; // responsive
+                }
+            }
+            &.ldc-left-message {
+                text-align: left;
+            }
+            &.ldc-right-message {
+                text-align: right;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 40.063em) {
+    #ldc-header {
+        >div {
+            >div {
+                &.ldc-banner {
+                    min-width: 150px; // responsive
+                    max-width: 150px; // responsive
+                }
+                &.ldc-left-message,
+                &.ldc-right-message {
+                    max-width: auto; // responsive
+                    >a, >span {
+                        display: inline; // responsive
+                    }
+                }
             }
         }
     }
@@ -164,48 +151,133 @@ a.active, a.active:hover {
 
 
 
-//// Header and Footer.
+//// Header icons.
+#ldc-header {
+    .ldc-icon {
+        div {
+            text-align: center;
+            font-size: 2rem; // responsive
+        }
+        h6 {
+            font-size: .7rem; // responsive
+            line-height: .8;
+        }
+    }
+}
+@media only screen and (min-width: 40.063em) {
+    #ldc-header {
+        .ldc-icon {
+            div {
+                font-size: 3rem; // responsive
+            }
+            h6 {
+                position: relative;
+                height: 1rem;
+                font-size: 1rem; // responsive
+                span {
+                    display: block;
+                    height: 0;
+                    height: 1rem; // @todo remove this line for show-on-hover icon text
+                    overflow: hidden;
+                    transition: height .2s ease-out; // 'ease-out' for sudden start and slow finish
+                }
+            }
+            &:hover {
+                h6 {
+                    span {
+                        height: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
 
-#header,
-#footer {
+
+
+//// Dashboard icons and messages.
+.dashboard {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    .ldc-icon, .ldc-message {
+        margin: 3px 3px 8px 3px;
+    }
+    .ldc-icon {
+        display: inline-table;
+        width: 125px;
+        height: 125px;
+        padding: 5px 5px 0 5px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #008CBA;
+        transition: background-color .4s ease-out; // 'ease-out' for sudden start and slow finish
+        >div {
+            display: table-row;
+            >* {
+                display: table-cell;
+                vertical-align: middle;
+                color: #eee;
+            }
+            >div {
+                font-size: 64px;
+                line-height: 0;
+            }
+            >h4 {
+                line-height: .9;
+                height: 45px;
+                max-height: 45px;
+                padding-bottom: 10px;
+                overflow: hidden;
+                font-size: 20px;
+            }
+        }
+        &:hover {
+            background-color: #d0d;
+        }
+    }
+    .ldc-message {
+        display: inline-block;
+        background-color: #eee;
+        border-radius: 10px;
+        padding: 10px 12px 10px 15px;
+        color: #333;
+        p {
+            text-align: left;
+            font-size: .8rem;
+        }
+    }
+}
+@media only screen and (min-width: 40.063em) {
+
+}
+
+
+
+
+//// Footer.
+#ldc-footer {
     padding-top: 10px;
     font-size: 1.2rem;
-    .ldc-social,
-    .ldc-menu,
     .ldc-legal,
     .ldc-copyright {
         text-align: center; // responsive
     }
-    .ldc-menu {
-        padding-bottom: 1rem; // responsive
-    }
     .ldc-legal {
         padding-bottom: .5rem; // responsive
     }
-    .ldc-social a {
-        padding: 0 .25rem;
-    }
-    .ldc-menu a,
     .ldc-legal a,
     .ldc-copyright span {
         padding: 0 .5rem;
     }
 }
 @media only screen and (min-width: 40.063em) {
-    #header {
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-    #header,
-    #footer {
+    #ldc-footer {
         padding-bottom: 10px;
-        .ldc-social,
         .ldc-legal {
-            text-align: left; // responsive
+            text-align: left;  // responsive
             padding-bottom: 0; // responsive
         }
-        .ldc-menu,
         .ldc-copyright {
             text-align: right; // responsive
             padding-bottom: 0; // responsive
@@ -216,15 +288,7 @@ a.active, a.active:hover {
 
 
 
-.large-12.columns >img, .large-12.columns >a >img {
-  width: 1100px;
-  height: auto;
-}
-
-
-
-
-/* Sticky Footer, based on http://jsbin.com/qucet/2 and http://www.cssstickyfooter.com/ */
+//// Sticky footer, based on http://jsbin.com/qucet/2 and http://www.cssstickyfooter.com/
 @footer-height: 2.5rem;
 @footer-height-mobile: 4rem;
 
@@ -238,20 +302,89 @@ html, body {
     overflow: auto;
     padding-bottom: @footer-height-mobile; // responsive - must be same height as the footer
 }
-#footer {
+#ldc-footer {
     position: relative;
     margin-top: -@footer-height-mobile; // responsive - negative value of footer height
     height: @footer-height-mobile; // responsive
     clear: both;
+    z-index: 5;
 } 
 @media only screen and (min-width: 40.063em) {
     #main {
         padding-bottom: @footer-height; // responsive - must be same height as the footer
     }
-    #footer {
+    #ldc-footer {
         margin-top: -@footer-height; // responsive - negative value of footer height
         height: @footer-height; // responsive
     } 
 }
 
 
+
+
+//// Dismiss button.
+.dismiss-button {
+    >div {
+        position: relative; // allow `z-index: 10` to take effect
+        margin-top: 10px;
+        text-align: right;
+        z-index: 10;
+        >a {
+            padding: 0; // responsive
+            font-size: 32px; // responsive
+        }
+    }
+}
+@media only screen and (min-width: 40.063em) {
+    .dismiss-button {
+        >div {
+            margin-top: 20px;
+            >a {
+                padding: 0; // responsive
+                font-size: 48px; // responsive
+            }
+        }
+    }
+}
+
+
+
+
+//// Xx.
+.at {
+    position: relative; // allow `z-index: 3` to take effect
+    margin-top: -40px; // responsive
+    border-radius: 22px; // responsive
+    background-color: #333;
+    z-index: 3;
+    h3 {
+        padding: 0 30px; // responsive
+        font-size: 1.4rem; // the natural Foundation size, which ‘AccountsTemplates’ overrides
+        font-weight: 400; // ‘AccountsTemplates’ has set this to '800'
+        line-height: 1.1;
+    }
+    label {
+        color: #ccc;
+    }
+}
+@media only screen and (min-width: 40.063em) {
+    .at {
+        margin-top: -57px; // responsive
+        border-radius: 22px 34px 22px 22px; // responsive
+        h3 {
+            padding: 0 50px; // responsive
+            font-size: 1.6875rem; // the natural Foundation size, which ‘AccountsTemplates’ overrides
+        }
+    }
+}
+
+
+
+
+//// Utility.
+.nowrap {
+    white-space: nowrap;
+}
+.ellipsis {
+    text-overflow: ellipsis;
+}

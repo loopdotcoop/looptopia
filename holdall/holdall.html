@@ -1,0 +1,30 @@
+<head>
+<!-- holdall.html -->
+</head>
+
+<template name="holdall">
+  <tt class="x">holdall.html
+     {{$.Config.holdall.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="holdall dashboard at">
+        <h3>Your Holdall</h3>
+        {{#each widgets 'holdall'}}
+        <a href="{{ path }}" target="{{#if $exists target}}{{ target }}{{/if}}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
+          <div>{{! table-row}}
+            <div class="{{ icon }}"></div>
+          </div>
+          <div>{{! table-row}}
+            <h4>{{{ name }}}</h4>
+          </div>
+        </a>
+        {{/each}}
+        <div class="ldc-message">
+          {{{ $.Config.home.unregistered }}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

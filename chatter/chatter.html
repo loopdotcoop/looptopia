@@ -1,0 +1,28 @@
+<head>
+<!-- chatter.html -->
+</head>
+
+<template name="chatter">
+  <tt class="x">chatter.html
+     {{$.Config.chatter.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="chatter dashboard at">
+        <h3>Social Chatter and Party Invites</h3>
+        {{#each widgets 'chatter'}}
+        
+        <a href="{{ path }}" target="{{#if $exists target}}{{ target }}{{/if}}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
+          <div>{{! table-row}}
+            <div class="{{ icon }}"></div>
+          </div>
+          <div>{{! table-row}}
+            <h4>{{{ name }}}</h4>
+          </div>
+        </a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+</template>

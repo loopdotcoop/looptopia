@@ -10,7 +10,7 @@
   <meta name="format-detection"                content="telephone=no">
 
   <!-- Seo -->
-  <title>Looptopia by Loop.Coop</title>
+  <title>Loop.Coop Present: Looptopia</title>
   <meta name="description"                     content="A cube-shaped planet in the Loop.Coop system.">
   <meta name="keywords"                        content="Brighton, art, music, immersive, app, game, cooperative, party, festival">
   <meta name="author"                          content="Rich Plastow <infoATloop.coop>">
@@ -72,48 +72,58 @@
   <div id="wrap" class="no-js index"><!--<![endif]-->
     <div id="main">
 
-      <iframe id="iframe" src="http://aahdesoot-22112.onmodulus.net/"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
-      <div id="iframe-blocker" class="{{#if $not $.Meteor.userId}}active {{/if}}{{#if $neq currentPath '/'}}active{{/if}}"></div>
+<!--       <iframe id="iframe" src="http://aahdesoot-22112.onmodulus.net/"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
+ -->      <div id="iframe-blocker" class="{{#if $not $.Meteor.userId}}active {{/if}}{{#if $neq currentPath '/'}}active{{/if}}"></div>
 
-      <div id="banner">
-        <div class="large-12 columns">
-          <a href="/" title="The Looptopia homepage"><img src="/layout/img/loopdotcoop-blue-grey-pink-v1-150x50.png" alt="Loop.Coop logo"></a>
-        </div>
-      </div>
-
-      <div id="header">
-        <div class="medium-4 columns ldc-social">
-          <!--<a target="_blank" href="https://github.com/loopdotcoop"      ><span class="foundicon-github"  ></span></a>-->
-          <a target="_blank" href="https://www.facebook.com/loopdotcoop"><span class="foundicon-facebook"></span></a>
-          <a target="_blank" href="https://twitter.com/loopdotcoop"     ><span class="foundicon-twitter" ><span class="ldc-raise-icon"><span class="show-for-large-up">@loopdotcoop</span></span></span></a>
-        </div>
-        <div class="medium-4 columns ldc-menu">
+      <div id="ldc-header">
+        <div><!-- explicit table-row -->
+          {{#each widgets 'all-users'}}
+          <div class="ldc-all-users">
+            <a href="{{ path }}" id="{{ id }}" class="ldc-icon {{ activeIfTemplateIs tmpt}}" title="{{ title }}"><div class="ldc-icon {{ icon }}"></div><h6><span>{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></h6></a>
+          </div>
+          {{/each}}
+          <div class="ldc-left-message">
+            {{! <a href="/wisdom" title="Xx">Xx Lorem ipsum et wisi delor fugit aliquando</a> }}
+          </div>
+          <div class="ldc-banner">
+            <a href="/" title="The Looptopia homepage"><img src="/layout/img/loopdotcoop-blue-grey-pink-v1-150x50.png" alt="Loop.Coop"></a>
+          </div>
+          <div class="ldc-right-message">
+            {{! <span href="/you" title="{ { username } }">grenouille-embrouillé-et-magenta</span> }}
+          </div>
 {{#if $.Meteor.userId }}
           {{#each widgets 'registered'}}
-          <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}">{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</a>
+          <div class="ldc-registered">
+            <a href="{{ path }}" id="{{ id }}" class="ldc-icon {{ activeIfTemplateIs tmpt}}" title="{{ title }}"><div class="{{ icon }}"></div><h6><span>{{#if $eq name '_username_'}}{{{ username }}}{{else}}{{{ name }}}{{/if}}</span></h6></a>
+          </div>
           {{/each}}
 {{else}}
           {{#each widgets 'unregistered'}}
-          <a href="{{ path }}" id="{{ id }}">{{{ name }}}</a>
+          <div class="ldc-unregistered">
+            <a href="{{ path }}" id="{{ id }}" class="ldc-icon {{ activeIfTemplateIs tmpt}}" title="{{ title }}"><div class="{{ icon }}"></div><h6><span>{{{ name }}}</span></h6></a>
+          </div>
           {{/each}}
 {{/if}}
         </div>
-      </div><!--/#header -->
+      </div><!--/#ldc-header -->
 
       <article id="yeild">
         <tt class="x">layout.html
            {{$.Config.layout.version}}</tt>
+        <div class="row dismiss-button">
+          <div class="large-12 columns"><a href="/"><span class="cbh-cancel-circled2"></span></a></div>
+        </div>
         {{> yield}}{{! `yield` is a special Iron Router template }}
       </article><!--/#yeild -->
 
     </div><!--/#main -->
   </div><!--/#wrap -->
 
-  <!-- #footer -->
-  <div id="footer">
+  <!-- #ldc-footer -->
+  <div id="ldc-footer">
     <div class="medium-6 small-12 columns ldc-legal">
       {{#each widgets 'footer-left'}}
-      <a href="{{ path }}" id="{{ id }}">{{ name }}</a>
+      <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}" title="{{ title }}"><span class="{{ icon }}">{{{ name }}}</span></a>
       {{/each}}
       <a href="http://loop.coop/legal/privacy.html" target="_blank" title="Read the {{ $.Config.about.organization }} privacy policy">Privacy</a>
       <a href="http://loop.coop/legal/terms.html" target="_blank" title="Read the {{ $.Config.about.organization }} terms of use">Terms</a>
@@ -121,7 +131,7 @@
     <div class="medium-6 small-12 columns ldc-copyright">
       <span>&copy;{{ $.Config.about.year }} {{ $.Config.about.organization }}</span>
     </div>
-  </div><!--/#footer -->
+  </div><!--/#ldc-footer -->
 
 </template>
 

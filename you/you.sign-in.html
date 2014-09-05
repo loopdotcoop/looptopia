@@ -1,0 +1,22 @@
+<head>
+<!-- you.sign-in.html -->
+</head>
+
+<template name="you.sign-in">
+  <tt class="x">you.sign-in.html
+     {{$.Config.you.version}}</tt>
+
+  <div class="row">
+    <div class="large-12 columns">
+      {{#if $.Meteor.userId}}
+      <div class="at">{{! style identically to ‘AccountsTemplates’ forms}}
+        <h3>Oops!</h3>
+        <p>You are aleady signed in.</p>
+      </div>
+      {{else}}
+        {{> atForm state='signIn'}}{{! https://github.com/splendido/accounts-templates-core/tree/v0.0.21#templates}}
+      {{/if}}
+    </div>
+  </div>
+
+</template>

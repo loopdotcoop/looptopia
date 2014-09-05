@@ -1,6 +1,16 @@
-Config.account = {
-    name:         'Account'
-  , slug:         'account'
+//// Return the appropriate icon-class for the current user. Used by `Config.you.widgets.registered.icon`.
+var userIcon = function () {
+    var user = Meteor.user();
+    if (user && user.profile && user.profile.username) {
+        return 'cbh-babelslug-' + user.profile.username.split('-').pop();
+    }
+    return 'cbh-user'; // fallback
+}
+
+
+Config.you = {
+    name:         'You'
+  , slug:         'you'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -14,22 +24,28 @@ Config.account = {
   , contributors: [
         'Beth Walker <info@loop.coop>'
     ]
-  , widgets: { // add account links to the 'registered', 'unregistered', and 'dashboard' widget areas
+
+    //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
+  , widgets: {
         'registered': [
-            { path:'/account/profile', name:'_username_', order:'high' } // '_username_' is a keyword recognized by ‘layout.html’
-          , { path:'/', name:'Sign&nbsp;Out', id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+            { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon   , tmpt:'you', order:'high' }
         ]
       , 'unregistered': [
-            { path:'/account/sign-in' , name:'Sign&nbsp;In'  }
-          , { path:'/account/register', name:'Register' }
+            { path:'/you/register'       , name:'Register'       , title:'Register'             , icon:'cbh-feather' }
+          , { path:'/you/sign-in'        , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login-1' }
         ]
-        //// http://zurb.com/playground/foundation-icons
-      , 'dashboard': [
-            { path:'/account/profile', name:'Profile', class:'foundicon-torso' } 
+      , 'holdall': [
+            { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon }
+        ]
+      , 'you': [
+            { path:'/you/profile'        , name:'Profile'        , title:'Edit your profile'    , icon:userIcon }
+          , { path:'/'                   , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout-1' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
+          , { path:'/you/password-change', name:'Change Password', title:'Change your password' , icon:'cbh-lock' }
+          , { path:'/you/delete'         , name:'Delete Account' , title:'Delete your account'  , icon:'cbh-trash-1' }
         ]
     }
 
-    //// `ageGroupData`, `basedInData`, and `hearAboutData` are used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element in each is the default.
+    //// `ageGroupData`, `basedInData`, and `hearAboutData` are used by ‘you.register.js’ and ‘you.profile.js’. Note that the first element in each is the default.
   , ageGroupData: [
         { code:'' , label:'What’s your age group?' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
       , { code:'c', label:'Under 8'  } // codes step through the alphabet in threes, in case we want finer granuality later on
@@ -41,7 +57,7 @@ Config.account = {
       , { code:'u', label:'Over 65'  }
       , { code:'x', label:'Don’t be nosey' }
     ]
-  , basedInData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
+  , basedInData: [ // used by ‘you.register.js’ and ‘you.profile.js’. Note that the first element will be the default.
         { code:'' , label:'Where are you based?' } // the `required: true` configuration can detect that the `<select>` has not been changed, because this `code` is an empty string
       , { code:'b', label:'Brighton and Hove' }
       , { code:'s', label:'Elsewhere in Sussex'  }
@@ -50,12 +66,12 @@ Config.account = {
       , { code:'e', label:'Elsewhere on planet Earth' }
       , { code:'x', label:'Don’t be nosey' }
     ]
-  , hearAboutData: [ // used by ‘account.register.js’ and ‘account.profile.js’. Note that the first element will be the default.
+  , hearAboutData: [ // used by ‘you.register.js’ and ‘you.profile.js’. Note that the first element will be the default.
         { code:'' , label:'How did you hear about us?'         , prompt:false }
-      , { code:'m', label:'Word of mouth'                      , prompt:false } // `prompt` is falsey, so the 'account-hear-about-text' field will be hidden when this is selected
+      , { code:'m', label:'Word of mouth'                      , prompt:false } // `prompt` is falsey, so the 'you-hear-about-text' field will be hidden when this is selected
       , { code:'e', label:'At a festival or party'             , prompt:'Which one?' }
       , { code:'t', label:'Traditional media (print, TV, etc)' , prompt:'Whereabouts, exactly?' }
-      , { code:'s', label:'Social media (Twitter, etc)', prompt:'Where and how?' }
+      , { code:'s', label:'Social media (Twitter, etc)'        , prompt:'Where and how?' }
       , { code:'g', label:'Search engine (Google, etc)'        , prompt:'What were you searching for?' }
       , { code:'w', label:'Some other website'                 , prompt:'Which web page?' }
       , { code:'z', label:'...or something else...'            , prompt:'More details please!' }
@@ -83,8 +99,10 @@ Config.account = {
       , '+ account@0.0.11-2  `$ mrt add collection2` to allow access to `attachSchema()`;  \n' +
         '                    ‘account/profile’ functional and styled; ‘account/delete’ functional and styled; '
       , '+ account@0.0.12    all forms in a box like dashboard; back to dashboard after saving profile; '
+      , '+ you@0.1.1-1       change ‘account’ to ‘you’; '
+      , '+ you@0.1.1-2       create a dashboard for the ‘/you’ route; '
     ]
-  , version:      '0.0.12'
+  , version:  '0.1.1-2'
 };
 
 
@@ -104,72 +122,72 @@ AccountsTemplates.configure({
 
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#routing
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
-    path:     'account/register',
-    template: 'account.register',
-    redirect: '/dashboard'
+    path:     'you/register',
+    template: 'you.register',
+    redirect: '/holdall'
 });
 AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
-    path:     'account/sign-in',
-    template: 'account.sign-in',
-    redirect: '/dashboard'
+    path:     'you/sign-in',
+    template: 'you.sign-in',
+    redirect: '/holdall'
 });
 AccountsTemplates.configureRoute('forgotPwd', { // name: 'atForgotPwd'
-    path:     'account/password-forgot',
-    template: 'account.password-forgot',
-    redirect: '/account/password-retrieve'
+    path:     'you/password-forgot',
+    template: 'you.password-forgot',
+    redirect: '/you/password-retrieve'
 });
 AccountsTemplates.configureRoute('resetPwd', { // name: 'atResetPwd' @todo test this
-    path:     'account/password-reset',
-    template: 'account.password-reset',
+    path:     'you/password-reset',
+    template: 'you.password-reset',
     redirect: '/'
 });
 AccountsTemplates.configureRoute('changePwd', { // name: 'atChangePwd'
-    path:     'account/password-change',
-    template: 'account.password-change',
-    redirect: '/account/profile'
+    path:     'you/password-change',
+    template: 'you.password-change',
+    redirect: '/you/profile'
 });
 
 
 //// https://github.com/splendido/accounts-templates-core/tree/v0.0.21#form-fields-configuration
 AccountsTemplates.addFields([
     {
-        _id: 'account-babelslug'
+        _id: 'you-babelslug'
       , type: 'text'
       , displayName: "Your username will be"
       , required: true
     }
   , {
-        _id: 'account-age-group-code'
+        _id: 'you-age-group-code'
       , type: 'text'
       , displayName: "Age group"
       , maxLength: 1
       , required: true
     }
   , {
-        _id: 'account-based-in-code'
+        _id: 'you-based-in-code'
       , type: 'text'
       , displayName: "Based in"
       , maxLength: 1
       , required: true
     }
   , {
-        _id: 'account-hear-about-code'
+        _id: 'you-hear-about-code'
       , type: 'text'
       , maxLength: 1
     }
   , {
-        _id: 'account-hear-about-text'
+        _id: 'you-hear-about-text'
       , type: 'text'
       , displayName: "..."
       , maxLength: 64
     }
   , {
-        _id: 'account-newsletter-opt'
+        _id: 'you-newsletter-opt'
       , type: 'text'
       , displayName: "Newsletter opt-in"
       , placeholder: "Tick here to receive Email invitations to Loop.Coop parties."
       , maxLength: 1 // 'y' for a ticked checkbox, 'n' otherwise
-      , required: true // jQuery in ‘account.register.js’ will hide this field, and then fill it according to the state of a dynamically-added checkbox
+      , required: true // jQuery in ‘you.register.js’ will hide this field, and then fill it according to the state of a dynamically-added checkbox
     }
 ]);
 
@@ -182,4 +200,5 @@ AccountsTemplates.addFields([
 Meteor.startup(function () {
     AccountsTemplates.init();
 });
+
 
