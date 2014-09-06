@@ -1,6 +1,6 @@
-Config.holdall = {
-    name:         'Holdall'
-  , slug:         'holdall'
+Config.gear = {
+    name:         'Gear'
+  , slug:         'gear'
   , description:  'Xx.' // no more than 255 characters
   , keywords:     'Xx'
   , scripts: {
@@ -18,7 +18,7 @@ Config.holdall = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'registered': [
-            { path:'/holdall', name:'Holdall', icon:'cbh-holdall', title:'View your holdall', tmpt:'holdall' }
+            { path:'/gear', name:'Gear', icon:'cbh-holdall', title:'Useful links and messages', tmpt:'gear' }
         ]
     }
 
@@ -30,6 +30,7 @@ Config.holdall = {
       , '+ dashboard@0.0.6     finish feature branch; '
       , '+ kaboodle@0.1.1-1    change ‘dashboard’ to ‘kaboodle’; '
       , '+ holdall@0.1.2       change ‘kaboodle’ to ‘holdall’; '
+      , '+ gear@0.1.4          change ‘holdall’ to ‘gear’; '
     ]
-  , version:       '0.1.2'
+  , version:       '0.1.4'
 }

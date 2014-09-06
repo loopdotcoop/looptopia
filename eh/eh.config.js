@@ -18,14 +18,12 @@ Config.eh = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'all-users': [
-            { path:'/eh?!', name:'Eh?!', tmpt:'eh', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
-        ]
-      , 'holdall': [
-            { path:'/eh?!', name:'Eh?!', tmpt:'eh', icon:'cbh-thought-bubble', title:'Tips, tricks, clues and missions' }
+            { path:'/eh?!', name:'Eh?!', tmpt:'eh', icon:'cbh-thought-bubble', title:'About this sneak preview' }
         ]
       , 'eh': [
-          //   { path:'xx', name:'XX', icon:'cbh-facebook-rect', title:'Follow us on Facebook' }
-          // , { path:'yy', name:'YY', icon:'cbh-twitter-bird' , title:'Follow us on Twitter' }
+        ]
+      , 'gear': [
+            { path:'/eh?!', name:'Eh?!', tmpt:'eh', icon:'cbh-thought-bubble', title:'About this sneak preview' }
         ]
     }
 

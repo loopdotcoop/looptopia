@@ -1,16 +1,16 @@
 <head>
-<!-- holdall.html -->
+<!-- gear.html -->
 </head>
 
-<template name="holdall">
-  <tt class="x">holdall.html
-     {{$.Config.holdall.version}}</tt>
+<template name="gear">
+  <tt class="x">gear.html
+     {{$.Config.gear.version}}</tt>
 
   <div class="row">
     <div class="large-12 columns">
-      <div class="holdall dashboard at">
-        <h3>Your Holdall</h3>
-        {{#each widgets 'holdall'}}
+      <div class="gear dashboard at">
+        <h3>Useful links and messages</h3>
+        {{#each widgets 'gear'}}
         <a href="{{ path }}" target="{{#if $exists target}}{{ target }}{{/if}}" id="{{ id }}" class="ldc-icon" title="{{ title }}">
           <div>{{! table-row}}
             <div class="{{ icon }}"></div>

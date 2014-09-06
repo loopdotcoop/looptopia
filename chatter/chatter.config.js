@@ -20,7 +20,7 @@ Config.chatter = {
         'all-users': [
             { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!' }
         ]
-      , 'holdall': [
+      , 'gear': [
             { path:'/chatter', name:'Chatter', tmpt:'chatter', icon:'cbh-chat-2', title:'Follow us! Come to our parties!', order:'high' }
         ]
       , 'chatter': [
