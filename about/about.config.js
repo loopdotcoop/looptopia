@@ -91,8 +91,9 @@ Config = {
           , '+ looptopia@0.2.10       always render the `<iframe>`; '
           , '+ looptopia@0.2.12       must have webgl enabled to render the `<iframe>`, same as looptopia@0.2.8; '
           , '+ looptopia@0.2.13-1     on the homepage, show all users an “About this sneak preview” message; '
+          , '+ looptopia@0.2.14       tweaked, with “About this sneak preview” message; '
         ]
-      , version:        '0.2.13-1'
+      , version:        '0.2.14'
     }
 }
 
