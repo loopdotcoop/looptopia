@@ -28,20 +28,20 @@ Config.you = {
     //// Add links to widgetized areas. For icons, see private/fontello-*/demo.html
   , widgets: {
         'registered': [
-            { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon   , tmpt:'you', order:'high' }
+            { path:'/you'                , name:'You'            , title:'Account settings, etc', icon:userIcon   , tmpt:'you', order:'high' }
         ]
       , 'unregistered': [
             { path:'/you/register'       , name:'Register'       , title:'Register'             , icon:'cbh-feather' }
           , { path:'/you/sign-in'        , name:'Sign&nbsp;In'   , title:'Sign In'              , icon:'cbh-login-1' }
-        ]
-      , 'holdall': [
-            { path:'/you/'               , name:'You'            , title:'Account settings, etc', icon:userIcon }
         ]
       , 'you': [
             { path:'/you/profile'        , name:'Profile'        , title:'Edit your profile'    , icon:userIcon }
           , { path:'/'                   , name:'Sign Out'       , title:'Sign Out'             , icon:'cbh-logout-1' , id:'sign-out' } // 'click #sign-out' will trigger `Meteor.logout();`
           , { path:'/you/password-change', name:'Change Password', title:'Change your password' , icon:'cbh-lock' }
           , { path:'/you/delete'         , name:'Delete Account' , title:'Delete your account'  , icon:'cbh-trash-1' }
+        ]
+      , 'gear': [
+            { path:'/you'                , name:'You'            , title:'Account settings, etc', icon:userIcon }
         ]
     }
 
@@ -124,12 +124,12 @@ AccountsTemplates.configure({
 AccountsTemplates.configureRoute('signUp', { // name: 'atSignUp'
     path:     'you/register',
     template: 'you.register',
-    redirect: '/holdall'
+    redirect: '/gear'
 });
 AccountsTemplates.configureRoute('signIn', { // name: 'atSignIn'
     path:     'you/sign-in',
     template: 'you.sign-in',
-    redirect: '/holdall'
+    redirect: '/gear'
 });
 AccountsTemplates.configureRoute('forgotPwd', { // name: 'atForgotPwd'
     path:     'you/password-forgot',

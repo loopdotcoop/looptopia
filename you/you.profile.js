@@ -27,11 +27,11 @@ if (Meteor.isClient) {
 
     });
 
-    //// Go to ‘/holdall’ after a successful submission of the ‘profile’ form.
+    //// Go to ‘/gear’ after a successful submission of the ‘profile’ form.
     AutoForm.hooks({
         'edit-user': {
             onSuccess: function(operation, result, template) {
-                Router.go('holdall');
+                Router.go('gear');
             }
         }
     });

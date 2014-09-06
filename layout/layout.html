@@ -114,11 +114,17 @@
       <article id="yeild">
         <tt class="x">layout.html
            {{$.Config.layout.version}}</tt>
-        {{#if $neq currentPath '/' }}
+
+{{#if $eq currentPath '/' }}
+  {{#if hasWebGL }}
+        <h6 id="ldc-about-this-sneak-preview"><span class="cbh-up-dir"></span>About this sneak preview</h6>
+  {{/if}}
+{{else}}
         <div class="row dismiss-button">
           <div class="large-12 columns"><a href="/"><span class="cbh-cancel-circled2"></span></a></div>
         </div>
-        {{/if}}
+{{/if}}
+
         {{> yield}}{{! `yield` is a special Iron Router template }}
       </article><!--/#yeild -->
 
@@ -127,14 +133,14 @@
 
   <!-- #ldc-footer -->
   <div id="ldc-footer">
-    <div class="medium-6 small-12 columns ldc-legal">
+    <div class="small-6 columns ldc-legal">
       {{#each widgets 'footer-left'}}
       <a href="{{ path }}" id="{{ id }}" class="{{ activeIfTemplateIs tmpt}}" title="{{ title }}"><span class="{{ icon }}">{{{ name }}}</span></a>
       {{/each}}
       <a href="http://loop.coop/legal/privacy.html" target="_blank" title="Read the {{ $.Config.about.organization }} privacy policy">Privacy</a>
       <a href="http://loop.coop/legal/terms.html" target="_blank" title="Read the {{ $.Config.about.organization }} terms of use">Terms</a>
     </div>
-    <div class="medium-6 small-12 columns ldc-copyright">
+    <div class="small-6 columns ldc-copyright">
       <span>&copy;{{ $.Config.about.year }} {{ $.Config.about.organization }}</span>
     </div>
   </div><!--/#ldc-footer -->
