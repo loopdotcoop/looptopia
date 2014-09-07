@@ -93,8 +93,9 @@ Config = {
           , '+ looptopia@0.2.13-1     on the homepage, show all users an “About this sneak preview” message; '
           , '+ looptopia@0.2.14       tweaked, with “About this sneak preview” message; '
           , '+ looptopia@0.2.16       “About this sneak preview” message also shows when WebGL is not available; '
+          , '+ looptopia@0.2.18       change `<iframe src="http://... >`  to `<iframe src="//... >`; '
         ]
-      , version:        '0.2.16'
+      , version:        '0.2.18'
     }
 }
 

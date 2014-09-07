@@ -73,7 +73,7 @@
     <div id="main">
 
 {{#if hasWebGL }}
-      <iframe id="iframe" src="http://aahdesoot-22112.onmodulus.net/"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
+      <iframe id="iframe" src="//aahdesoot-22112.onmodulus.net/"></iframe>{{! placeholder url @todo “http://loop.coop/loading.html”, which times-out to an error message after 10 seconds }}
       <div id="iframe-blocker" class="{{#if $not $.Meteor.userId}}active {{/if}}{{#if $neq currentPath '/'}}active{{/if}}"></div>
 {{else}}
       <div id="ldc-alert">Looptopia needs WebGL 3D, but your browser doesn’t support it :-(</div>
