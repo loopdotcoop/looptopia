@@ -30,7 +30,7 @@ Config.home = {
 '            <h3>You have entered Looptopia</h3> ' +
 '            <p>This is a young planet. The landscape is bare at the moment, waiting to be filled with music.</p> ' +
 // '            <p>Take a look around and keep an eye out for signs of life. Rumour has it of rhythmical rock forms, melodic plant life, and a curious species born to boogie.</p>' +
-'            <p>Take a look around if you like, but there are no signs of life yet. The latest rumours say that rhythmical rock forms will be uncovered on Monday 8th September.</p>' +
+'            <p>Take a look around if you like, but there are no signs of life yet. We think that some rhythmical rock-forms will be uncovered ready for the weekend…</p>' +
 '            <p style="text-align:center; font-weight:bold;">Drag to look around. Click to move.</p>' +
 // '            <p style="text-align:center;">A silent landscape is due to appear tomorrow, Tuesday&nbsp;2nd&nbsp;September.</p>' +
 '          </div>'

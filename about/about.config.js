@@ -95,8 +95,9 @@ Config = {
           , '+ looptopia@0.2.16       “About this sneak preview” message also shows when WebGL is not available; '
           , '+ looptopia@0.2.18       change `<iframe src="http://... >`  to `<iframe src="//... >`; '
           , '+ looptopia@0.2.20       change ‘Sunday 7th’ to ‘Monday 8th’; '
+          , '+ looptopia@0.2.22       change ‘Monday 8th’ to ‘the weekend’; '
         ]
-      , version:        '0.2.20'
+      , version:        '0.2.22'
     }
 }
 
