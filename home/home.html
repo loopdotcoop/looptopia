@@ -6,4 +6,20 @@
   <tt class="x">home.html
      {{$.Config.home.version}}</tt>
 
+{{#if $not $.Meteor.userId}}
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="eh at">
+        <div class="message">
+          {{{$.Config.home.unregistered}}}
+          <p style="text-align:center; font-weight:bold;">To try it out, <a href="/you/sign-in">Sign In</a> or</p>
+          <div class="medium-4 medium-push-4 small-8 small-push-2 columns">
+            <a href="/you/register" class="large radius button expand">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
 </template>

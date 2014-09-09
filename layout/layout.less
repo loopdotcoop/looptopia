@@ -389,6 +389,9 @@ html, body {
         font-weight: 400; // ‘AccountsTemplates’ has set this to '800'
         line-height: 1.1;
     }
+    >.message >p {
+        padding: 0; // responsive
+    }
     label {
         color: #ccc;
     }
@@ -400,6 +403,9 @@ html, body {
         h3 {
             padding: 0 50px; // responsive
             font-size: 1.6875rem; // the natural Foundation size, which ‘AccountsTemplates’ overrides
+        }
+        >.message >p {
+            padding: 0 10%; // responsive
         }
     }
 }
@@ -427,11 +433,17 @@ html, body {
         color: #d0d;
     }
 }
+#ldc-push { // adds height when `#ldc-about-this-sneak-preview` is missing @todo make `#ldc-about-this-sneak-preview` absolute, and get rid of `.ldc-push`
+    height: 43px; // responsive
+}
 @media only screen and (min-width: 40.063em) {
     #ldc-about-this-sneak-preview {
         left: 3rem; // responsive
         width: 7rem; // responsive
         font-size: 1rem; // responsive
+    }
+    #ldc-push {
+        height: 68px; // responsive
     }
 }
 
