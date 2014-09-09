@@ -116,7 +116,11 @@
            {{$.Config.layout.version}}</tt>
 
 {{#if $eq currentPath '/' }}
+  {{#if $.Meteor.userId }}
         <h6 id="ldc-about-this-sneak-preview"><span class="cbh-up-dir"></span>About this sneak preview</h6>
+  {{else}}
+        <div id="ldc-push"></div>
+  {{/if}}
 {{else}}
         <div class="row dismiss-button">
           <div class="large-12 columns"><a href="/"><span class="cbh-cancel-circled2"></span></a></div>
