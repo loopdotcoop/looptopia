@@ -28,9 +28,9 @@ Config.home = {
 '          <div class="instructions">' +
 // '            <h3>Right now, Looptopia is just empty space</h3> ' +
 '            <h3>You have entered Looptopia</h3> ' +
-'            <p>This is a young planet. The landscape is bare at the moment, waiting to be filled with music.</p> ' +
+'            <p>This is a young planet. The landscape is bare at the moment, with just a few rhythmical rock-forms scattered here and there.</p> ' +
 // '            <p>Take a look around and keep an eye out for signs of life. Rumour has it of rhythmical rock forms, melodic plant life, and a curious species born to boogie.</p>' +
-'            <p>Take a look around if you like, but there are no signs of life yet. We think that some rhythmical rock-forms will be uncovered ready for the weekend…</p>' +
+'            <p>Take a look around if you like, but there’s not much to play with yet. We’ve heard that more stone circles will be uncovered this week…</p>' +
 '            <p style="text-align:center; font-weight:bold;">Drag to look around. Click to move.</p>' +
 // '            <p style="text-align:center;">A silent landscape is due to appear tomorrow, Tuesday&nbsp;2nd&nbsp;September.</p>' +
 '          </div>'

@@ -97,8 +97,9 @@ Config = {
           , '+ looptopia@0.2.20       change ‘Sunday 7th’ to ‘Monday 8th’; '
           , '+ looptopia@0.2.22       change ‘Monday 8th’ to ‘the weekend’; '
           , '+ looptopia@0.2.24       unregistered users always see the “Thanks for visiting...” text; '
+          , '+ looptopia@0.2.25-1     new wording on ‘Eh?!’ to mention stone-circles; '
         ]
-      , version:        '0.2.24'
+      , version:        '0.2.25-1'
     }
 }
 
