@@ -17,8 +17,8 @@
       },
       "accounts-templates-foundation": {
         "git": "https://github.com/splendido/accounts-templates-foundation.git",
-        "tag": "v0.0.21",
-        "commit": "575cca2f775f826da0d2ef7240aa25c599a17f04"
+        "tag": "v0.0.28",
+        "commit": "aaa65b16d66e72a160c422ab411eaa89ea610582"
       },
       "handlebar-helpers": {
         "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
@@ -37,13 +37,13 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.17.1",
-        "commit": "a4688e7d77019a68ef43c2a303e905748beeb860"
+        "tag": "v1.0.0",
+        "commit": "5a5977dd9b66d8109d766b41fb5dc1a0ac3e83be"
       },
       "accounts-templates-core": {
         "git": "https://github.com/splendido/accounts-templates-core.git",
-        "tag": "v0.0.21",
-        "commit": "c41262fe77853e6c981c14c30d5cffa2e73dedb2"
+        "tag": "v0.0.28",
+        "commit": "d7c80dbd380b34fbf1f09aa7a69e55cb8d392252"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
@@ -57,8 +57,8 @@
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.7.0",
-        "commit": "77d267aec4ba8a70f677e5d9ef9fb91fb0e3f0f6"
+        "tag": "v1.0.2",
+        "commit": "21a4ce06ae29bff2fb1203c44ea24e61f1c3edba"
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
@@ -72,8 +72,8 @@
       },
       "accounts-t9n": {
         "git": "https://github.com/softwarerero/meteor-accounts-t9n.git",
-        "tag": "v0.0.14",
-        "commit": "3d35d7a24dd9fc3be8dde05f8f3ffdf5cf2e8302"
+        "tag": "v0.0.17",
+        "commit": "b293ebca52d6dca01f96264d69b9b229cebe49b3"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
