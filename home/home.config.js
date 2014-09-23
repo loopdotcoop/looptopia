@@ -22,7 +22,7 @@ Config.home = {
 '          <p>Looptopia is a strange and beautiful web app where you can immerse yourself in an otherworldly musical experience.</p> ' +
 '          <p>Version 1 launches September 27th 2014, but we’ve decided to open the doors a little early and give you a sneak preview of Looptopia… as it is being built.</p>' +
 '          <p>Throughout September 2014, you can try out the app and see the world of Looptopia taking shape. New features are being added regularly, new characters are arriving, and more and more of the environment is being unlocked.</p>' +
-'          <p>We’re giving you a sneak preview because we’re keen to open up a dialogue about Looptopia from the beginning. Want a feature that isn’t there? Think something should be changed? Want to help build this world? Then get in touch and let’s talk.</p>' // @todo link to contact
+'          <p>We’re giving you a sneak preview because we’re keen to open up a dialogue about Looptopia from the beginning. Want a feature that isn’t there? Think something should be changed? Want to help build this world? Then <a target="_blank" href="https://twitter.com/loopdotcoop">get in touch</a> and let’s talk.</p>' // @todo link to feedback form
 
   , registered:
 '          <div class="instructions">' +
@@ -30,8 +30,7 @@ Config.home = {
 '            <h3>You have entered Looptopia</h3> ' +
 '            <p>This is a young planet. The landscape is bare at the moment, with just a few rhythmical rock-forms scattered here and there.</p> ' +
 // '            <p>Take a look around and keep an eye out for signs of life. Rumour has it of rhythmical rock forms, melodic plant life, and a curious species born to boogie.</p>' +
-'            <p>Take a look around if you like, but there’s not much to play with yet. We’ve heard that more stone circles will be uncovered this week…</p>' +
-'            <p style="text-align:center; font-weight:bold;">Drag to look around. Click to move.</p>' +
+'            <p>To explore the stony beats, <b>drag to look around, and click to move.</b></p>' +
 // '            <p style="text-align:center;">A silent landscape is due to appear tomorrow, Tuesday&nbsp;2nd&nbsp;September.</p>' +
 '          </div>'
 // '          <iframe src="http://loop.coop/empty-space.html" width="100%" height="450px" style="width:100%; height:450px; border-radius:30px; overflow:hidden; border-width:0;"></iframe>'
