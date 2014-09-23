@@ -99,8 +99,8 @@ Config = {
           , '+ looptopia@0.2.24       unregistered users always see the “Thanks for visiting...” text; '
           , '+ looptopia@0.2.25-1     new wording on ‘Eh?!’ to mention stone-circles; '
           , '+ looptopia@0.2.26       fix “Blocked loading mixed active content "http://fonts.g...” error; '
-        ]
-      , version:        '0.2.26'
+          , '+ looptopia@0.2.28       hotfix “This is a young planet...” text; '
+        ], version:     '0.2.28'
     }
 }
 
