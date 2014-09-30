@@ -100,7 +100,8 @@ Config = {
           , '+ looptopia@0.2.25-1     new wording on ‘Eh?!’ to mention stone-circles; '
           , '+ looptopia@0.2.26       fix “Blocked loading mixed active content "http://fonts.g...” error; '
           , '+ looptopia@0.2.28       hotfix “This is a young planet...” text; '
-        ], version:     '0.2.28'
+          , '+ looptopia@0.2.30       hotfix remove references to the 27th September; '
+        ], version:     '0.2.30'
     }
 }
 
