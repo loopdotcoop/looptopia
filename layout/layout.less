@@ -125,16 +125,19 @@ a.active {
                 padding-top: 4px;
                 text-align: center;
                 a {
-                    opacity: .7;
-                    transition: opacity .4s ease-out; 
+                    opacity: .6;
+                    transition: opacity .4s ease-out;
+                    outline-width: 0!important; // prevent Firefox from showing dotted border
                     &:hover {
-                        opacity: 1;
+                        opacity: 1; // @todo fix Firefox, which fractionally moves image position during transition
+                    }
+                    &.only-small {
+                        display: inline-block; // responsive
+                    }
+                    &.not-small {
+                        display: none; // responsive
                     }
                 }
-                // a {
-                //     display: inline-block; // allow `padding-top` to take effect
-                //     padding-top: 4px;
-                // }
             }
             &.ldc-left-message,
             &.ldc-right-message {
@@ -163,6 +166,12 @@ a.active {
                 &.ldc-banner {
                     min-width: 150px; // responsive
                     max-width: 150px; // responsive
+                    a.only-small {
+                        display: none; // responsive
+                    }
+                    a.not-small {
+                        display: inline-block; // responsive
+                    }
                 }
                 &.ldc-left-message,
                 &.ldc-right-message {
